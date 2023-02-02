@@ -117,3 +117,9 @@ a.carousel-control-next
 {
      display: none;
 }
+
+.elementy {
+  display: flex;
+  flex-direction: column;
+  background: lightblue;
+}
