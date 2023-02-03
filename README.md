@@ -8,8 +8,6 @@
 1. [Motivation](#motivation)
 1. [Features](#features)
 1. [Project structure](#project-structure)
-   - [Folders](#folders-structure)
-   - [Files within component](#component-files)
 1. [Setting up](#setting-up)
 1. [Running project](#starting-project)
 1. [Deploying the project](#deploying)
