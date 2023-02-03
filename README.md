@@ -9,7 +9,8 @@
 1. [Features](#features)
 1. [Project structure](#project-structure)
 1. [Setting up](#setting-up)
-
+1. [Running the project](#running-project-locally)
+1. [Deploying the project](#deploying-the-project)
 ---
 
 ## Introduction[![](./docs/img/pin.svg)](#introduction)
