@@ -9,8 +9,6 @@
 1. [Features](#features)
 1. [Project structure](#project-structure)
 1. [Setting up](#setting-up)
-1. [Running project](#running-project)
-1. [Deploying the project](#deploying)
 
 ---
 
@@ -110,36 +108,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Deploying the project[![](./docs/img/pin.svg)](#deploying)
 
 Our Next.js app probably will be deployed on [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
-
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
-Test lorem ipsum
