@@ -123,3 +123,9 @@ a.carousel-control-next
   flex-direction: column;
   background: lightblue;
 }
+
+/* TODO: Try to not do it here */
+.link-active {
+  color: goldenrod !important;
+  font-weight: 500 !important;
+}

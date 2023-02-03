@@ -3,12 +3,10 @@ import React from 'react'
 
 type Props = {}
 
-function index({}: Props) {
+function ArrayVizualization({}: Props) {
   return (
-    <div>
-        QUEUE
-        <StepsSlider /></div>
+    <div><StepsSlider /></div>
   )
 }
 
-export default index
+export default ArrayVizualization

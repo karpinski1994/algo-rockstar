@@ -1,25 +1,27 @@
+import { useRouter } from 'next/router';
 import React from 'react'
 import { Nav } from 'react-bootstrap'
-import { useRouter } from 'next/router'
+type Props = {
+    queryElement: any
+}
 
-type Props = {}
 
-function TabsNavbar({ }: Props) {
+function TabsNavbar({ queryElement }: Props) {
     const router = useRouter();
-    console.log('router: ', router)
-    return <Nav variant="tabs" 
-    // defaultValue={query.pathname + 'description'}
+
+    return <Nav fill variant="tabs"
     >
-        <Nav.Item>
-            <Nav.Link href="/">Description</Nav.Link>
+         <Nav.Item>
+            <Nav.Link
+                href={`/data-structures/${queryElement}/`}>Description</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link href="/data-structures/linked-list">Option 2</Nav.Link>
+            <Nav.Link
+                href={`/data-structures/${queryElement}/vizualization`}>Vizualization</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-                Disabled
-            </Nav.Link>
+            <Nav.Link
+                href={`/data-structures/${queryElement}/code-examples`}>Code Examples</Nav.Link>
         </Nav.Item>
     </Nav>
 }

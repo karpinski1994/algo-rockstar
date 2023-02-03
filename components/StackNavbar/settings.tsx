@@ -1,3 +1,12 @@
+export const defaultSuffix = '/'
+export const defaultPrefix = '/data-structures/'
+export const vizualizationSuffix = '/vizualization'
+export const codeExamplesSuffix = '/code-examples'
+// TODO: Handle that in other way just dummy solution for now
+export const differentSufixes = [vizualizationSuffix, codeExamplesSuffix]
+// TOOD: Move everything here to utils
+export const buildUrl = (url: string) => defaultPrefix + url + defaultSuffix;
+
 export const stackNavSettings = [
     { title: 'Data structures'},
     {
@@ -5,37 +14,37 @@ export const stackNavSettings = [
     },
     {
         title: 'Linked List',
-        url: '/data-structures/linked-list'
+        url: 'linked-list'
     },
     {
         title: 'Array',
-        url: '/data-structures/array'
+        url: 'array'
     },
     {
         title: 'Stack',
-        url: '/data-structures/stack'
+        url: 'stack'
     },
     {
         title: 'Queue',
-        url: '/data-structures/queue'
+        url: 'queue'
     },
     {
         title: 'Non-linear'
     },
     {
         title: 'Hash Table',
-        url: '/data-structures/hash-table'
+        url: 'hash-table'
     },
     {
         title: 'Tree',
-        url: '/data-structures/tree'
+        url: '/tree'
     },
     {
         title: 'Heap',
-        url: '/data-structures/heap'
+        url: 'heap'
     },
     {
         title: 'Graph',
-        url: '/data-structures/graph'
+        url: 'graph'
     }
 ];

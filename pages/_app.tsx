@@ -7,15 +7,22 @@ import Container from 'react-bootstrap/Container';
 import StackNavbar from '@/components/StackNavbar';
 import HeaderNavbar from '@/components/HeaderNavbar/HeaderNavbar';
 import TabsNavbar from '@/components/TabsNavbar/TabsNavbar';
+
+const Layout = ({ Component, pageProps }) => {
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />);
+  } else {
+    return <Component {...pageProps} />;
+  }
+};
+
 export default function App({ Component, pageProps }: AppProps) {
   return (<Container fluid className="p-0 main-wrapper">
     <HeaderNavbar />
     <div className='content bg-black'>
       <StackNavbar />
       <main>
-      <TabsNavbar />
-      {/* <StepsSlider /> */}
-        <Component {...pageProps} />
+        <Layout Component={Component} pageProps={pageProps} />
       </main>
     </div>
     <style jsx>{layoutStyles}</style>
