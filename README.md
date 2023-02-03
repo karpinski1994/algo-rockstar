@@ -9,7 +9,7 @@
 1. [Features](#features)
 1. [Project structure](#project-structure)
 1. [Setting up](#setting-up)
-1. [Running project](#starting-project)
+1. [Running project](#running-project)
 1. [Deploying the project](#deploying)
 
 ---
@@ -79,6 +79,7 @@ Please follow the system design guidelines. If everyone makes every effort to co
 ---
 ## Setting up[![](./docs/img/pin.svg)](#setting-up)
 
+
 ##### NPM packages
 Install all necessary dependencies by running
 `
@@ -88,7 +89,8 @@ in your terminal (in project's root directory).
 
 ---
 
-## Running project locally[![](./docs/img/pin.svg)](#starting-project)
+## Running project locally[![](./docs/img/pin.svg)](#running-project)
+
 
 First, run the development server:
 
@@ -104,7 +106,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ---
 
-## Deploying on Vercel[![](./docs/img/pin.svg)](#deploying)
+## Deploying the project[![](./docs/img/pin.svg)](#deploying)
 
 Our Next.js app probably will be deployed on [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
