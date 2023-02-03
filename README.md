@@ -7,11 +7,13 @@
 1. [Tech stack](#tech-stack)
 1. [Motivation](#motivation)
 1. [Features](#features)
-1. [Setting up](#setting-up)
-1. [Starting project](#starting-project)
 1. [Project structure](#project-structure)
    - [Folders](#folders-structure)
    - [Files within component](#component-files)
+1. [Setting up](#setting-up)
+1. [Running project](#starting-project)
+1. [Deploying the project](#deploying)
+
 ---
 
 ## Introduction[![](./docs/img/pin.svg)](#introduction)
@@ -52,40 +54,6 @@ The third feature is a collection of ready-to-use code examples in various progr
 
 ---
 
-## Setting up[![](./docs/img/pin.svg)](#setting-up)
-
-##### NPM packages
-Install all necessary dependencies by running
-`
-yarn
-`
-in your terminal (in project's root directory).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-
----
-
 ## Project structure[![](./docs/img/pin.svg)](#project-structure)
 We decided to choose the so-called ducked folders and files structure. More about the concept you can find [here](https://medium.com/building-crowdriff/react-redux-file-architecture-ducks-it-up-6b32eaaba341). We want everything that relates to a component to exist within its own folder. This way of organising files is very scalable and intuitive.
 #### Folders structure[![](./docs/img/pin.svg)](#folders-structure) [To be updated]
@@ -111,8 +79,18 @@ Each component folder at the ExampleComponent level should consist of the follow
 Please follow the system design guidelines. If everyone makes every effort to comply with common rules, our code will be in order, that is easy to maintain, repair and develop.
 
 ---
+## Setting up[![](./docs/img/pin.svg)](#setting-up)
 
-## Running project locally
+##### NPM packages
+Install all necessary dependencies by running
+`
+yarn
+`
+in your terminal (in project's root directory).
+
+---
+
+## Running project locally (#starting-project)
 
 First, run the development server:
 
@@ -128,7 +106,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ---
 
-## Deploying on Vercel
+## Deploying on Vercel(#deploying)
 
 Our Next.js app probably will be deployed on [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
