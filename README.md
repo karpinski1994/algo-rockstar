@@ -10,7 +10,7 @@
 1. [Project structure](#project-structure)
 1. [Setting up](#setting-up)
 1. [Running project](#running-project)
-1. [Deploying the project](#deploying)
+4. [Deploying the project](#deploying)
 
 ---
 
@@ -88,7 +88,6 @@ yarn
 in your terminal (in project's root directory).
 
 ---
-
 ## Running project locally[![](./docs/img/pin.svg)](#running-project)
 
 
@@ -105,7 +104,6 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You may use ctrl / cmd + right click, clicking the link in the development console - should open the application in preferable browser automatically.
 
 ---
-
 ## Deploying the project[![](./docs/img/pin.svg)](#deploying)
 
 Our Next.js app probably will be deployed on [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
