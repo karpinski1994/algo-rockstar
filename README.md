@@ -1,4 +1,4 @@
-## Algo Rockstar ![Latest release](https://badgen.net/badge/Release%20Date/January%202022/blue)
+<!-- ## Algo Rockstar ![Latest release](https://badgen.net/badge/Release%20Date/January%202022/blue) -->
 
 ---
 
