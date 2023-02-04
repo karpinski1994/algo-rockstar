@@ -4,14 +4,14 @@ import { useEffect } from "react";
 import nestLayout from "@/utils/nenstLayout";
 import TabsNavbar from "@/components/TabsNavbar/TabsNavbar";
 import { Container } from "react-bootstrap";
-import DescriptionSwitch from "@/components/DescriptionSwitch";
+import Markdown from "@/components/Markdown";
 
 const DataStructurePage = () => {
   const router = useRouter();
   const { dataStructure } = router.query;
   return (
     <section>
-      <DescriptionSwitch route={dataStructure}/>
+      <Markdown route={dataStructure}/>
     </section>
   );
 };

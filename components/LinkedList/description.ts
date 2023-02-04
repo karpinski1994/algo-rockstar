@@ -1,12 +1,4 @@
-import React from 'react'
-
-type Props = {}
-// TODO: We just have to insert markdown
-function LinkedListDescription({ }: Props) {
-    return (
-        <div>{
-            `
-# Linked list
+export default `# Linked list
 ### Linear data structures
 
 #### Description
@@ -39,8 +31,3 @@ Split O(n): Dividing a linked list into two separate linked lists.
 
 [Introduction to Linked Lists (Data Structures & Algorithms #5)](https://www.youtube.com/watch?v=WwfhLC16bis)
 `
-        }</div>
-    )
-}
-
-export default LinkedListDescription
