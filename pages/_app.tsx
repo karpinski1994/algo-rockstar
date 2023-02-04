@@ -19,7 +19,7 @@ const Layout = ({ Component, pageProps }) => {
 export default function App({ Component, pageProps }: AppProps) {
   return (<Container fluid className="p-0 main-wrapper">
     <HeaderNavbar />
-    <div className='content bg-black'>
+    <div className='content'>
       <StackNavbar />
       <main>
         <Layout Component={Component} pageProps={pageProps} />

@@ -8,9 +8,8 @@ const DataStructuresCodeExamplesPage = () => {
   const { dataStructure } = router.query;
   return (
     <section>
-
       <h3>{dataStructure} Code Examples</h3>
-      <CodeExample dataStructure={dataStructure}/>
+      <CodeExample codeStructure={dataStructure}/>
     </section>
   );
 };

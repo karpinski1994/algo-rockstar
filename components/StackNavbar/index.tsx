@@ -5,10 +5,10 @@ import { stackNavSettings, buildUrl } from './settings';
 
 const NavElement = ({ url, title, active }) => {
     if (!url) {
-        return (<Navbar.Text>{title}</Navbar.Text>)
+        return (<ul> <Navbar.Text className="text-dark">{title}</Navbar.Text> </ul>)
     }
 
-    return <Nav.Link className={active ? 'link-active' : ''} href={buildUrl(url)}>{title}</Nav.Link>
+    return <li> <Nav.Link className={active ? 'link-active' : ''} href={buildUrl(url)}>{title}</Nav.Link> </li>
 }
 
 
