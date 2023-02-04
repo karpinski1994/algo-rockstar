@@ -14,15 +14,12 @@ const NavElement = ({ url, title, active }) => {
 
 function StackNavbar() {
     const { asPath } = useRouter();
-    console.log("🚀 ~ file: index.tsx:17 ~ StackNavbar ~ asPath", asPath)
     return (
         <Navbar variant="dark" className='flex-column mt-5'>
             {
                 stackNavSettings.map((el, idx) => {
-                    asPath?.includes(el.url) && console.log('el.url ', el.url)
                     return <NavElement active={el.url && asPath?.includes(el.url)} key={el.url + el.title + idx} url={el.url} title={el.title} />
-                }
-                )
+                })
             }
         </Navbar>
     );
