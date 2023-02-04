@@ -10,26 +10,30 @@ const addActiveClass = (currentUrl: string, linkUrl: string) => currentUrl === l
 function TabsNavbar({ queryElement }: Props) {
     const router = useRouter();
     const { asPath } = router;
-
-    return <Nav fill variant="tabs"
-    >
-        <Nav.Item>
-            <Nav.Link
-                // TODO: Maybe move it to utils, and extract configuration of nav to some config array
-                className={addActiveClass(asPath, `/data-structures/${queryElement}`)}
-                href={`/data-structures/${queryElement}/`}>Description</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Nav.Link
-                className={addActiveClass(asPath, `/data-structures/${queryElement}/vizualization`)}
-                href={`/data-structures/${queryElement}/vizualization`}>Vizualization</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Nav.Link
-                className={addActiveClass(asPath, `/data-structures/${queryElement}/code-examples`)}
-                href={`/data-structures/${queryElement}/code-examples`}>Code Examples</Nav.Link>
-        </Nav.Item>
+    const navItems = [
+        { name: "Description", href: "" },
+        { name: "Vizualization", href: "vizualization" },
+        { name: "Code Examples", href: "code-examples" },
+      ];
+    return (
+    <Nav fill variant="tabs">
+        {
+            navItems.map((item) => (
+                <Nav.Item key={item.name}>
+                    <Nav.Link 
+                        className={addActiveClass(
+                            asPath, 
+                                `/data-structures/${queryElement}/${item.href}`
+                        )}
+                        href={`/data-structures/${queryElement}/${item.href}`}
+                    >
+                        {item.name}
+                    </Nav.Link>
+                </Nav.Item>
+            ))
+        }
     </Nav>
+    )
 }
 
 export default TabsNavbar
