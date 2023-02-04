@@ -24,7 +24,7 @@ Introducing Algorockstar, an innovative app that makes understanding and working
   <tr>
     <td style="background-color: grey"><a href="https://nextjs.org/docs/getting-started"><img height="50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png" alt="Next.js"/></a></td>
     <td style="background-color: grey"><a href="https://en.wikipedia.org/wiki/TypeScript"><img height="50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1280px-Typescript.svg.png" alt="Type Script"/></a></td>
-    <td style="background: grey"><a href="https://react-bootstrap.github.io/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAJBL2IlYkGo2WwsaKQtyHWqVbHTy9bKECaVkrc4hiGQ&s" height="30px" width="180px" atl="React bootstrap"/></a></td>
+    <td style="background: grey"><a href="https://react-bootstrap.github.io/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAJBL2IlYkGo2WwsaKQtyHWqVbHTy9bKECaVkrc4hiGQ&s" height="30px" width="32px" atl="React bootstrap"/></a></td>
   </tr>
 </table>
 We chose to use Next.js for our project because of its excellent SEO capabilities, Server-Side Rendering (SSR) capabilities, and Static Site Generation (SSG) capabilities. These features allow us to optimize our website for search engines, improve the load time and performance of our website, and generate a static version of our website for faster delivery.
