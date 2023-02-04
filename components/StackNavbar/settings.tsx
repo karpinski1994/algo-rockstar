@@ -8,7 +8,6 @@ export const differentSufixes = [vizualizationSuffix, codeExamplesSuffix]
 export const buildUrl = (url: string) => defaultPrefix + url + defaultSuffix; 
 
 export const stackNavSettings = [
-    { title: 'Data structures'},
     {
         title: 'Linear'
     },
