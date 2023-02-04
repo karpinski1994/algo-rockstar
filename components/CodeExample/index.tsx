@@ -5,8 +5,8 @@ import codeExamplesFactory from './codeExamplesFactory';
 
 type Props = {}
 // TODO: The same like with Markdown here we may want to rename this
-function CodeExample({ dataStructure }: Props) {
-    const codeExamples = codeExamplesFactory(dataStructure);
+function CodeExample({ codeStructure }: Props) {
+    const codeExamples = codeExamplesFactory(codeStructure);
     // TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component
     console.log("🚀 0 codeExamples", codeExamples)
 
