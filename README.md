@@ -11,6 +11,7 @@
 1. [Setting up](#setting-up)
 1. [Running the project](#running-project-locally)
 1. [Deploying the project](#deploying-the-project)
+1. [Conventions](#conventions)
 ---
 
 ## Introduction[![](./docs/img/pin.svg)](#introduction)
@@ -109,3 +110,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Deploying the project[![](./docs/img/pin.svg)](#deploying)
 
 Our Next.js app probably will be deployed on [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+
+
+## Conventions[![](./docs/img/pin.svg)](#conventions)
+
+#### Setting files  
+1. For now we keep settings / configuration files close to the place where they are being used. For example if we have an array keeping the shape of the navigation:
+```
+const nagivation = [
+  {
+    title: 'Home'
+    url: '/'
+  }
+]
+```
+and the directory holding component responsible for rendering this navigation - we keep settings in the same directory, like this:
+/Navigation
+-- settings.ts
+-- NavigationComponent.tsx
+
+#### Git
+We use semantic naming of branches following suffixes example:
+feature - for features
+fix - for bug fixes
+refactor - for refactoring
+chore - changes to build processes or auxiliary tools
+as [here](https://www.conventionalcommits.org/en/v1.0.0/) 
