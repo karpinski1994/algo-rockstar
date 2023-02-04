@@ -1,4 +1,4 @@
-import VizualizationSwitch from "@/components/VizualizationSwitch";
+import VizualizationSwitch from "@/components/Vizualization";
 import { useRouter } from "next/router";
 import { DataStructurePageLayout } from ".";
 
