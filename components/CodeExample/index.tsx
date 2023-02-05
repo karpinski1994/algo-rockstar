@@ -12,7 +12,6 @@ function CodeExample({ codeStructure }: Props) {
 
     useEffect(() => {
         if(codeExamples) {
-            console.log("🚀 ~ file: index.tsx:15 ~ useEffect ~ codeExamples", codeExamples)
             setCodeExample(codeExamples['javascript'])
         }
     }, [codeExamples])
@@ -20,8 +19,6 @@ function CodeExample({ codeStructure }: Props) {
     const [language, changeLanguage] = useState('javascript');
     const [codeExample, setCodeExample] = useState(codeExamples['javascript']);
     const [areLineNumbersVisible, toggleLineNumbersVisibility] = useState(true);
-    console.log("🚀 1 language", language)
-    console.log("🚀 2 codeExample", codeExample)
     
     return (
         <>

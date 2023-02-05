@@ -3,10 +3,10 @@ import React from 'react'
 
 type Props = {}
 
-function LinkedListVizualization({}: Props) {
+function LinkedListVisualization({}: Props) {
   return (
     <div><StepsSlider /></div>
   )
 }
 
-export default LinkedListVizualization
+export default LinkedListVisualization

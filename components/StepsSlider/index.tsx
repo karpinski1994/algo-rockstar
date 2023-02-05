@@ -32,10 +32,10 @@ function StepsSlider() {
 
     return (
         <div className="w-100 position-relative">
-            <div className='bg-secondary py-3'>
-                <Button size="lg" className='me-1 font-weight-bold' variant="danger" onClick={onStartClick}>{'|| <'}</Button>
-                <Button size="lg"  className='me-1 font-weight-bold' variant="warning" onClick={onPrevClick}>{'<'}</Button>
-                <Button size="lg font-weight-bold"  variant="success" onClick={onNextClick}>{'Next Step >'}</Button>
+            <div className='py-3'>
+                <Button size="lg" variant="light" className='me-1 font-weight-bold btn-outline-danger' onClick={onStartClick}>{'|| <'}</Button>
+                <Button size="lg" variant="light"  className='me-1 font-weight-bold btn-outline-dark'  onClick={onPrevClick}>{'<'}</Button>
+                <Button size="lg font-weight-bold"  variant="dark" onClick={onNextClick}>{'Next Step >'}</Button>
             </div>
             <Carousel variant="dark" activeIndex={activeIndex} ref={ref} indicators={false} interval={null} slide={false}>
                 <Carousel.Item>

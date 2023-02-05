@@ -1,12 +1,12 @@
-import LinkedListVizualization from "../../data-structures/LinkedList/vizualization";
-import ArrayVizualization from  "../../data-structures/Array/vizualization";
+import LinkedListVisualization from "../../data-structures/LinkedList/visualization";
+import ArrayVisualization from  "../../data-structures/Array/visualization";
 // TODO: COmponent has to be common we just need to pass markdown
 export default ({ route }) => {
     switch (route) {
         case "linked-list":
-            return <LinkedListVizualization />
+            return <LinkedListVisualization />
         case "array":
-            return <ArrayVizualization />
+            return <ArrayVisualization />
         default:
             return <div>Content for that section will be provided soon.</div>;
     }
