@@ -1,4 +1,5 @@
 import Visualization from "@/components/Visualization";
+import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { useRouter } from "next/router";
 import { DataStructurePageLayout } from ".";
 
@@ -6,9 +7,10 @@ const DataStructuresVisualizationPage = () => {
   const router = useRouter();
   const { dataStructure } = router.query;
   return (
-    <section>
-      <Visualization route={dataStructure}/>
-    </section>
+    <>
+      <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - visualization`}</h3>
+      <Visualization route={dataStructure} />
+    </>
   );
 };
 

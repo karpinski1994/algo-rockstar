@@ -5,7 +5,7 @@ type Props = {}
 
 function LinkedListVisualization({}: Props) {
   return (
-    <div><StepsSlider /></div>
+   <StepsSlider />
   )
 }
 

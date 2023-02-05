@@ -6,12 +6,12 @@ export default function ({ toggle, select }) {
   return (
     <Form>
       <Form.Check
+        className="mb-3"
         type="switch"
-        id="custom-switch"
-        label="Check this switch"
+        label="Show number of lines"
         {...toggle}
       />
-      <Form.Select aria-label="Default select example" {...select}
+      <Form.Select className="mb-3" aria-label="Default select example" {...select}
       >
         {select.options}
       </Form.Select>
