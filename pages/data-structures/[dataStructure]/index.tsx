@@ -21,7 +21,7 @@ const NestedLayout = ({ children }) => {
   const { dataStructure } = router.query;
 
   return (
-    <Container className="w-100">
+    <Container className="w-100 mt-3">
         <TabsNavbar queryElement={dataStructure}/>
       <section>{children}</section>
     </Container>
