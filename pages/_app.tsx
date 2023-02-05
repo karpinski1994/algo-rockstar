@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <HeaderNavbar />
     <div className='row'>
       <StackNavbar />
-      <main className='col'>
+      <main className='col-10'>
         <Layout Component={Component} pageProps={pageProps} />
       </main>
     </div>
@@ -62,7 +62,6 @@ nav {
 }
 
 main {
-  width: 100%;
   height: calc(100vh - 56px);
 }
 `

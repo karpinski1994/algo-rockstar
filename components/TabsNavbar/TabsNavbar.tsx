@@ -13,21 +13,22 @@ function TabsNavbar({ queryElement }: Props) {
     const { asPath } = router;
     return (
     <Nav fill variant="tabs">
-        {
-            navItems.map((item) => (
-                <Nav.Item key={item.name}>
-                    <Nav.Link 
-                        className={addActiveClass(
-                            asPath, 
-                                `/data-structures/${queryElement}/${item.href}`
-                        )}
-                        href={`/data-structures/${queryElement}/${item.href}`}
-                    >
-                        {item.name}
-                    </Nav.Link>
-                </Nav.Item>
-            ))
-        }
+       <Nav.Item>
+            <Nav.Link
+                // TODO: Maybe move it to utils, and extract configuration of nav to some config array
+                className={addActiveClass(asPath, `/data-structures/${queryElement}`)}
+                href={`/data-structures/${queryElement}/`}>Description</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+            <Nav.Link
+                className={addActiveClass(asPath, `/data-structures/${queryElement}/visualization`)}
+                href={`/data-structures/${queryElement}/visualization`}>Vizualization</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+            <Nav.Link
+                className={addActiveClass(asPath, `/data-structures/${queryElement}/code-examples`)}
+                href={`/data-structures/${queryElement}/code-examples`}>Code Examples</Nav.Link>
+        </Nav.Item>
     </Nav>
     )
 }

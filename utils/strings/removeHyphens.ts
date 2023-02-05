@@ -1,0 +1,1 @@
+export const removeHyphens = (text: string) => text && text.toString().replace(/-/g, " ");
