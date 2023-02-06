@@ -118,6 +118,10 @@ a.carousel-control-next
   background: lightblue;
 }
 
+.link {
+  color: goldenrod 
+}
+
 /* TODO: Try to not do it here */
 .link-active {
   color: goldenrod !important;

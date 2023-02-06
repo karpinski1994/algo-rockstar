@@ -6,7 +6,7 @@ import css from 'styled-jsx/css'
 import Container from 'react-bootstrap/Container';
 import StackNavbar from '@/components/StackNavbar';
 import HeaderNavbar from '@/components/HeaderNavbar/HeaderNavbar';
-import TabsNavbar from '@/components/TabsNavbar/TabsNavbar';
+import Footer from '@/components/Footer';
 
 const Layout = ({ Component, pageProps }) => {
   if (Component.getLayout) {
@@ -25,17 +25,16 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout Component={Component} pageProps={pageProps} />
       </main>
     </div>
+    <Footer />
     <style jsx>{layoutStyles}</style>
   </Container>)
 }
 
 const layoutStyles = css`
 .main-wrapper {
-  height: 100vh;
 }
 
 .container {
-  height: 100vh;
   width: 100vw;
 }
 
@@ -50,7 +49,6 @@ header {
   display:flex;
   flex-direction:row;
   text-align: center; 
-  height: 90%;
 }
 
 nav {
@@ -62,6 +60,5 @@ nav {
 }
 
 main {
-  height: calc(100vh - 56px);
 }
 `
