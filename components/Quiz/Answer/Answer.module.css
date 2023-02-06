@@ -1,0 +1,24 @@
+.check {
+  width: 100%;
+}
+.check > input {
+  display: none;
+}
+
+.check > label {
+  border: 1px solid black;
+  max-width: 100%;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: #666;
+  border: 1px #666 solid;
+  font-weight: 300;
+}
+
+.check > input:checked + label {
+  outline: 3px #9A9A9A solid;
+  color: black;
+  border-color: black;
+  font-weight: 500;
+}

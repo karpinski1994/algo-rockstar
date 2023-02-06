@@ -99,11 +99,6 @@ a {
     color-scheme: dark;
   }
 }
-
-.main-wrapper {
-  max-height: 100%
-}
-
 /* StepsSlider */
 
 a.carousel-control-prev, 
@@ -149,3 +144,7 @@ a.nav-link:hover{
 .form-switch > .form-check-input:checked{
   background-color: goldenrod;
 }
+/* 
+.answer > .form-check-input {
+  display: none;
+} */
