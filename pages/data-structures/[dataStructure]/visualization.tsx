@@ -1,3 +1,4 @@
+import StepsSlider from "@/components/StepsSlider";
 import Visualization from "@/components/Visualization";
 import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { useRouter } from "next/router";
@@ -9,7 +10,7 @@ const DataStructuresVisualizationPage = () => {
   return (
     <>
       <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - visualization`}</h3>
-      <Visualization route={dataStructure} />
+      <StepsSlider route={removeHyphens(dataStructure)}/>
     </>
   );
 };

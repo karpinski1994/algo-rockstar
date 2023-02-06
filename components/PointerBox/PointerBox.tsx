@@ -1,12 +1,14 @@
 import React from 'react'
+import Arrow from '../Arrow/Arrow';
 
 type Props = {
     color?: number[];
     pointed?: boolean;
+    arrow?: boolean;
 }
 
 
-function PointerBox({ pointed, color }: Props) {
+function PointerBox({ pointed, color, arrow }: Props) {
     const colorSides = `RGBA(${color[0] - 100},${color[1] - 100},${color[2] - 100},${color[3]})`;
     const colorTop = `RGBA(${color[0] - 30},${color[1] - 30},${color[2] - 30},${color[3]})`;
     return (
@@ -19,10 +21,10 @@ function PointerBox({ pointed, color }: Props) {
                 <g clipPath="url(#clip0_106_11)">
                     <rect className="buttonTop" width="57" height="57" rx="8" transform="matrix(0.866025 -0.5 0.866025 0.5 1 51)" fill={colorTop} />
                     <path className="buttonSides playSides" d="M 60.909 58.762 L 32.221 52.35 L 51.327 38.067 L 60.909 58.762 Z" fill={colorSides}></path>
-                    <g className={!pointed ? 'glowAll' : ''} filter="url(#filter0_d_106_11)">
+                    <g opacity={pointed ? '1' : '0'} filter="url(#filter0_d_106_11)">
                         <path d="M 60.909 58.762 L 32.221 52.35 L 51.327 38.067 L 60.909 58.762 Z" fill="white" />
                     </g>
-                    <g className={!pointed ? 'glowAll' : ''} opacity="0.5" filter="url(#filter1_f_106_11)">
+                    <g opacity={pointed ? '0.5' : '0'} filter="url(#filter1_f_106_11)">
                         <path d="M73.0478 36.9032L58.6665 67.8905L19.3761 45.2062L73.0478 36.9032Z" fill="white" />
                     </g>
                 </g>
@@ -30,7 +32,7 @@ function PointerBox({ pointed, color }: Props) {
                 <g></g>
                 <g></g>
                 <g></g>
-                <path className={!pointed ? 'glowAll' : ''} opacity="0.5" d="M60.5 58.5L32.5 52.3L30 8L70 6L64 40Z" fill="url(#paint0_linear_106_11)" />
+                <path opacity={pointed ? '0.5' : '0'} d="M60.5 58.5L32.5 52.3L30 8L70 6L64 40Z" fill="url(#paint0_linear_106_11)" />
                 <defs>
                     <filter id="filter0_d_106_11" x="23.4353" y="34.5" width="48.7846" height="34.9282" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix" />
@@ -56,6 +58,7 @@ function PointerBox({ pointed, color }: Props) {
                     </clipPath>
                 </defs>
             </svg>
+            {arrow?<Arrow/>:null}
         </div>
     )
 }
