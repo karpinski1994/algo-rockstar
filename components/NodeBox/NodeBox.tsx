@@ -14,7 +14,7 @@ type Props = {
 }
 
 
-function NodeBox({ pointer=true, pointed, color, name, arrow=true }: Props) {
+function NodeBox({ pointer=true, pointed, color, name, arrow=true, orientation='row' }: Props) {
     return (
         <div>
             <ValueBox color={color} name={name}/>
