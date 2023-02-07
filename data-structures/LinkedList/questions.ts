@@ -13,7 +13,8 @@ export default [
       label: 'O(m * n)',
       type: 'radio',
     },],
-    correctId: 1,
+    correctId: '1',
+    answer: false,
   },
   {
     question: 'Can you access values by using index in the linked list?',
@@ -25,6 +26,7 @@ export default [
       label: 'No',
       type: 'radio',
     }],
-    correctId: 1,
+    correctId: '1',
+    answer: false,
   },
 ]

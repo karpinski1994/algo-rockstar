@@ -1,18 +1,25 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
+import { Form, FormCheck } from 'react-bootstrap'
 import styles from './Answer.module.css'
 
-const Answer = ({label, name, type, id, correct, submitted}) => {
-    console.log("🚀 ~ file: index.tsx:6 ~ Answer ~ correct", correct)
+const Answer = ({ question, answer, label, type, id, submitted, correctId, onChange }) => {
     
     return (
-        <Form.Check
-            className={`${styles.check} ms-0 ps-0 mb-2, ${submitted && correct ? styles.correct : ''} ${submitted && !correct ? styles.wrong : ''}`}
-            label={label}
-            name={name}
-            type={type}
-            id={label + id}
-        />
+        <>
+            <FormCheck.Label htmlFor={question + id} 
+           />
+            <Form.Check
+                className={`${styles.check} ${submitted && correctId === id ? styles.correct: ''} ${submitted && correctId !== id ? styles.wrong: ''}`}
+                label={label}
+                name={question}
+                type={type}
+                checked={answer === id}
+                id={question + id}
+                onChange={onChange}
+                disabled={submitted}
+            />
+        </>
+
     )
 }
 

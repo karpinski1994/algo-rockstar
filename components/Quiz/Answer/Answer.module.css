@@ -1,11 +1,14 @@
 .check {
   width: 100%;
+  margin-left: 0;
+  padding: 0;
 }
 .check > input {
   display: none;
 }
 
 .check > label {
+  margin-left: 0;
   border: 1px solid black;
   max-width: 100%;
   width: 100%;
@@ -17,22 +20,23 @@
 }
 
 .check > input:checked + label {
-  outline: 3px #9A9A9A solid;
+  margin-left: 0;
+  outline: 4px #9A9A9A solid;
   color: black;
   border-color: black;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 
-.correct{
-  outline: 3px rgb(27, 183, 27) solid !important;
+.correct {
+  margin-left: 0;
   border-radius: 7px;
   background-color: rgb(185, 242, 185);
 }
 
 
-.wrong {
-  outline: 3px rgb(183, 27, 27) solid !important;
+.wrong > label{
+  margin-left: 0;
   border-radius: 7px;
-  background-color: rgb(242, 185, 185);
+  background-color: rgba(255, 0, 0, 0.444);
 }

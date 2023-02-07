@@ -13,7 +13,7 @@ export default [
       label: 'O(m * n)',
       type: 'radio',
     },],
-    correctId: 1,
+    correctId: '1',
   },
   {
     question: 'Can you access values by using index in the array?',
@@ -25,6 +25,6 @@ export default [
       label: 'No',
       type: 'radio',
     }],
-    correctId: 0,
+    correctId: '0',
   },
 ]
