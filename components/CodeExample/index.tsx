@@ -3,31 +3,38 @@ import React, { useEffect, useState } from 'react'
 import { CopyBlock, dracula } from 'react-code-blocks';
 import codeExamplesFactory from './codeExamplesFactory';
 
-type Props = {}
 // TODO: The same like with Markdown here we may want to rename this
+// TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component
+
+type Props = {
+    codeStructure: string | string[] | undefined;
+}
+
+type CodeExample = {
+    [key: string]: string;
+}
+
 function CodeExample({ codeStructure }: Props) {
-    const codeExamples = codeExamplesFactory(codeStructure);
-    // console.log("🚀 ~ file: index.tsx:10 ~ CodeExample ~ codeExamples", codeExamples)
-    // TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component
+
+    const codeExamples: CodeExample | string | undefined = codeExamplesFactory(codeStructure);
 
     useEffect(() => {
-        if(codeExamples) {
-            setCodeExample(codeExamples['javascript'])
+        if (codeExamples) {
+            setCodeExample(codeExamples['javascript' as keyof CodeExample])
         }
     }, [codeExamples])
 
     const [language, changeLanguage] = useState('javascript');
     const [codeExample, setCodeExample] = useState(codeExamples['javascript']);
     const [areLineNumbersVisible, toggleLineNumbersVisibility] = useState(true);
-    
     return (
         <>
             <TopBar
                 select={{
                     value: language,
-                    onChange: e => {
-                        setCodeExample(codeExamples[e.target.value]);
-                        return changeLanguage(e.target.value);
+                    onChange: (e: React.ChangeEvent) => {
+                        setCodeExample(codeExamples[(e.target as HTMLInputElement).value]);
+                        return changeLanguage((e.target as HTMLInputElement).value);
                     },
                     options: Object.keys(codeExamples).map(lang => (
                         <option key={lang} value={lang}>

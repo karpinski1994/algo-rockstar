@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 import { Nav } from 'react-bootstrap'
-import navItems from './settings';
+
 type Props = {
     queryElement: any
 }
@@ -29,6 +29,12 @@ function TabsNavbar({ queryElement }: Props) {
                 className={addActiveClass(asPath, `/data-structures/${queryElement}/code-examples`)}
                 href={`/data-structures/${queryElement}/code-examples`}>Code Examples</Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+            <Nav.Link
+                className={addActiveClass(asPath, `/data-structures/${queryElement}/quiz`)}
+                href={`/data-structures/${queryElement}/quiz`}>Quiz</Nav.Link>
+        </Nav.Item>
+        
     </Nav>
     )
 }
