@@ -11,13 +11,22 @@ type Props = {
     color?: number[]
     name?: string
     arrow?: boolean
+    label?: string
 }
 
 
-function NodeBox({ pointer=true, pointed, color, name, arrow=true, orientation='row' }: Props) {
+function NodeBox({
+  pointer=true,
+  pointed,
+  color,
+  name,
+  arrow=true,
+  orientation='row',
+  label=''
+}: Props) {
     return (
         <div>
-            <ValueBox color={color} name={name}/>
+            <ValueBox color={color} name={name} label={label}/>
             {pointer&&<PointerBox color={color} pointed={pointed} arrow={arrow}/>}
             
             <style jsx>{nodeBoxStyles}</style>
