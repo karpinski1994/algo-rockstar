@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { ChangeEvent, SyntheticEvent } from 'react'
 import { Form, FormCheck } from 'react-bootstrap'
+import { FormCheckType } from 'react-bootstrap/esm/FormCheck';
 import styles from './Answer.module.css'
 
-const Answer = ({ question, answer, label, type, id, submitted, correctId, onChange }) => {
+interface Props {
+    question: string;
+    answer: string;
+    label: string;
+    type: FormCheckType;
+    id: string;
+    submitted: boolean;
+    correctId: string;
+    onChange: (e: ChangeEvent<Element>) => void;
+}
+
+const Answer = ({ question, answer, label, type, id, submitted, correctId, onChange }: Props) => {
     
     return (
         <>

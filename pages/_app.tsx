@@ -7,8 +7,14 @@ import Container from 'react-bootstrap/Container';
 import StackNavbar from '@/components/StackNavbar';
 import HeaderNavbar from '@/components/HeaderNavbar/HeaderNavbar';
 import Footer from '@/components/Footer';
+import { Page } from '@/types/page';
+import { ReactElement } from 'react';
 
-const Layout = ({ Component, pageProps }) => {
+
+const Layout = ({ Component, pageProps }: {
+  Component: Page, 
+  pageProps: any
+}): any => {
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps} />);
   } else {

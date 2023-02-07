@@ -5,6 +5,8 @@ import nestLayout from "@/utils/layout/nenstLayout";
 import TabsNavbar from "@/components/TabsNavbar/TabsNavbar";
 import { Container } from "react-bootstrap";
 import Markdown from "@/components/Markdown";
+import { Page } from "@/types/page";
+import { ReactNode } from "react";
 
 const DataStructurePage = () => {
   const router = useRouter();
@@ -17,7 +19,7 @@ const DataStructurePage = () => {
   );
 };
 
-const NestedLayout = ({ children }) => {
+const NestedLayout = ({ children }: {children: React.ReactNode}) => {
   const router = useRouter();
   const { dataStructure } = router.query;
 
@@ -29,7 +31,7 @@ const NestedLayout = ({ children }) => {
   );
 };
 
-const getLayout = (page) => <NestedLayout>{page}</NestedLayout>;
+const getLayout = (page: ReactNode) => <NestedLayout>{page}</NestedLayout>;
 
 export const DataStructurePageLayout = nestLayout(DataStructuresPageLayout, getLayout);
 

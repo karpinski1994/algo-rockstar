@@ -1,8 +1,17 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
 
+interface Select {
+  value: string; onChange: (e: React.ChangeEvent) => void; options: JSX.Element[]; 
+}
 
-export default function ({ toggle, select }) {
+interface Props {
+  toggle: Object;
+  select: Select;
+}
+
+
+export default function TopBar ({ toggle, select }: Props) {
   return (
     <Form>
       <Form.Check
@@ -18,3 +27,4 @@ export default function ({ toggle, select }) {
     </Form>
   );
 }
+TopBar.displayName = 'TopBar';

@@ -10,7 +10,8 @@ export const buildUrl = (url: string) => defaultPrefix + url + defaultSuffix;
 
 export const stackNavSettings = [
     {
-        title: 'Linear'
+        title: 'Linear',
+        url: '',
     },
     {
         title: 'Linked List',
@@ -29,7 +30,8 @@ export const stackNavSettings = [
         url: 'queue'
     },
     {
-        title: 'Non-linear'
+        title: 'Non-linear',
+        url: '',
     },
     {
         title: 'Hash Table',
