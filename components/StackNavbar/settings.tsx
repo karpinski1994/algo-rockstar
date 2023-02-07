@@ -2,8 +2,9 @@ export const defaultSuffix = '/'
 export const defaultPrefix = '/data-structures/'
 export const visualizationSuffix = '/visualization'
 export const codeExamplesSuffix = '/code-examples'
+export const quizSuffix = '/quiz'
 // TODO: Handle that in other way just dummy solution for now
-export const differentSufixes = [visualizationSuffix, codeExamplesSuffix]
+export const differentSufixes = [visualizationSuffix, codeExamplesSuffix, quizSuffix]
 // TOOD: Move everything here to utils
 export const buildUrl = (url: string) => defaultPrefix + url + defaultSuffix; 
 

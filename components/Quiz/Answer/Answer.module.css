@@ -22,3 +22,17 @@
   border-color: black;
   font-weight: 500;
 }
+
+
+.correct{
+  outline: 3px rgb(27, 183, 27) solid !important;
+  border-radius: 7px;
+  background-color: rgb(185, 242, 185);
+}
+
+
+.wrong {
+  outline: 3px rgb(183, 27, 27) solid !important;
+  border-radius: 7px;
+  background-color: rgb(242, 185, 185);
+}

@@ -6,6 +6,7 @@ import codeExamplesFactory from './codeExamplesFactory';
 type Props = {}
 // TODO: The same like with Markdown here we may want to rename this
 function CodeExample({ codeStructure }: Props) {
+    
     const codeExamples = codeExamplesFactory(codeStructure);
     // console.log("🚀 ~ file: index.tsx:10 ~ CodeExample ~ codeExamples", codeExamples)
     // TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component
@@ -19,7 +20,6 @@ function CodeExample({ codeStructure }: Props) {
     const [language, changeLanguage] = useState('javascript');
     const [codeExample, setCodeExample] = useState(codeExamples['javascript']);
     const [areLineNumbersVisible, toggleLineNumbersVisibility] = useState(true);
-    
     return (
         <>
             <TopBar
