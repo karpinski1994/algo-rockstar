@@ -1,24 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button, Card, Placeholder } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
-import NodeBox from '../NodeBox/NodeBox';
-import PointerBox from '../PointerBox/PointerBox';
 import Step from '../Step';
-import ValueBox from '../ValueBox/ValueBox';
 
-function StepsSlider(route) {
+// TODO: Remove any
+function StepsSlider({steps} : {steps: any}) {
     const ref = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [numberOfItems, setNumberOfItems] = useState(0);
     useEffect(() => {
         const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
         setNumberOfItems(numberOfItems)
-    }, [])
+    }, [steps])
 
     useEffect(() => {
         const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
+        console.log("🚀 ~ file: index.tsx:18 ~ useEffect ~ numberOfItems", numberOfItems)
         setNumberOfItems(numberOfItems)
-    }, [])
+    }, [steps])
 
     const onStartClick = () => {
         setActiveIndex(0)
@@ -36,13 +35,14 @@ function StepsSlider(route) {
             <div className='py-3'>
                 <Button size="lg" variant="light" className='me-1 font-weight-bold btn-outline-danger' onClick={onStartClick}>{'|| <'}</Button>
                 <Button size="lg" variant="light" className='me-1 font-weight-bold btn-outline-dark' onClick={onPrevClick}>{'<'}</Button>
-                <Button size="lg font-weight-bold" variant="dark" onClick={onNextClick}>{'Next Step >'}</Button>
+                <Button size="lg" className='font-weight-bold' variant="dark" onClick={onNextClick}>{'Next Step >'}</Button>
             </div>
             <Carousel variant="dark" activeIndex={activeIndex} ref={ref} indicators={false} interval={null} slide={false}>
                 {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
-                {Array(30).fill().map((_, i) => (
-                    <Carousel.Item>
-                        <Step route={route} stepIndex={i} />
+                {/* TODO: It can be lavereged to the top and render props / custom hook */}
+                {steps && Array.isArray(steps) && steps.map(({text, nodes}) => (
+                    <Carousel.Item key={text}>
+                        <Step text={text} nodes={nodes}/>
                     </Carousel.Item>
                 ))}
             </Carousel>

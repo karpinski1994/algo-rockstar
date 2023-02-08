@@ -1,8 +1,4 @@
-import NodeBox from '@/components/NodeBox/NodeBox'
-import React from 'react'
-
-
-const stepsSettings = [
+const linkedListVisualizationSteps = [
   {
     stepId: 0,
     text: '"Lists" are one type of data structure, and can storemultiple values',
@@ -47,27 +43,4 @@ const stepsSettings = [
   }
 
 ]
-
-
-const Step = ({ nodes, text }) => (
-  <div>
-    <div className="d-flex flex-column flex-md-row justify-content-center">
-      {nodes.map(({ name, color, arrow }) =>
-        <NodeBox name={name} color={color} arrow={arrow} />
-      )}
-    </div>
-    <p>{text}</p>
-  </div >
-)
-// TODO: This is wrong visualization must be common and generic
-// we pass some kind of steps that are dynamically chosen by route
-// look at /Users/karpinski94/projects/algo-rockstar/components/CodeExample
-// or /Users/karpinski94/projects/algo-rockstar/components/Visualization
-// and just copy the architecture
-function LinkedlistVisualization() {
-  const stepId = 0;
-  return stepsSettings && stepsSettings[stepId] && <Step {...stepsSettings[stepId]} />
-   
-}
-
-export default LinkedlistVisualization
+export default linkedListVisualizationSteps;

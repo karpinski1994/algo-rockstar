@@ -21,7 +21,6 @@ function NodeBox({
   color,
   name,
   arrow=true,
-  orientation='row',
   label=''
 }: Props) {
     return (

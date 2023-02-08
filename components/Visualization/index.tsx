@@ -1,13 +1,13 @@
-import LinkedListVisualization from "../../data-structures/LinkedList/visualization";
-import ArrayVisualization from  "../../data-structures/Array/visualization";
-// TODO: COmponent has to be common we just need to pass markdown
-export default ({ route }) => {
-    switch (route) {
-        case "linked-list":
-            return <LinkedListVisualization />
-        case "array":
-            return <ArrayVisualization />
-        default:
-            return <div>Content for that section will be provided soon.</div>;
-    }
-};
+import visualizationFactory from './visualizationFactory';
+
+// TODO: improve readability maybe just background maybe some extra highlighter
+export default ({ route }: {route: string}) => {
+  const visualizationSteps = visualizationFactory(route);
+  console.log("🚀 ~ file: index.tsx:6 ~ visualizationSteps", visualizationSteps)
+
+  return (
+    <div>
+        Visualization
+    </div>
+  )
+}
