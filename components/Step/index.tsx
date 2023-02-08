@@ -5,7 +5,6 @@ type Props = {
     // TODO: Remove any
     nodes: any;
     text: string;
-    arrow: boolean;
 }
 
 function Step({ text, nodes }: Props) {
@@ -16,7 +15,7 @@ function Step({ text, nodes }: Props) {
             <div className='d-flex flex-column flex-md-row'>
                 {
                     // TODO: This has to be changed color should be not passed as an array
-                    nodes && nodes.map(({ color, name, arrow }: { color: Array<number>, name: 'string' }) => (
+                    nodes && nodes.map(({ color, name, arrow }: { color: Array<number>, name: string, arrow: boolean }) => (
                         <NodeBox key={name + color} name={name} color={color} arrow={arrow}/>
                     ))
                 }
