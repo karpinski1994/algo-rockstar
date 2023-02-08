@@ -5,7 +5,7 @@ import Step from '../Step';
 
 // TODO: Remove any
 function StepsSlider({steps} : {steps: any}) {
-    const ref = useRef(null);
+    const ref = useRef<any>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [numberOfItems, setNumberOfItems] = useState(0);
     useEffect(() => {

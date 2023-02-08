@@ -8,7 +8,7 @@ type Props = {
     label?: string
 }
 
-function ValueBox({ color, name, label }: Props) {
+function ValueBox({ color=[122,122,122], name, label }: Props) {
   const colorSides = `RGBA(${color[0]-100},${color[1]-100},${color[2]-100},${color[3]})`;
   const colorTop = `RGBA(${color[0]},${color[1]},${color[2]},${color[3]})`;
     return (
