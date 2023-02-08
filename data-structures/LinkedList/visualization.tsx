@@ -12,7 +12,7 @@ export default LinkedlistVisualization
 const steps = [
   //step 1
   ( <div>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex flex-column flex-md-row justify-content-center">
         <NodeBox name="blue" color={[40, 148, 255, 1]}/>
         <NodeBox name="yellow" color={[255, 171, 1, 1]} />
         <NodeBox name="red" color={[226, 35, 35, 1]} arrow={false}/>
