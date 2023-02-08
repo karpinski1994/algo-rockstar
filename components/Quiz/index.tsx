@@ -1,19 +1,19 @@
 import { IQuestion } from '@/data-structures/LinkedList/questions';
+import { removeHyphens } from '@/utils/strings/removeHyphens';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
 
 import Question from './Question';
 import questionsFactory from './questionsFactory';
 
-type Props = {
-  codeStructure: string | string[] | undefined;
-}
-
 
 // TODO: Change everywhere where i have factories (Visualization factory to factories / switch)
-function Quiz({ codeStructure }: Props) {
-  const questionsFromFactory: string | IQuestion[] = questionsFactory(codeStructure);
-  // console.log("🚀 ~ file: index.tsx:10 ~ CodeExample ~ questions", questions)
+function Quiz() {
+  const router = useRouter();
+  // TODO: consider changing name 'dataStructure' because in the future it might be also an algorithm 
+  const { dataStructure } = router.query;
+  const questionsFromFactory: string | IQuestion[] = questionsFactory(dataStructure);
   // TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component
 
   useEffect(() => {
@@ -46,15 +46,19 @@ function Quiz({ codeStructure }: Props) {
   }
 
   return (
-    <Form onSubmit={handleOnSubmit}>
-      {Array.isArray(questions) && questions.map((el: IQuestion, idx) => {
+    <>
+      <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - code examples`}</h3>
+      <Form onSubmit={handleOnSubmit}>
+        {Array.isArray(questions) && questions.map((el: IQuestion, idx) => {
 
-        return (
-          <Question selectAnswer={handleOnSelectAnswer} key={el.question + idx} {...el} />
-        )
-      })}
-      <Button disabled={isSubmitted} type="submit">Check answers</Button>
-    </Form>
+          return (
+            <Question selectAnswer={handleOnSelectAnswer} key={el.question + idx} {...el} />
+          )
+        })}
+        <Button disabled={isSubmitted} type="submit">Check answers</Button>
+      </Form>
+    </>
+
   )
 }
 

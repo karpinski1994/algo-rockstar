@@ -5,7 +5,6 @@ import nestLayout from "@/utils/layout/nenstLayout";
 import TabsNavbar from "@/components/TabsNavbar/TabsNavbar";
 import { Container } from "react-bootstrap";
 import Markdown from "@/components/Markdown";
-import { Page } from "@/types/page";
 import { ReactNode } from "react";
 
 const DataStructurePage = () => {
