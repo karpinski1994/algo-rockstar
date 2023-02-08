@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className='container'>
       <div className='row'>
         <StackNavbar />
-        <main className='col-9'>
+        <main className='col-md-9 col-12'>
           <Layout Component={Component} pageProps={pageProps} />
         </main>
       </div>

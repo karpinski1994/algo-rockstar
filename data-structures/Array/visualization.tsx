@@ -38,7 +38,29 @@ const arrayVisualizationSteps = [
         name: 'blue',
         color: [255, 12, 155, 1],
         arrow: false,
-      }
+      },
+      
+    ]
+  },
+  {
+    stepId: 2,
+    text: 'Third desc',
+    nodes: [
+      {
+        name: 'kura',
+        color: [60, 48, 5, 1],
+        arrow: false,
+      },
+      {
+        name: 'swinia',
+        color: [200, 73, 255, 1],
+        arrow: false,
+      },
+      {
+        name: 'krowa',
+        color: [255, 12, 155, 1],
+        arrow: true,
+      },
     ]
   }
 
