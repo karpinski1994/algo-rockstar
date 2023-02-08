@@ -5,17 +5,17 @@ const arrayVisualizationSteps = [
     nodes: [
       {
         name: 'blue',
-        color: [40, 148, 255, 1],
+        color: [240, 148, 255, 1],
         arrow: false,
       },
       {
         name: 'blue',
-        color: [50, 18, 255, 1],
+        color: [150, 118, 255, 1],
         arrow: false,
       },
       {
         name: 'blue',
-        color: [150, 180, 55, 1],
+        color: [150, 180, 255, 1],
         arrow: false,
       }
     ]
