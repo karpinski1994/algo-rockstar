@@ -3,9 +3,12 @@ export default function Arrow(){
     return(
         <div>
         <svg viewBox="0 0 100 100" 
-            width="82%" 
+            width="100px" 
+            height="100px"
             style={{
                 position: 'absolute', 
+                left: 0,
+                top: 0,
                 transform:'translate(108%, -70%)',
             }}
             xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd">

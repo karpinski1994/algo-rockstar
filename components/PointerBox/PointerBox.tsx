@@ -27,10 +27,6 @@ function PointerBox({ pointed, arrow=false, color = [122, 123, 124] }: Props) {
                         <path d="M73.0478 36.9032L58.6665 67.8905L19.3761 45.2062L73.0478 36.9032Z" fill="white" />
                     </g>
                 </g>
-                {/* YADADADADA */}
-                <g></g>
-                <g></g>
-                <g></g>
                 <path opacity={pointed ? '0.5' : '0'} d="M60.5 58.5L32.5 52.3L30 8L70 6L64 40Z" fill="url(#paint0_linear_106_11)" />
                 <defs>
                     <filter id="filter0_d_106_11" x="23.4353" y="34.5" width="48.7846" height="34.9282" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
