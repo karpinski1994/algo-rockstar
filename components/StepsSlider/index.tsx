@@ -15,7 +15,6 @@ function StepsSlider({steps} : {steps: any}) {
 
     useEffect(() => {
         const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
-        console.log("🚀 ~ file: index.tsx:18 ~ useEffect ~ numberOfItems", numberOfItems)
         setNumberOfItems(numberOfItems)
     }, [steps])
 
@@ -23,9 +22,11 @@ function StepsSlider({steps} : {steps: any}) {
         setActiveIndex(0)
     };
     const onPrevClick = () => {
+        if (numberOfItems) 
         activeIndex === 0 ? setActiveIndex(numberOfItems - 1) : setActiveIndex(i => i - 1)
     };
     const onNextClick = () => {
+        if (numberOfItems) 
         activeIndex === numberOfItems - 1 ? setActiveIndex(0) : setActiveIndex(i => i + 1)
     };
 

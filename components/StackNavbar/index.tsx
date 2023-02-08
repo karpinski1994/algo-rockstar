@@ -3,7 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { stackNavSettings, buildUrl } from './settings';
 
-const NavElement = ({ url, title, active }) => {
+interface Props {
+    url: string;
+    title: string;
+    active: boolean;
+}
+
+const NavElement = ({ url, title, active }: Props) => {
     if (!url) {
         return (<Navbar.Text className="text-dark fw-bold me-3 me-md-0">{title}</Navbar.Text>)
     }
@@ -15,12 +21,12 @@ const NavElement = ({ url, title, active }) => {
 function StackNavbar() {
     const { asPath } = useRouter();
     return (
-        <Navbar variant="dark" className='col-lg-2 col-sm-12 flex-column mt-5'>
+        <Navbar variant="dark" className='col-md-3 col-sm-12 flex-column mt-5'>
             <p className="fw-bolder">Data structures</p>
             <ul className="d-flex flex-md-column flex-wrap align-items-center align-items-md-start">
                 {
                     stackNavSettings.map((el, idx) => {
-                        return <NavElement active={el.url && asPath?.includes(el.url)} key={el.url + el.title + idx} url={el.url} title={el.title} />
+                        return <NavElement active={asPath.includes(el.url)} key={el.url + el.title + idx} url={el.url} title={el.title} />
                     })
                 }
             </ul>

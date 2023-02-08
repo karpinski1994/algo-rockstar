@@ -4,11 +4,10 @@ import Arrow from '../Arrow/Arrow';
 type Props = {
     color?: number[];
     pointed?: boolean;
-    arrow?: boolean;
+    arrow: boolean;
 }
-
-
-function PointerBox({ pointed, color, arrow }: Props) {
+// TODO: Fix colors
+function PointerBox({ pointed, arrow=false, color = [122, 123, 124] }: Props) {
     const colorSides = `RGBA(${color[0] - 100},${color[1] - 100},${color[2] - 100},${color[3]})`;
     const colorTop = `RGBA(${color[0] - 30},${color[1] - 30},${color[2] - 30},${color[3]})`;
     return (

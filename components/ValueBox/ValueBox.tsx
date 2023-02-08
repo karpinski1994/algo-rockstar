@@ -1,6 +1,5 @@
 import React from 'react'
-import styled from 'styled-components';
-import PointerBox from '../PointerBox/PointerBox';
+
 type Props = {
     color?: number[];
     pointer?: boolean
