@@ -1,14 +1,17 @@
-import LinkedListVisualization from "../../data-structures/LinkedList/visualization";
-import ArrayVisualization from "../../data-structures/Array/visualization";
-// TODO: COmponent has to be common we just need to pass markdown
-const visualizationFactory = ({ route }: {route: string | string[] | undefined}) => {
-    switch (route) {
-        case "linked-list":
-            return <LinkedListVisualization />
-        case "array":
-            return <ArrayVisualization />
-        default:
-            return <div>Content for that section will be provided soon.</div>;
-    }
-};
-export default visualizationFactory;
+import { removeHyphens } from '@/utils/strings/removeHyphens';
+import { useRouter } from 'next/router';
+import React from 'react'
+import StepsSlider from '../StepsSlider';
+import visualizationFactory from './visualizationFactory';
+
+export const Visualization = () => {
+    const router = useRouter();
+    const { dataStructure } = router.query;
+    const visualizationSteps = visualizationFactory(dataStructure)
+    return (
+        <>
+            <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - visualization`}</h3>
+            {visualizationSteps && <StepsSlider steps={visualizationSteps} />}
+        </>
+    )
+}

@@ -1,25 +1,22 @@
-import { MutableRefObject, Ref, useEffect, useRef, useState } from 'react';
-import { Button, Card, Placeholder } from 'react-bootstrap';
-import Carousel, { CarouselRef } from 'react-bootstrap/Carousel';
-import NodeBox from '../NodeBox/NodeBox';
-import PointerBox from '../PointerBox/PointerBox';
-import ValueBox from '../ValueBox/ValueBox';
+import { useEffect, useRef, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
+import Step from '../Step';
 
-
-function StepsSlider() {
+// TODO: Remove any
+function StepsSlider({steps} : {steps: any}) {
     const ref = useRef<any>(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    const [numberOfItems, setNumberOfItems] = useState<number | undefined>(0);
+    const [numberOfItems, setNumberOfItems] = useState(0);
+    useEffect(() => {
+        const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
+        setNumberOfItems(numberOfItems)
+    }, [steps])
 
     useEffect(() => {
-        const numberOfItems = ref?.current?.element.querySelectorAll('.carousel-item').length;
-        numberOfItems && (setNumberOfItems(numberOfItems))
-    }, [])
-
-    useEffect(() => {
-        const numberOfItems = ref?.current?.element.querySelectorAll('.carousel-item').length;
-        numberOfItems && (setNumberOfItems(numberOfItems))
-    }, [])
+        const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
+        setNumberOfItems(numberOfItems)
+    }, [steps])
 
     const onStartClick = () => {
         setActiveIndex(0)
@@ -33,6 +30,7 @@ function StepsSlider() {
         activeIndex === numberOfItems - 1 ? setActiveIndex(0) : setActiveIndex(i => i + 1)
     };
 
+    
     return (
         <div className="w-100 position-relative">
             <div className='py-3'>
@@ -41,30 +39,13 @@ function StepsSlider() {
                 <Button size="lg" className='font-weight-bold' variant="dark" onClick={onNextClick}>{'Next Step >'}</Button>
             </div>
             <Carousel variant="dark" activeIndex={activeIndex} ref={ref} indicators={false} interval={null} slide={false}>
-                <Carousel.Item>
-                    <div className="d-flex">
-                        <NodeBox name="swinia" color={[122, 144, 155, 1]} />
-                        <NodeBox name="krowa" color={[122, 144, 155, 1]} />
-                        <NodeBox name="kura" color={[122, 144, 155, 1]} />
-                    </div>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <PointerBox color={[122, 144, 155, 1]} />
-                    {/* <img className="d-block w-100" src='http://placekitten.com/g/400/200' /> */}
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <ValueBox color={[122, 144, 155, 1]} />
-                    {/* <img className="d-block w-100" src='http://placekitten.com/g/400/200' /> */}
-                    <h3>Third slide label</h3>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
-                </Carousel.Item>
-
+                {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
+                {/* TODO: It can be lavereged to the top and render props / custom hook */}
+                {steps && Array.isArray(steps) && steps.map(({text, nodes}) => (
+                    <Carousel.Item key={text}>
+                        <Step text={text} nodes={nodes}/>
+                    </Carousel.Item>
+                ))}
             </Carousel>
         </div>
     );

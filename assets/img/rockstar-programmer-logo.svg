@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW 2019 (64-Bit) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="723.712mm" height="542.828mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="723.712mm" height="542.828mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fillRule:evenodd; clipRule:evenodd"
 viewBox="0 0 72356.94 54272.14"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
@@ -11,9 +11,9 @@ viewBox="0 0 72356.94 54272.14"
     .fil0 {fill:url(#id0)}
     .fil4 {fill:url(#id1)}
     .fil2 {fill:url(#id2)}
-    .fil5 {fill:url(#id3);fill-rule:nonzero}
-    .fil3 {fill:url(#id4);fill-rule:nonzero}
-    .fil1 {fill:url(#id5);fill-rule:nonzero}
+    .fil5 {fill:url(#id3);fillRule:nonzero}
+    .fil3 {fill:url(#id4);fillRule:nonzero}
+    .fil1 {fill:url(#id5);fillRule:nonzero}
    ]]>
   </style>
   <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="19220.71" y1="31823.5" x2="29031.21" y2="21487.59">

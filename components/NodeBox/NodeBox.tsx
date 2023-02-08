@@ -2,6 +2,7 @@ import React from 'react'
 import PointerBox from '../PointerBox/PointerBox'
 import ValueBox from '../ValueBox/ValueBox'
 import css from 'styled-jsx/css'
+import Arrow from '../Arrow/Arrow'
 
 type Props = {
     pointer?: boolean
@@ -9,14 +10,24 @@ type Props = {
     orientation?: 'row' | 'column'
     color?: number[]
     name?: string
+    arrow?: boolean
+    label?: string
 }
 
 
-function NodeBox({ pointer, pointed, color, name }: Props) {
+function NodeBox({
+  pointer=true,
+  pointed,
+  color,
+  name,
+  arrow=true,
+  label=''
+}: Props) {
     return (
         <div>
-            <ValueBox color={color} name={name} pointer={pointer} pointed={pointed} />
-            <PointerBox color={color} pointed={pointed} />
+            <ValueBox color={color} name={name} label={label}/>
+            {pointer&&<PointerBox color={color} pointed={pointed} arrow={arrow}/>}
+            
             <style jsx>{nodeBoxStyles}</style>
         </div>
 
@@ -31,6 +42,7 @@ const nodeBoxStyles = css`
     display: flex;
   }
   div > :global(.pointer-box)  {
-    transform: translateX(-110px);
+    transform: translateX(42%);
+    margin-right:5vw;
   }
 `
