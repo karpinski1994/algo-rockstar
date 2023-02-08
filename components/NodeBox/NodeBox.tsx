@@ -43,6 +43,7 @@ const nodeBoxStyles = css`
     display: flex;
   }
   div > :global(.pointer-box)  {
-    transform: translateX(-110px);
+    transform: translateX(42%);
+    margin-right:5vw;
   }
 `

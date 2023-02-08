@@ -15,7 +15,7 @@ const NavElement = ({ url, title, active }) => {
 function StackNavbar() {
     const { asPath } = useRouter();
     return (
-        <Navbar variant="dark" className='col-md-2 col-sm-12 flex-column mt-5'>
+        <Navbar variant="dark" className='col-lg-2 col-sm-12 flex-column mt-5'>
             <p className="fw-bolder">Data structures</p>
             <ul className="d-flex flex-md-column flex-wrap align-items-center align-items-md-start">
                 {
