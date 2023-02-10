@@ -6,14 +6,17 @@ import TabsNavbar from "@/components/TabsNavbar/TabsNavbar";
 import { Container } from "react-bootstrap";
 import Markdown from "@/components/Markdown";
 import { ReactNode } from "react";
+import markdownFactory from "@/components/Markdown/markdownFactory";
 
 const DataStructurePage = () => {
   const router = useRouter();
   const { dataStructure } = router.query;
+  const markdown = markdownFactory(dataStructure);
+  console.log("🚀 ~ file: index.tsx:15 ~ DataStructurePage ~ markdown", markdown)
   return (
     <>
       <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - description`}</h3>
-      <Markdown route={dataStructure} />
+      <Markdown markdown={markdown} />
     </>
   );
 };

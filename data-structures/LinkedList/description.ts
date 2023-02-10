@@ -22,7 +22,15 @@ Split O(n): Dividing a linked list into two separate linked lists.
 
 
 (n: number of elements in first linked list, m: number of elements in second linked list)
-
+${'```javascript'}
+function loopAadUpTo(n) {
+    let sum = 0;
+    for (let i = 1; i <= n; i ++) {
+      sum += i;
+    }
+  return sum;
+}
+${"```"}
 ### Videos
 [Linked lists in 4 minutes](https://www.youtube.com/watch?v=F8AbOfQwl1c)
 
