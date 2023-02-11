@@ -10,6 +10,14 @@ export const buildUrl = (url: string) => defaultPrefix + url + defaultSuffix;
 
 export const stackNavSettings = [
     {
+        title: 'Basics',
+        url: '',
+    },
+    {
+        title: 'Big O Notation',
+        url: 'big-o'
+    },
+    {
         title: 'Linear',
         url: '',
     },
