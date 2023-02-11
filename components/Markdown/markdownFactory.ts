@@ -14,4 +14,5 @@ const markdownFactory = (route: string | string[] | undefined) => {
       return 'Content for that section will be provided soon.';
   }
 };
+
 export default markdownFactory;

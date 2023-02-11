@@ -47,7 +47,7 @@ export const stackNavSettings = [
     },
     {
         title: 'Tree',
-        url: '/tree'
+        url: 'tree'
     },
     {
         title: 'Heap',
