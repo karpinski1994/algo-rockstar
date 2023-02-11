@@ -1,3 +1,5 @@
+// TODO: change images
+// TODO: check out the text, if has some errors
 export default `#### What is Big O Notation?
 Big O notation is a way to determine the complexity of an algorithm. Using Big O notation we assume the ratio of time or memory needed to execute some algorithm on a certain amount of data. We measure how much time or memory is needed to execute a given algorithm as the data we put into it grows. 
 
@@ -72,10 +74,10 @@ To be clear, when analyzing the performance of algorithms, we can take into acco
 
 ###### Small numbers out!
 Let’s take a look at these examples again, we can conclude that "small numbers" in calculating complexity of aforementioned algorithms do not matter much. Let's go back to the first example: <code>simpleAddUpTo</code>. No matter how many math operations we would have one after the other in this function, the quantity of the operations would not depend on the number of n. That means that no matter what n we would pass the length of the algorithm or the approximate number of operations performed would always be the same for each N. Precisely writing would be equal to the number of mathematical operations . This situation is called **O(1)**. A graph presenting ratio of data size against need time to process it would look like this:
-![Constant complexity graph](https://rockstar-programmer.com/wp-content/uploads/2023/02/image-6.png)
 
+<img src="https://rockstar-programmer.com/wp-content/uploads/2023/02/image-6.png" width="220px" height="160px">
 
-data size.
+Where x corresponds to the size of input data and y = 1 to the time needed to preprocess such data size.
 
 In the second example <code>loopAadUpTo</code>, the number of steps will depend on the amount of data passed. The larger the data, the more units of time will be needed until the algorithm is fully executed. The main part of this increase is due to the use of loops. Even if inside the loop we increased the number of operations drastically, the general trend of the increase of time units to the amount of data will be n. Whilst number of operations inside loop is constant there. It never changes so it doesn't affect the overall trend/correlations of time and data. 
 
@@ -99,8 +101,8 @@ function printAllPairs(arr) {
 **If 1,000 -> 1,000,000 times.**
 
 So you can imagine now, the importance of algorithm efficiency for example in big data areas, where we are dealing with huge amounts of data.
-![Squared complexity](https://rockstar-programmer.com/wp-content/uploads/2023/02/image-8-1024x922.png)
 
+<img src="https://rockstar-programmer.com/wp-content/uploads/2023/02/image-8-1024x922.png"  width="310px" height="280px">
 
 #### Example of the efficient algorithm
 
@@ -108,7 +110,8 @@ The last example of an algorithm in this section will be an example of an algori
 
 I will use a real life example to illustrate it. Suppose you are looking for a phone number in the phone book with a person's name. Let us note that in books, data are usually arranged alphabetically after the surnames listed. Start by marking a point about halfway through the book and see what name is there. If the last name you found begins with an 'earlier' letter of the alphabet than the one you are looking for, select the right half of the book, if vice versa, the left half. Then repeat the action of dividing the parts of the book you have read in half and selecting the middle until you find the data you are looking for. BTW what you did is called binary search which I will write more about in the future. In any case, regardless of the number of names, the number of operations will always be O(log n). Such complexity can often be seen in efficient sorting algorithms and very often in recursive algorithms, which you will learn more about soon.
 
-![Logarithmic complexity](https://rockstar-programmer.com/wp-content/uploads/2023/02/image-10.png)
+<img src="https://rockstar-programmer.com/wp-content/uploads/2023/02/image-10.png" width="310px" height="280px">
+
 
 #### But what was a logarithm?
 
@@ -117,15 +120,16 @@ In terms of Big O notation most commonly used is the base 2 logarithm. A logarit
 
 What this logarithm does In simple terms, it answers the question of how many times do we have to multiply two by itself to get some number. For our algorithm, we start with some n. N is the number of names in the book. Our search is done by splitting the book in half. So for each subsequent step, we have n / 2 operations to finish (n divided by two). We keep dividing until we get an indivisible number. For example, let's take the number of names 1024.
 
-Guesses | Items
-1 | 2
-2 | 4
-3 | 8
-4 | 16
-5 | 32
-6 | 64
-7 | 128
-10 | 1024
+| Guesses | &nbsp;| &nbsp;|  Items |
+| :---    | :---: | ---:  |  :---  |
+| 1       |       | &nbsp;| 2      |
+| 2       |&nbsp; |       | 4      |
+| 3       |       |       | 8      |
+| 4       |       |       | 16     |
+| 5       |       |       | 32     |
+| 6       |       |       | 64     |
+| 7       |       |       | 128    |
+| 10      |       |       | 1024   |
 
 We would have to do this kind of “dividing by two” with such a number of names 10 times.
 If we double the number of names to 2048 steps, we will have to do 11 steps. Four times the amount of data (4096) will need 12 divisions. Eight times the amount of data (8196) 13 divisions. As we can see, the number of operations needed to find the name we are interested in does not grow linearly. **The more data, the more the trend decreases**.
@@ -144,7 +148,7 @@ Every algorithm you write has some complexity. Although millions of algorithms a
 • **Exponential O(2^n)**: Complexity is exponential; execution time doubles with each new item added.
 • **Factorial O(n!)**: Complexity is factorial. The algorithm will be executed in time n factorial for each new operation that is performed.
 
-![Most popular complexities](https://rockstar-programmer.com/wp-content/uploads/2023/02/image-9-1024x735.png)
+<img src="https://rockstar-programmer.com/wp-content/uploads/2023/02/image-9-1024x735.png"  width="410px" height="295px">
 
 As we can see in the graph, in the case of the most efficient algorithms, the number of operations / units of time almost does not increase with the increasing amount of data. However, in the case of the least optimal, even a small increase in the amount of data results in a huge jump in time / number of operations / number of steps needed to execute the algorithm.
 
