@@ -11,8 +11,9 @@ export default DataStructuresCodeExamplesPage;
 
 export const getStaticPaths = () => {
     const paths = stackNavSettings.filter(({url}) => url.length > 1).map(({ url }) => {
-      return buildUrl(url)
+      return buildUrl(url)+'/code-examples';
     })
+    console.log(paths);
     return {
       paths,
       fallback: false

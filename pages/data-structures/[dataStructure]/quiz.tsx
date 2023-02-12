@@ -11,7 +11,7 @@ export default DataStructuresQuizPage;
 
 export const getStaticPaths = () => {
     const paths = stackNavSettings.filter(({url}) => url.length > 1).map(({ url }) => {
-      return buildUrl(url)
+      return buildUrl(url)+'/quiz';
     })
     return {
       paths,

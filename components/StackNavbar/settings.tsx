@@ -6,7 +6,7 @@ export const quizSuffix = '/quiz'
 // TODO: Handle that in other way just dummy solution for now
 export const differentSufixes = [visualizationSuffix, codeExamplesSuffix, quizSuffix]
 // TOOD: Move everything here to utils
-export const buildUrl = (url: string) => defaultPrefix + url + defaultSuffix; 
+export const buildUrl = (url: string) => defaultPrefix + url; 
 
 export const stackNavSettings = [
     {
