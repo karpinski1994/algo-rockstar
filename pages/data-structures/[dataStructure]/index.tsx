@@ -34,8 +34,8 @@ export async function getStaticProps(context: any) {
     },
   };
 }
-
-const DataStructurePage = ({ dataStructure, markdown }) => {
+// TODO: Remove all the anys
+const DataStructurePage = ({ dataStructure, markdown }: any) => {
   return (
     <>
       <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - description`}</h3>

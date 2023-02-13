@@ -1,5 +1,5 @@
-import linkedListCodeExamples from '../../data-structures/LinkedList/codeExamples';
-import arrayCodeExamples from '../../data-structures/Array/codeExamples';
+import linkedListCodeExamples from '../../data-structures/linked-list/codeExamples';
+import arrayCodeExamples from '../../data-structures/array/codeExamples';
 
 const codeExampleFactory = (route: string | undefined | string[]) => {
   switch (route) {

@@ -1,4 +1,4 @@
-import { IAnswer, IQuestion } from '@/data-structures/LinkedList/questions'
+import { IAnswer, IQuestion } from '@/data-structures/linked-list/questions'
 import { getAlphabetLetter } from '@/utils/strings/alphabet'
 import React, { useState } from 'react'
 import Answer from '../Answer'

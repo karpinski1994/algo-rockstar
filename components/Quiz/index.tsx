@@ -1,4 +1,4 @@
-import { IQuestion } from '@/data-structures/LinkedList/questions';
+import { IQuestion } from '@/data-structures/linked-list/questions';
 import { removeHyphens } from '@/utils/strings/removeHyphens';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'

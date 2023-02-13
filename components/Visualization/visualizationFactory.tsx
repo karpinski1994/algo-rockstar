@@ -1,5 +1,5 @@
-import arrayVisualizationSteps from "@/data-structures/Array/visualization";
-import linkedListVisualizationSteps from "@/data-structures/LinkedList/visualization";
+import arrayVisualizationSteps from "@/data-structures/array/visualization";
+import linkedListVisualizationSteps from "@/data-structures/linked-list/visualization";
 
 const visualizationFactory = (codeStructure: string | string[] | undefined) => {
     switch (codeStructure) {
