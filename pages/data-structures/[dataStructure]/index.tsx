@@ -9,6 +9,11 @@ import { ReactNode, useEffect } from "react";
 import markdownFactory from "@/components/Markdown/markdownFactory";
 import { buildUrl, stackNavSettings } from '@/components/StackNavbar/settings';
 
+interface Props {
+  dataStructure: string;
+  markdown: string;
+  context: object;
+  }
 
 export const getStaticPaths = () => {
   const paths = stackNavSettings.filter(({url}) => url.length > 1).map(({ url }) => {
@@ -20,7 +25,7 @@ export const getStaticPaths = () => {
   }
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: Props) {
   const {
     params: {
       dataStructure
@@ -34,8 +39,9 @@ export async function getStaticProps(context: any) {
     },
   };
 }
-// TODO: Remove all the anys
-const DataStructurePage = ({ dataStructure, markdown }: any) => {
+
+
+const DataStructurePage = ({ dataStructure, markdown }: Props) => {
   return (
     <>
       <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - description`}</h3>

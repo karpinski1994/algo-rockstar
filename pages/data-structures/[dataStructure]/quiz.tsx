@@ -1,13 +1,8 @@
 import Quiz from "@/components/Quiz";
 import questionsFactory from "@/components/Quiz/questionsFactory";
 import { buildUrl, stackNavSettings } from "@/components/StackNavbar/settings";
+import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { DataStructurePageLayout } from ".";
-
-const DataStructuresQuizPage = () =>  <Quiz />;
-
-DataStructuresQuizPage.getLayout = DataStructurePageLayout;
-
-export default DataStructuresQuizPage;
 
 export const getStaticPaths = () => {
     const paths = stackNavSettings.filter(({url}) => url.length > 1).map(({ url }) => {
@@ -20,7 +15,6 @@ export const getStaticPaths = () => {
   }
 
 export async function getStaticProps(context: any) {
-    console.log(context);
     const {
       params: {
         dataStructure
@@ -34,3 +28,16 @@ export async function getStaticProps(context: any) {
       },
     };
   }
+
+const DataStructuresQuizPage = ({ questions, dataStructure }: Props) => {
+  return (
+    <>
+      <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - code examples`}</h3>
+      <Quiz questionsFromFactory={questions}/>
+    </>
+  );
+};
+
+DataStructuresQuizPage.getLayout = DataStructurePageLayout;
+
+export default DataStructuresQuizPage;

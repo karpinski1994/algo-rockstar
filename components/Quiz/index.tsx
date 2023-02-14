@@ -9,20 +9,8 @@ import questionsFactory from './questionsFactory';
 
 
 // TODO: Change everywhere where i have factories (Visualization factory to factories / switch)
-function Quiz() {
-  const router = useRouter();
-  // TODO: consider changing name 'dataStructure' because in the future it might be also an algorithm 
-  const { dataStructure } = router.query;
-  const questionsFromFactory: string | IQuestion[] = questionsFactory(dataStructure);
-  // TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component
-
-  useEffect(() => {
-    if (questionsFromFactory) {
-      setQuestions(questionsFromFactory)
-    }
-  }, [questionsFromFactory])
-
-  const [questions, setQuestions] = useState<IQuestion[] | string>('');
+function Quiz({questionsFromFactory}) {
+  const [questions, setQuestions] = useState<IQuestion[] | string>(questionsFromFactory);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   const handleOnSelectAnswer = (e: React.ChangeEvent) => {
@@ -47,7 +35,6 @@ function Quiz() {
 
   return (
     <>
-      <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - code examples`}</h3>
       <Form onSubmit={handleOnSubmit}>
         {Array.isArray(questions) && questions.map((el: IQuestion, idx) => {
 
