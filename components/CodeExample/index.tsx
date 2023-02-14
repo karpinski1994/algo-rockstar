@@ -12,18 +12,7 @@ type CodeExample = {
     [key: string]: string;
 }
 
-function CodeExample() {
-    const router = useRouter();
-    // TODO: consider changing name 'dataStructure' because in the future it might be also an algorithm 
-    const { dataStructure } = router.query;
-
-    const codeExamples: CodeExample | string | undefined = codeExamplesFactory(dataStructure);
-
-    useEffect(() => {
-        if (codeExamples) {
-            setCodeExample(codeExamples['javascript' as keyof CodeExample])
-        }
-    }, [codeExamples])
+function CodeExample({codeExamples}) {
 
     const [language, changeLanguage] = useState('javascript');
     const [codeExample, setCodeExample] = useState(codeExamples['javascript']);
