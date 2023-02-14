@@ -1,11 +1,7 @@
 import { IQuestion } from '@/data-structures/linked-list/questions';
-import { removeHyphens } from '@/utils/strings/removeHyphens';
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
-
 import Question from './Question';
-import questionsFactory from './questionsFactory';
 
 
 // TODO: Change everywhere where i have factories (Visualization factory to factories / switch)

@@ -1,8 +1,7 @@
 import TopBar from './TopBar';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { CopyBlock, dracula } from 'react-code-blocks';
-import codeExamplesFactory from './codeExamplesFactory';
-import { useRouter } from 'next/router';
+
 
 // TODO: The same like with Markdown here we may want to rename this
 // TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component

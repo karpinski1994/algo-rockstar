@@ -2,13 +2,8 @@
 import { buildUrl, stackNavSettings } from "@/components/StackNavbar/settings";
 import { Visualization } from "@/components/Visualization";
 import visualizationFactory from "@/components/Visualization/visualizationFactory";
+import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { DataStructurePageLayout } from ".";
-
-const DataStructuresVisualizationPage = () => <Visualization />;
-
-DataStructuresVisualizationPage.getLayout = DataStructurePageLayout;
-
-export default DataStructuresVisualizationPage;
 
 export const getStaticPaths = () => {
     const paths = stackNavSettings.filter(({url}) => url.length > 1).map(({ url }) => {
@@ -35,3 +30,16 @@ export async function getStaticProps(context: any) {
       },
     };
   }
+
+  const DataStructuresVisualizationPage = ({ visualization, dataStructure}) => {
+    return (
+      <>
+        <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - visualization`}</h3>
+        <Visualization visualization={visualization}/>
+      </>
+    );
+  };
+  
+  DataStructuresVisualizationPage.getLayout = DataStructurePageLayout;
+  
+  export default DataStructuresVisualizationPage;
