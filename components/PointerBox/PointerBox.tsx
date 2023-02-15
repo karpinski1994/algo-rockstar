@@ -7,7 +7,7 @@ type Props = {
     arrow: boolean;
 }
 // TODO: Fix colors
-function PointerBox({ pointed, arrow=false, color = [122, 123, 124] }: Props) {
+function PointerBox({ color = [122, 123, 124], pointed=false, arrow=false }: Props) {
     const colorSides = `RGBA(${color[0] - 100},${color[1] - 100},${color[2] - 100},${color[3]})`;
     const colorTop = `RGBA(${color[0] - 30},${color[1] - 30},${color[2] - 30},${color[3]})`;
     return (
@@ -53,7 +53,7 @@ function PointerBox({ pointed, arrow=false, color = [122, 123, 124] }: Props) {
                     </clipPath>
                 </defs>
             </svg>
-            {arrow?<Arrow/>:null}
+            <Arrow arrow={arrow}/>
         </div>
     )
 }

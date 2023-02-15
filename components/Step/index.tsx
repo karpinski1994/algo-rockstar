@@ -12,11 +12,21 @@ function Step({ text, nodes }: Props) {
         <div className='d-flex flex-column'>
             <h2>Step Description:</h2>
             <p>{text}</p>
-            <div className='d-flex flex-column flex-md-row'>
+            <div className='d-flex flex-row'>
                 {
                     // TODO: This has to be changed color should be not passed as an array
-                    nodes && nodes.map(({ color, name, arrow }: { color: Array<number>, name: string, arrow: boolean }) => (
-                        <NodeBox key={name + color} name={name} color={color} arrow={arrow}/>
+                    nodes && nodes.map(({ color, name, arrow, pointer, pointed }
+                        : { color: Array<number>, 
+                            name: string, 
+                            arrow: boolean, 
+                            pointer: boolean, 
+                            pointed: boolean }) => (
+                        <NodeBox key={name + color}
+                         name={name} 
+                         color={color} 
+                         arrow={arrow} 
+                         pointer={pointer} 
+                         pointed={pointed}/>
                     ))
                 }
             </div>

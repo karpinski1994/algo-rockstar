@@ -6,16 +6,17 @@ const linkedListVisualizationSteps = [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
+        arrow: true,
+        pointed: true
+      },
+      {
+        name: 'yellow',
+        color: [255, 200, 10, 1],
         arrow: false,
       },
       {
-        name: 'blue',
-        color: [50, 18, 255, 1],
-        arrow: false,
-      },
-      {
-        name: 'blue',
-        color: [150, 180, 55, 1],
+        name: 'red',
+        color: [240, 10, 10, 1],
         arrow: false,
       }
     ]
@@ -26,7 +27,7 @@ const linkedListVisualizationSteps = [
     nodes: [
       {
         name: 'blue',
-        color: [60, 48, 5, 1],
+        color: [250, 48, 5, 1],
         arrow: false,
       },
       {

@@ -21,14 +21,14 @@ function NodeBox({
   pointed,
   color,
   name,
-  arrow = false,
+  arrow,
   label = ''
 }: Props) {
   return (
     <div>
       <ValueBox color={color} name={name} label={label} />
-      {pointer && <PointerBox color={color} pointed={true} arrow={arrow} />}
-      <Arrow />
+      {pointer && <PointerBox color={color} pointed={pointed} arrow={arrow} />}
+      
       <style jsx>{nodeBoxStyles}</style>
     </div>
 

@@ -14,7 +14,7 @@ function ValueBox({ color=[122,122,122], name, label }: Props) {
     return (
       <div className='value-box d-flex justify-content-center'>
         {label&&<h3 className="">{label}</h3>}
-        <svg width="100%" style={{transform: 'rotate(-30deg)'}} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" tabIndex={0}>
+        <svg width="100%" style={{transform: 'rotate(-30deg) translate(24%, -22%)'}} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" tabIndex={0}>
           <rect className="buttonSides" x="5.04999" y="51" width="90.62" height="8" fill={colorSides} />
           <rect className="buttonSides" width="57" height="57" rx="8" transform="matrix(0.866025 -0.5 0.866025 0.5 1 59)" fill={colorSides}/>
           <g clipPath="url(#clip0_106_11)">
