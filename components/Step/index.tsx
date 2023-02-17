@@ -6,14 +6,17 @@ type Props = {
     nodes: any;
     text: string;
     orientation?: 'row' | 'column';
+    label?: string;
 }
 
-function Step({ text, nodes,orientation="row" }: Props) {
+function Step({ text, nodes, orientation="row", label='' }: Props) {
+    console.log(label);
     return (
         <div className='d-flex flex-column'>
             <h2>Step Description:</h2>
             <p>{text}</p>
-            <div className={`d-flex flex-${orientation}`}>
+            {label?<div style={{border:"2px solid black"}}>{label}</div>:null}
+            <div className={`d-flex flex-${orientation} ${orientation=='column'?'align-items-center':null}`}>
                 {
                     // TODO: This has to be changed color should be not passed as an array
                     nodes && nodes.map(({ color, name, arrow, pointer, pointed }
