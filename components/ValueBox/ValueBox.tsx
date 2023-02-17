@@ -21,7 +21,7 @@ function ValueBox({ color=[122,122,122], name, label }: Props) {
             <rect className="buttonTop" width="57" height="57" rx="8" transform="matrix(0.866025 -0.5 0.866025 0.5 1 51)" fill={colorTop} />
           </g>
           <text id='text' x="57" y="57" fontSize="80%" fill="#fff"
-            style={{transform: "rotate(30deg) translate(-10%, -35%)"}}>{name}</text>
+            style={{transform: "rotate(30deg) matrix(.9, 0, -0.5, 0.9, 22, -28)"}}>{name}</text>
         </svg>
        
       </div>
