@@ -5,7 +5,7 @@ export const Visualization = ({visualization}) => {
     return (
         <>
             
-            {visualization && <StepsSlider steps={visualization} />}
+            {visualization && <StepsSlider visualization={visualization} />}
         </>
     )
 }

@@ -34,6 +34,7 @@ export async function getStaticProps(context: any) {
   const DataStructuresVisualizationPage = ({ visualization, dataStructure}) => {
     return (
       <>
+      {/* TODO: Extract to above component to not depend on dataStructure here */}
         <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - visualization`}</h3>
         <Visualization visualization={visualization}/>
       </>

@@ -13,8 +13,6 @@ function Step({ text, nodes, orientation="row", label='' }: Props) {
     console.log(label);
     return (
         <div className='d-flex flex-column'>
-            <h2>Step Description:</h2>
-            <p>{text}</p>
             {label?<div style={{border:"2px solid black"}}>{label}</div>:null}
             <div className={`d-flex flex-${orientation} ${orientation=='column'?'align-items-center':null}`}>
                 {
@@ -25,12 +23,7 @@ function Step({ text, nodes, orientation="row", label='' }: Props) {
                             arrow: boolean, 
                             pointer: boolean, 
                             pointed: boolean }) => (
-                        <NodeBox key={name + color}
-                         name={name} 
-                         color={color} 
-                         arrow={arrow} 
-                         pointer={pointer} 
-                         pointed={pointed}/>
+                        
                     ))
                 }
             </div>
