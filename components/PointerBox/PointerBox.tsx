@@ -12,9 +12,9 @@ function PointerBox({ color = [122, 123, 124], pointed=false, arrow=false }: Pro
     const colorTop = `RGBA(${color[0] - 30},${color[1] - 30},${color[2] - 30},${color[3]})`;
     return (
         <div 
-        className=''>
+        className='pointerBox position-relative'>
             {/* TODO: we have to change coloring of those borders / tops and light to reflect colors or whatever */}
-            <svg width="100%" style={{ transform: 'rotate(-30deg)', marginLeft: '-58%'}} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" tabIndex={0}>
+            <svg width="100%" height="150px" style={{ transform: 'rotate(-30deg)', marginLeft: '-58%'}} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" tabIndex={0}>
                 <rect className="buttonSides" x="5.04999" y="51" width="90.62" height="8" fill={colorSides} />
                 <rect className="buttonSides" width="57" height="57" rx="8" transform="matrix(0.866025 -0.5 0.866025 0.5 1 59)" fill={colorSides} />
                 <g clipPath="url(#clip0_106_11)">
@@ -53,7 +53,7 @@ function PointerBox({ color = [122, 123, 124], pointed=false, arrow=false }: Pro
                     </clipPath>
                 </defs>
             </svg>
-            <Arrow arrow={arrow}/>
+            {arrow ? <Arrow/> : null}
         </div>
     )
 }

@@ -41,9 +41,9 @@ function StepsSlider({steps} : {steps: any}) {
             <Carousel variant="dark" activeIndex={activeIndex} ref={ref} indicators={false} interval={null} slide={false}>
                 {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
                 {/* TODO: It can be lavereged to the top and render props / custom hook */}
-                {steps && Array.isArray(steps) && steps.map(({text, nodes}) => (
+                {steps && Array.isArray(steps) && steps.map(({text, nodes, orientation}) => (
                     <Carousel.Item key={text}>
-                        <Step text={text} nodes={nodes}/>
+                        <Step text={text} nodes={nodes} orientation={orientation}/>
                     </Carousel.Item>
                 ))}
             </Carousel>

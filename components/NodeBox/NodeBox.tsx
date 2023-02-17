@@ -2,8 +2,8 @@ import React from 'react'
 import PointerBox from '../PointerBox/PointerBox'
 import ValueBox from '../ValueBox/ValueBox'
 import css from 'styled-jsx/css'
-// TODO: Make files structure consistent (here ..Arrow/index.tsx)
 import Arrow from '../Arrow/Arrow'
+// TODO: Make files structure consistent (here ..Arrow/index.tsx)
 
 type Props = {
   pointer?: boolean
@@ -28,7 +28,6 @@ function NodeBox({
     <div>
       <ValueBox color={color} name={name} label={label} />
       {pointer && <PointerBox color={color} pointed={pointed} arrow={arrow} />}
-      
       <style jsx>{nodeBoxStyles}</style>
     </div>
 
@@ -41,9 +40,5 @@ export default NodeBox
 const nodeBoxStyles = css`
   div {
     display: flex;
-  }
-  div > :global(.pointer-box)  {
-    transform: translateX(42%);
-    margin-right:5vw;
   }
 `

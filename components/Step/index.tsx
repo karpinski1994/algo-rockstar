@@ -5,14 +5,15 @@ type Props = {
     // TODO: Remove any
     nodes: any;
     text: string;
+    orientation?: 'row' | 'column';
 }
 
-function Step({ text, nodes }: Props) {
+function Step({ text, nodes,orientation="row" }: Props) {
     return (
         <div className='d-flex flex-column'>
             <h2>Step Description:</h2>
             <p>{text}</p>
-            <div className='d-flex flex-row'>
+            <div className={`d-flex flex-${orientation}`}>
                 {
                     // TODO: This has to be changed color should be not passed as an array
                     nodes && nodes.map(({ color, name, arrow, pointer, pointed }
