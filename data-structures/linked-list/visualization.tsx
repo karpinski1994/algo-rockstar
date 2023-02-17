@@ -226,6 +226,10 @@ const linkedListVisualizationSteps = [
       {
         name: 'red',
         color: [240, 10, 10, 1],
+      },
+      {
+        name: 'green',
+        color: [0, 255, 255, 1],
       }
     ]
   }
