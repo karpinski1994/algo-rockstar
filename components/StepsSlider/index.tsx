@@ -10,15 +10,15 @@ function StepsSlider({ visualization }: { visualization: any }) {
     const ref = useRef<any>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [numberOfItems, setNumberOfItems] = useState(0);
-    // useEffect(() => {
-    //     const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
-    //     setNumberOfItems(numberOfItems)
-    // }, [steps])
+     useEffect(() => {
+         const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
+         setNumberOfItems(numberOfItems)
+     }, [visualization])
 
-    // useEffect(() => {
-    //     const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
-    //     setNumberOfItems(numberOfItems)
-    // }, [steps])
+     useEffect(() => {
+         const numberOfItems = ref.current.element.querySelectorAll('.carousel-item').length;
+         setNumberOfItems(numberOfItems)
+     }, [visualization])
 
     const onStartClick = () => {
         setActiveIndex(0)
@@ -44,18 +44,19 @@ function StepsSlider({ visualization }: { visualization: any }) {
             <Carousel variant="dark" activeIndex={activeIndex} ref={ref} indicators={false} interval={null} slide={false}>
                 {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
                 {/* TODO: It can be lavereged to the top and render props / custom hook */}
-                {visualization && Array.isArray(visualization) && visualization.map(({ text, rows, }) => {
-
+                
+                {visualization && Array.isArray(visualization) && visualization.map(({ text, rows, stepId }) => {
+                        console.log("visualization",stepId)
                     return (
-                        <Carousel.Item key={text + JSON.stringify(rows)}>
+                        <Carousel.Item key={stepId+text}>
                             <p className='ww-bold'>
                                 {text}
                             </p>
-                            {rows.map(r => {
+                            {rows.map((row,index) => {
                                 return (
-                                    <div key={JSON.stringify(r)} className='d-flex mb-5'>
-                                        {r.map(r => {
-                                            return <div>
+                                    <div key={JSON.stringify(row)+index} className='d-flex mb-5'>
+                                        {row.map((r, index) => {
+                                            return <div key={JSON.stringify(r)+index}>
                                                 <NodeBox {...r} />
                                             </div>
                                         })}
