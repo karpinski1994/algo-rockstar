@@ -45,7 +45,7 @@ function StepsSlider({ visualization }: { visualization: any }) {
                 {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
                 {/* TODO: It can be lavereged to the top and render props / custom hook */}
                 
-                {visualization && Array.isArray(visualization) && visualization.map(({ text, rows, stepId, orientation }) => {
+                {visualization && Array.isArray(visualization) && visualization.map(({ text, rows, stepId, orientation='row' }) => {
                     return (
                         <Carousel.Item key={stepId+text}>
                             <p className='ww-bold'>
@@ -53,9 +53,10 @@ function StepsSlider({ visualization }: { visualization: any }) {
                             </p>
                             {rows.map((row,index) => {
                                 return (
-                                    <div key={JSON.stringify(row)+index} className={`d-flex mb-5 flex-${orientation}`}>
+                                    <div key={JSON.stringify(row)+index} className={`d-flex mb-5 flex-${orientation}`}
+                                        style={{maxWidth: '696px', minWidth: '288px'}}>
                                         {row.map((r, index) => {
-                                            return <div key={JSON.stringify(r)+index}>
+                                            return <div key={JSON.stringify(r)+index} style={{width: '30%'}}>
                                                 <NodeBox {...r} />
                                             </div>
                                         })}

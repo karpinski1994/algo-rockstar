@@ -9,6 +9,7 @@ type Props = {
   pointer?: boolean
   pointed?: boolean
   orientation?: 'row' | 'column'
+  arrowOrientation?: 'string'
   color?: number[]
   name?: string
   arrow?: boolean
@@ -22,12 +23,13 @@ function NodeBox({
   color,
   name,
   arrow,
-  label = ''
+  label = '',
+  arrowOrientation,
 }: Props) {
   return (
     <div>
       <ValueBox color={color} name={name} label={label} />
-      {pointer && <PointerBox color={color} pointed={pointed} arrow={arrow} />}
+      {pointer && <PointerBox color={color} pointed={pointed} arrow={arrow} arrowOrientation={arrowOrientation} />}
       <style jsx>{nodeBoxStyles}</style>
     </div>
 
@@ -40,5 +42,6 @@ export default NodeBox
 const nodeBoxStyles = css`
   div {
     display: flex;
+    margin-right: -30%;
   }
 `

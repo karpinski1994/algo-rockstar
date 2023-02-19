@@ -278,6 +278,8 @@ const linkedListVisualizationSteps = [
       {
         name: 'green',
         color: [0, 200, 7, 1],
+        arrow: true,
+        arrowOrientation: 'top',
       }
     ]
   ]
