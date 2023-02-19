@@ -2,7 +2,8 @@ const linkedListVisualizationSteps = [
   {
     stepId: 0,
     text: `"Lists" are one type of data structure, and can storemultiple values`,
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -17,13 +18,15 @@ const linkedListVisualizationSteps = [
         name: 'red',
         color: [240, 10, 10, 1],
       }
-    ]
+        ]
+      ]
   },
   {
     stepId: 1,
     text: `They are unique in how they pair data with "pointers", the pointers indicating the next piece of data's memory location.`,
     label: 'Pointer',
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -41,6 +44,7 @@ const linkedListVisualizationSteps = [
         color: [240, 10, 10, 1],
         pointed: true
       }
+      ]
     ]
   },
   {
@@ -48,7 +52,7 @@ const linkedListVisualizationSteps = [
     text: `In lists, data is stored in various disjointed locations in memory.`,
     orientation: 'column',
     label: 'Memory',
-    nodes: [
+    rows: [[
       {
         name: 'yellow',
         color: [255, 200, 10, 1],
@@ -68,13 +72,14 @@ const linkedListVisualizationSteps = [
         pointed: true
       }
     ]
+  ]
   },
   {
     stepId: 3,
     text: `In lists, data is stored in various disjointed locations in memory.`,
     orientation: 'column',
     label: 'Memory',
-    nodes: [
+    rows: [[
       {
         name: 'yellow',
         color: [255, 200, 10, 1],
@@ -94,12 +99,14 @@ const linkedListVisualizationSteps = [
         pointed: true
       }
     ]
+  ]
   },
   {
     stepId: 4,
     text: `Because data is stored in different locations, each piece of data can only be accessed through the pointer that precedes it.`,
     label: 'Sequential Access',
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -115,12 +122,14 @@ const linkedListVisualizationSteps = [
         color: [180, 180, 180, 1],
       }
     ]
+  ]
   },
   {
     stepId: 5,
     text: `Because data is stored in different locations, each piece of data can only be accessed through the pointer that precedes it.`,
     label: 'Sequential Access',
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -137,12 +146,14 @@ const linkedListVisualizationSteps = [
         color: [180, 180, 180, 1],
       }
     ]
+  ]
   },
   {
     stepId: 6,
     text: `Because data is stored in different locations, each piece of data can only be accessed through the pointer that precedes it.`,
     label: 'Sequential Access',
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -159,12 +170,14 @@ const linkedListVisualizationSteps = [
         color: [180, 180, 180, 1],
       }
     ]
+  ]
   },
   {
     stepId: 7,
     text: `Because data is stored in different locations, each piece of data can only be accessed through the pointer that precedes it.`,
     label: 'Sequential Access',
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -182,12 +195,14 @@ const linkedListVisualizationSteps = [
         color: [180, 180, 180, 1],
       }
     ]
+  ]
   },
   {
     stepId: 8,
     text: `Because data is stored in different locations, each piece of data can only be accessed through the pointer that precedes it.`,
     label: 'Sequential Access',
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -205,12 +220,14 @@ const linkedListVisualizationSteps = [
         color: [240, 10, 10, 1],
       }
     ]
+  ]
   },
   {
     stepId: 9,
-    text: `Because data is stored in different locations, each piece of data can only be accessed through the pointer that precedes it.`,
+    text: `Addition of data is performed simply by replacing the pointers on either side of the addition.`,
     label: 'Sequential Access',
-    nodes: [
+    rows: [
+      [
       {
         name: 'blue',
         color: [40, 148, 255, 1],
@@ -226,12 +243,104 @@ const linkedListVisualizationSteps = [
       {
         name: 'red',
         color: [240, 10, 10, 1],
-      },
+      }
+    ],[
       {
         name: 'green',
-        color: [0, 255, 255, 1],
+        color: [0, 200, 7, 1],
       }
     ]
+  ]
+  },
+  {
+    stepId: 10,
+    text: `Addition of data is performed simply by replacing the pointers on either side of the addition.`,
+    label: 'Sequential Access',
+    rows: [
+      [
+      {
+        name: 'blue',
+        color: [40, 148, 255, 1],
+        arrow: true,
+        pointed: true
+      },
+      {
+        name: 'yellow',
+        color: [255, 200, 10, 1],
+        arrow: true,
+        pointed: true
+      },
+      {
+        name: 'red',
+        color: [240, 10, 10, 1],
+      }
+    ],[
+      {
+        name: 'green',
+        color: [0, 200, 7, 1],
+      }
+    ]
+  ]
+  },
+  {
+    stepId: 11,
+    text: `Addition of data is performed simply by replacing the pointers on either side of the addition.`,
+    label: 'Sequential Access',
+    rows: [
+      [
+      {
+        name: 'blue',
+        color: [40, 148, 255, 1],
+        arrow: true,
+        pointed: true
+      },
+      {
+        name: 'yellow',
+        color: [255, 200, 10, 1],
+        arrow: true,
+        pointed: true
+      },
+      {
+        name: 'red',
+        color: [240, 10, 10, 1],
+      }
+    ],[
+      {
+        name: 'green',
+        color: [0, 200, 7, 1],
+      }
+    ]
+  ]
+  },
+  {
+    stepId: 12,
+    text: `This concludes the explanation of lists.`,
+    label: 'Sequential Access',
+    rows: [
+      [
+      {
+        name: 'blue',
+        color: [40, 148, 255, 1],
+        arrow: true,
+        pointed: true
+      },
+      {
+        name: 'yellow',
+        color: [255, 200, 10, 1],
+        arrow: true,
+        pointed: true
+      },
+      {
+        name: 'red',
+        color: [240, 10, 10, 1],
+      }
+    ],[
+      {
+        name: 'green',
+        color: [0, 200, 7, 1],
+      }
+    ]
+  ]
   }
 
 ]
