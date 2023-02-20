@@ -19,9 +19,9 @@ export default function Arrow({arrowOrientation}){
     }
     return(
         <div className='arrow'>
-        <svg viewBox="0 0 50 50" 
-            width="100%" 
-            height="150px"
+        <svg viewBox={arrowOrientation=='top'?"-30 20 70 70" :"-7 -3 70 70"} 
+            width="150%" 
+            
             style={{
                 
             }}
