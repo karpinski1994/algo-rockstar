@@ -53,10 +53,10 @@ function StepsSlider({ visualization }: { visualization: any }) {
                             </p>
                             {rows.map((row,index) => {
                                 return (
-                                    <div key={JSON.stringify(row)+index} className={`d-flex mb-5 flex-${orientation}`}
+                                    <div key={JSON.stringify(row)+index} className={`d-flex flex-${orientation}`}
                                         style={{maxWidth: '696px', minWidth: '288px'}}>
                                         {row.map((r, index) => {
-                                            return <div key={JSON.stringify(r)+index} style={{width: '30%'}}>
+                                            return <div key={JSON.stringify(r)+index} style={{width: r.color[3]==0 ? '10%':'30%'}}>
                                                 <NodeBox {...r} />
                                             </div>
                                         })}

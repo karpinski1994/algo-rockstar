@@ -1,27 +1,31 @@
 export default function Arrow({arrowOrientation}){
     let rotation = '0';
+    let viewBox = "-7 -3 70 70";
     switch (arrowOrientation){
         case 'top':
             rotation = '-90';
+            viewBox = "-30 10 70 70";
             break;
         case 'right':
             rotation = '0';
+            viewBox = "-7 -3 70 70";
             break;
         case 'bottom':
             rotation = '90';
+            viewBox = "-33 -27 70 70";
             break;    
         case 'left':
             rotation = '180';
+            viewBox = "-7 -3 70 70";
             break;
         default:
             rotation = '0';
+            viewBox = "-7 -3 70 70";
             break;
     }
     return(
         <div className='arrow'>
-        <svg viewBox={arrowOrientation=='top'?"-30 20 70 70" :"-7 -3 70 70"} 
-            width="150%" 
-            
+        <svg viewBox={viewBox} width="150%" 
             style={{
                 
             }}

@@ -246,6 +246,10 @@ const linkedListVisualizationSteps = [
       }
     ],[
       {
+        name: '',
+        color: [0, 200, 7, 0],
+      },
+      {
         name: 'green',
         color: [0, 200, 7, 1],
       }
@@ -276,6 +280,10 @@ const linkedListVisualizationSteps = [
       }
     ],[
       {
+        name: '',
+        color: [0, 200, 7, 0],
+      },
+      {
         name: 'green',
         color: [0, 200, 7, 1],
         arrow: true,
@@ -294,7 +302,8 @@ const linkedListVisualizationSteps = [
         name: 'blue',
         color: [40, 148, 255, 1],
         arrow: true,
-        pointed: true
+        pointed: true,
+        arrowOrientation: 'bottom'
       },
       {
         name: 'yellow',
@@ -308,8 +317,14 @@ const linkedListVisualizationSteps = [
       }
     ],[
       {
+        name: '',
+        color: [0, 200, 7, 0],
+      },
+      {
         name: 'green',
         color: [0, 200, 7, 1],
+        arrow: true,
+        arrowOrientation: 'top',
       }
     ]
   ]
@@ -324,7 +339,8 @@ const linkedListVisualizationSteps = [
         name: 'blue',
         color: [40, 148, 255, 1],
         arrow: true,
-        pointed: true
+        pointed: true,
+        arrowOrientation: 'bottom'
       },
       {
         name: 'yellow',
@@ -338,8 +354,14 @@ const linkedListVisualizationSteps = [
       }
     ],[
       {
+        name: '',
+        color: [0, 200, 7, 0],
+      },
+      {
         name: 'green',
         color: [0, 200, 7, 1],
+        arrow: true,
+        arrowOrientation: 'top',
       }
     ]
   ]
