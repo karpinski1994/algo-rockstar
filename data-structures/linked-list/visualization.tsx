@@ -56,14 +56,16 @@ const linkedListVisualizationSteps = [
       {
         name: 'yellow',
         color: [255, 200, 10, 1],
-        arrow: false,
-        pointed: true
+        arrow: true,
+        pointed: true,
+        arrowOrientation: 'bottom',
       },
       {
         name: 'blue',
         color: [40, 148, 255, 1],
-        arrow: false,
-        pointed: true
+        arrow: true,
+        pointed: true,
+        arrowOrientation: 'bottom',
       },
       {
         name: 'red',
@@ -83,14 +85,16 @@ const linkedListVisualizationSteps = [
       {
         name: 'yellow',
         color: [255, 200, 10, 1],
-        arrow: false,
-        pointed: true
+        arrow: true,
+        pointed: true,
+        arrowOrientation: 'bottom',
       },
       {
         name: 'blue',
         color: [40, 148, 255, 1],
-        arrow: false,
-        pointed: true
+        arrow: true,
+        pointed: true,
+        arrowOrientation: 'bottom',
       },
       {
         name: 'red',

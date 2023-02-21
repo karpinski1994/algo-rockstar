@@ -48,12 +48,12 @@ function StepsSlider({ visualization }: { visualization: any }) {
                 {visualization && Array.isArray(visualization) && visualization.map(({ text, rows, stepId, orientation='row' }) => {
                     return (
                         <Carousel.Item key={stepId+text}>
-                            <p className='ww-bold'>
+                            <p className='ww-bold' style={{minHeight: '120px'}}>
                                 {text}
                             </p>
                             {rows.map((row,index) => {
                                 return (
-                                    <div key={JSON.stringify(row)+index} className={`d-flex flex-${orientation}`}
+                                    <div key={JSON.stringify(row)+index} className={`d-flex flex-${orientation} align-items-center`}
                                         style={{maxWidth: '696px', minWidth: '288px'}}>
                                         {row.map((r, index) => {
                                             return <div key={JSON.stringify(r)+index} style={{width: r.color[3]==0 ? '10%':'30%'}}>
