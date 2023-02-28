@@ -53,12 +53,9 @@ function TreeVizualization({ data = initialData }) {
         // transform hierarchical data
         const root = hierarchy(data);
         const treeLayout = tree().size([width, height - 20]);
-        function linkArc(d) {
+        function linkGenerator(d) {
             return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
         }
-        const linkGenerator = link(curveBumpY)
-            .x(d => d.x)
-            .y(d => d.y);
 
 
         // enrich hierarchical data with coordinates
@@ -81,7 +78,7 @@ function TreeVizualization({ data = initialData }) {
             .attr("opacity", 1)
             ;
 
-        function linkArc(d) {
+        function linkGenerator(d) {
             return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
         }
         // links
@@ -89,7 +86,7 @@ function TreeVizualization({ data = initialData }) {
             .data(root.links())
             .join("path")
             .attr("class", "link")
-            .attr("d", linkArc)
+            .attr("d", linkGenerator)
             .attr("stroke", "black")
             .attr("fill", "none")
             .attr("opacity", 1)
