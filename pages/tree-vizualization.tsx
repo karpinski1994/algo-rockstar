@@ -53,14 +53,8 @@ function TreeVizualization({ data = initialData }) {
         // transform hierarchical data
         const root = hierarchy(data);
         const treeLayout = tree().size([width, height - 20]);
-        function linkGenerator(d) {
-            return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
-        }
 
-
-        // enrich hierarchical data with coordinates
         treeLayout(root);
-        // nodes
         svg
             .selectAll(".node")
             .data(root.descendants())
@@ -90,7 +84,6 @@ function TreeVizualization({ data = initialData }) {
             .attr("stroke", "black")
             .attr("fill", "none")
             .attr("opacity", 1)
-        // .attr('d', elbow)
 
 
     }, [data, dimensions, previouslyRenderedData]);
