@@ -1,4 +1,4 @@
-import arrayVisualizationSteps from "@/data-structures/Array/visualization";
+import arrayVisualizationSteps from "@/data-structures/array/visualization";
 import linkedListVisualizationSteps from "@/data-structures/LinkedList/visualization";
 
 const visualizationFactory = (codeStructure: string | string[] | undefined) => {
