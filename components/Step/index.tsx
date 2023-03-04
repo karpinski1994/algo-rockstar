@@ -1,5 +1,5 @@
 import React from 'react'
-import NodeBox from '../NodeBox/NodeBox'
+import NodeBox from '../NodeBox'
 
 type Props = {
     // TODO: Remove any

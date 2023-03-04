@@ -1,4 +1,4 @@
-export default function Arrow({arrowOrientation}){
+export default function Arrow({arrowOrientation='right'}){
     let rotation = '0';
     let viewBox = "-7 -3 70 70";
     switch (arrowOrientation){

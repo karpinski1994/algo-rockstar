@@ -1,5 +1,5 @@
 import React from 'react'
-import Arrow from '../Arrow/Arrow';
+import Arrow from '../Arrow';
 
 type Props = {
     color?: number[]

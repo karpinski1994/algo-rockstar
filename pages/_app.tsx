@@ -5,7 +5,7 @@ import css from 'styled-jsx/css'
 
 import Container from 'react-bootstrap/Container';
 import StackNavbar from '@/components/StackNavbar';
-import HeaderNavbar from '@/components/HeaderNavbar/HeaderNavbar';
+import HeaderNavbar from '@/components/HeaderNavbar';
 import Footer from '@/components/Footer';
 import { Page } from '@/types/page';
 import { ReactElement } from 'react';

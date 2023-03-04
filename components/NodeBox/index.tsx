@@ -1,8 +1,8 @@
 import React from 'react'
-import PointerBox from '../PointerBox/PointerBox'
-import ValueBox from '../ValueBox/ValueBox'
+import PointerBox from '../PointerBox'
+import ValueBox from '../ValueBox'
 import css from 'styled-jsx/css'
-import Arrow from '../Arrow/Arrow'
+import Arrow from '../Arrow'
 // TODO: Make files structure consistent (here ..Arrow/index.tsx)
 
 type Props = {

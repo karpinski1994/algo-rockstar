@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
-import NodeBox from '../NodeBox/NodeBox';
+import NodeBox from '../NodeBox';
 import Step from '../Step';
 
 // TODO: Remove any
 function StepsSlider({ visualization }: { visualization: any }) {
+    console.log("🚀 ~ file: index.tsx:8 ~ StepsSlider ~ visualization", visualization)
     const ref = useRef<any>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [numberOfItems, setNumberOfItems] = useState(0);
@@ -44,13 +45,12 @@ function StepsSlider({ visualization }: { visualization: any }) {
                 {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
                 {/* TODO: It can be lavereged to the top and render props / custom hook */}
                 
-                {visualization && Array.isArray(visualization) && visualization.map(({ text, rows, stepId, orientation='row', label }) => {
+                {visualization && Array.isArray(visualization) && visualization.map(({ text, rows, stepId, orientation='row' }) => {
                     return (
                         <Carousel.Item key={stepId+text}>
                             <p className='ww-bold' style={{minHeight: '120px'}}>
-                                {text}
+                                {text} 
                             </p>
-                            <p>{label}</p>
                             {rows.map((row,index) => {
                                 return (
                                     <div key={JSON.stringify(row)+index} className={`d-flex flex-${orientation} align-items-center`}
