@@ -1,8 +1,7 @@
 import TopBar from './TopBar';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { CopyBlock, dracula } from 'react-code-blocks';
-import codeExamplesFactory from './codeExamplesFactory';
-import { useRouter } from 'next/router';
+
 
 // TODO: The same like with Markdown here we may want to rename this
 // TODO: This is dummy sync function for testing purposes we have to change it the way example will be rendered with mounting of component
@@ -12,18 +11,7 @@ type CodeExample = {
     [key: string]: string;
 }
 
-function CodeExample() {
-    const router = useRouter();
-    // TODO: consider changing name 'dataStructure' because in the future it might be also an algorithm 
-    const { dataStructure } = router.query;
-
-    const codeExamples: CodeExample | string | undefined = codeExamplesFactory(dataStructure);
-
-    useEffect(() => {
-        if (codeExamples) {
-            setCodeExample(codeExamples['javascript' as keyof CodeExample])
-        }
-    }, [codeExamples])
+function CodeExample({codeExamples}) {
 
     const [language, changeLanguage] = useState('javascript');
     const [codeExample, setCodeExample] = useState(codeExamples['javascript']);

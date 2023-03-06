@@ -25,7 +25,7 @@ const Layout = ({ Component, pageProps }: {
 export default function App({ Component, pageProps }: AppProps) {
   return (<Container fluid className="p-0 main-wrapper">
     <HeaderNavbar />
-    <div className='container'>
+    <div className='containerBox'>
       <div className='row'>
         <StackNavbar />
         <main className='col-md-9 col-12'>
@@ -42,7 +42,7 @@ const layoutStyles = css`
 .main-wrapper {
 }
 
-.container {
+.containerBox {
   width: 100vw;
 }
 

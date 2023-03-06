@@ -1,5 +1,5 @@
-import linkedQuestions from '../../data-structures/LinkedList/questions';
-import arrayQuestions from '../../data-structures/Array/questions';
+import linkedQuestions from '../../data-structures/linked-list/questions';
+import arrayQuestions from '../../data-structures/array/questions';
 
 const questionsFactory = (route: string | string[] | undefined) => {
   switch (route) {
