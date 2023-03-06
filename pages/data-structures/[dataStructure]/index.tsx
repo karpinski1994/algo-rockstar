@@ -5,20 +5,52 @@ import nestLayout from "@/utils/layout/nenstLayout";
 import TabsNavbar from "@/components/TabsNavbar/TabsNavbar";
 import { Container } from "react-bootstrap";
 import Markdown from "@/components/Markdown";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
+import markdownFactory from "@/components/Markdown/markdownFactory";
+import { buildUrl, stackNavSettings } from '@/components/StackNavbar/settings';
 
-const DataStructurePage = () => {
-  const router = useRouter();
-  const { dataStructure } = router.query;
+interface Props {
+  dataStructure: string;
+  markdown: string;
+  context: object;
+  }
+
+export const getStaticPaths = () => {
+  const paths = stackNavSettings.filter(({url}) => url.length > 1).map(({ url }) => {
+    return buildUrl(url)
+  })
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export async function getStaticProps(context: Props) {
+  const {
+    params: {
+      dataStructure
+    }
+  } = context;
+  const markdown = markdownFactory(context.params.dataStructure);
+  return {
+    props: {
+      dataStructure,
+      markdown
+    },
+  };
+}
+
+
+const DataStructurePage = ({ dataStructure, markdown }: Props) => {
   return (
     <>
       <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - description`}</h3>
-      <Markdown route={dataStructure} />
+      <Markdown markdown={markdown} />
     </>
   );
 };
 
-const NestedLayout = ({ children }: {children: React.ReactNode}) => {
+const NestedLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const { dataStructure } = router.query;
 

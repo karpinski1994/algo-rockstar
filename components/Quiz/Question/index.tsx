@@ -1,4 +1,4 @@
-import { IAnswer, IQuestion } from '@/data-structures/LinkedList/questions'
+import { IAnswer, IQuestion } from '@/data-structures/linked-list/questions'
 import { getAlphabetLetter } from '@/utils/strings/alphabet'
 import React, { useState } from 'react'
 import Answer from '../Answer'
@@ -24,7 +24,16 @@ const Question = ({question, answer, selectAnswer, answers, correctId, submitted
 
             <div className="d-flex flex-column mb-4">
                 {answers.map((el, idx) => (
-                    <Answer correctId={correctId} question={question} answer={answer} onChange={selectAnswer} submitted={submitted}  key={`${el}${idx}`} {...el} label={getLabel(el.label, idx)} id={`${idx}`} />
+                    <Answer
+                        correctId={correctId}
+                        question={question}
+                        answer={answer}
+                        onChange={selectAnswer}
+                        submitted={submitted} 
+                        key={`${el}${idx}`} 
+                        {...el} 
+                        label={getLabel(el.label, idx)} 
+                        id={`${idx}`} />
                 ))}
                 {submitted && correctId === answer && 
                 <div className='fw-bold text-success'>
