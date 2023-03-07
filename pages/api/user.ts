@@ -1,10 +1,7 @@
 export default function handler(req: any, res: any) {
-    
-    console.log('SWIANIAK: ')
+  const fs = require('fs');
 
-    const fs = require('fs');
-
-async function createFileOnDesktop(fileName='bylejaki') {
+  async function createFileOnDesktop(fileName='bylejaki') {
 
 
   const desktopPath = `${process.env.HOME}/Desktop/${fileName}`;
