@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { select, hierarchy, tree, linkHorizontal, linkVertical, curveLinear, link, curveBumpY } from "d3";
 import useResizeObserver from "@/hooks/useResizeObserver";
 
@@ -11,37 +11,39 @@ function usePrevious(value) {
 }
 
 const initialData = {
-    name: "😐",
+    name: "1",
     children: [
         {
-            name: "🙂",
+            name: "3",
             children: [
                 {
-                    name: "😀"
+                    name: "4"
                 },
                 {
-                    name: "😁"
+                    name: "5"
                 },
                 {
-                    name: "🤣"
+                    name: "6"
                 },
 
             ]
         },
         {
-            name: "😔"
+            name: "2"
         },
 
     ]
 };
 
-function TreeVizualization({ data = initialData }) {
+function TreeVizualization() {
     const svgRef = useRef();
     const wrapperRef = useRef();
     const dimensions = useResizeObserver(wrapperRef);
+    const [input, setInput] = useState('');
+    const [treeData, setTreeData] = useState(initialData);
 
     // we save data to see if it changed
-    const previouslyRenderedData = usePrevious(data);
+    const previouslyRenderedData = usePrevious(treeData);
 
     // will be called initially and on every data change
     useEffect(() => {
@@ -53,7 +55,7 @@ function TreeVizualization({ data = initialData }) {
         const { width, height } = wrapperRef.current.getBoundingClientRect();
 
         // transform hierarchical data
-        const root = hierarchy(data);
+        const root = hierarchy(treeData);
         const treeLayout = tree().size([width, height - 80]);
 
         treeLayout(root);
@@ -67,7 +69,7 @@ function TreeVizualization({ data = initialData }) {
         nodes
             .append("circle")
             .attr("r", 20)
-            .attr("fill", "white")
+            .attr("fill", "lightblue")
             .attr("stroke", "black")
             .attr("stroke-width", "2")
             .on("click", function (event, d) {
@@ -84,6 +86,7 @@ function TreeVizualization({ data = initialData }) {
             .attr("dy", 5)
             .attr("text-anchor", "middle")
             .attr("font-size", "12px")
+            .attr("font-weight", "bold")
             .attr("fill", "black");
 
         // Links
@@ -101,10 +104,24 @@ function TreeVizualization({ data = initialData }) {
             .attr("fill", "none")
             .attr("opacity", 1);
 
-    }, [data, dimensions, previouslyRenderedData]);
+    }, [treeData, dimensions, previouslyRenderedData]);
+
+    const handleOnChange = (e) => {
+        console.log('e: ',e.target.value)
+        setInput(e.target.value)
+    }
+
+    const handleOnClick = () => {
+        const newTree = {...treeData};
+        newTree.children[0].children[1].children = [];
+        newTree.children[0].children[1].children.push({name: input})
+        setTreeData(newTree)
+    }
 
     return (
         <div ref={wrapperRef} className="pt-8 mt-3 w-100 h-100">
+            <input type="number" onChange={(e) => handleOnChange(e)}/>
+            <button onClick={handleOnClick}>Submit</button>
             <svg className=" w-100 h-100" ref={svgRef}></svg>
         </div>
     );
