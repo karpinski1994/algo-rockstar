@@ -24,12 +24,14 @@ const initialData = {
                 },
                 {
                     name: "🤣"
-                }
+                },
+
             ]
         },
         {
             name: "😔"
-        }
+        },
+
     ]
 };
 
@@ -52,44 +54,57 @@ function TreeVizualization({ data = initialData }) {
 
         // transform hierarchical data
         const root = hierarchy(data);
-        const treeLayout = tree().size([width, height - 20]);
+        const treeLayout = tree().size([width, height - 80]);
 
         treeLayout(root);
-        svg
+        const nodes = svg
             .selectAll(".node")
             .data(root.descendants())
-            .join(enter => enter.append("circle").attr("opacity", 0))
+            .join("g")
             .attr("class", "node")
-            .attr("cx", node => node.x)
-            .attr("cy", node => node.y + 10)
+            .attr("transform", d => `translate(${d.x},${d.y + 30})`);
+
+        nodes
+            .append("circle")
             .attr("r", 20)
-            .on("click", function (event, node) {
-                console.log("Clicked on node:", node);
+            .attr("fill", "white")
+            .attr("stroke", "black")
+            .attr("stroke-width", "2")
+            .on("click", function (event, d) {
+                console.log("Clicked on node:", d);
             })
             .transition()
             .duration(500)
-            .delay(node => node.depth * 300)
-            .attr("opacity", 1)
-            ;
+            .delay(d => d.depth * 300)
+            .attr("opacity", 0.5);
 
-        function linkGenerator(d) {
-            return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
-        }
-        // links
-        svg.selectAll(".link")
+        nodes
+            .append("text")
+            .text(d => d.data.name)
+            .attr("dy", 5)
+            .attr("text-anchor", "middle")
+            .attr("font-size", "12px")
+            .attr("fill", "black");
+
+        // Links
+        svg
+            .selectAll(".link")
             .data(root.links())
             .join("path")
             .attr("class", "link")
-            .attr("d", linkGenerator)
+            .attr("d", d => {
+                const source = { x: d.source.x, y: d.source.y + 50 };
+                const target = { x: d.target.x, y: d.target.y };
+                return `M${source.x},${source.y} L${target.x},${target.y + 10}`;
+            })
             .attr("stroke", "black")
             .attr("fill", "none")
-            .attr("opacity", 1)
-
+            .attr("opacity", 1);
 
     }, [data, dimensions, previouslyRenderedData]);
 
     return (
-        <div ref={wrapperRef} className="mt-3 w-100 h-100">
+        <div ref={wrapperRef} className="pt-8 mt-3 w-100 h-100">
             <svg className=" w-100 h-100" ref={svgRef}></svg>
         </div>
     );
