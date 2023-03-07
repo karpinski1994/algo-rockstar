@@ -4,9 +4,25 @@ import Carousel from "react-bootstrap/Carousel";
 import NodeBox from "../NodeBox";
 import Step from "../Step";
 
-// TODO: Remove any
-function StepsSlider({ visualization }: { visualization: any }) {
-  const ref = useRef<any>(null);
+interface VisualizationRows {
+  name: string;
+  color: number[];
+  pointer: boolean;
+}
+
+interface VisualizationSteps {
+  text: string;
+  rows: Array<VisualizationRows>;
+  stepId: number;
+  orientation?: string;
+}
+
+function StepsSlider({
+  visualization,
+}: {
+  visualization: Array<VisualizationSteps>;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
   useEffect(() => {
