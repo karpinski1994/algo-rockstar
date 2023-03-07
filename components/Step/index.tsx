@@ -10,7 +10,6 @@ type Props = {
 }
 
 function Step({ text, nodes, orientation="row", label='' }: Props) {
-    console.log(label);
     return (
         <div className='d-flex flex-column'>
             {label?<div style={{border:"2px solid black"}}>{label}</div>:null}
