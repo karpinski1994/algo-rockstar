@@ -3,6 +3,15 @@ import codeExampleFactory from "@/components/CodeExample/codeExamplesFactory";
 import { buildUrl, stackNavSettings } from "@/components/StackNavbar/settings";
 import { DataStructurePageLayout } from ".";
 
+interface Props {
+  params: {
+    dataStructure: "array";
+  };
+  locales?: undefined;
+  locale?: undefined;
+  defaultLocale?: undefined;
+}
+
 export const getStaticPaths = () => {
   const paths = stackNavSettings
     .filter(({ url }) => url.length > 1)
@@ -15,7 +24,7 @@ export const getStaticPaths = () => {
   };
 };
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: Props) {
   const {
     params: { dataStructure },
   } = context;
