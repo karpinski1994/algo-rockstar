@@ -11,7 +11,7 @@ type CodeExample = {
     [key: string]: string;
 }
 
-function CodeExample({codeExamples}) {
+function CodeExample({ codeExamples }: { codeExamples: CodeExample }) {
 
     const [language, changeLanguage] = useState('javascript');
     const [codeExample, setCodeExample] = useState(codeExamples['javascript']);
