@@ -90,6 +90,7 @@ function TreeVizualization() {
             .attr("fill", "black");
 
         // Links
+        // explain me this
         svg
             .selectAll(".link")
             .data(root.links())
