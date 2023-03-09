@@ -1,0 +1,10 @@
+.svg {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    z-index: -1;
+}
+
+.path {
+    transform: translate(19%, 30%);
+}

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { DataStructuresPageLayout } from "../index";
 import { removeHyphens } from "@/utils/strings/removeHyphens";
 import nestLayout from "@/utils/layout/nenstLayout";
-import TabsNavbar from "@/components/TabsNavbar/TabsNavbar";
+import TabsNavbar from "@/components/TabsNavbar";
 import { Container } from "react-bootstrap";
 import Markdown from "@/components/Markdown";
 import { ReactNode, useEffect } from "react";

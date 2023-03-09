@@ -1,18 +1,17 @@
 import React from 'react'
-import PointerBox from '../PointerBox/PointerBox'
-import ValueBox from '../ValueBox/ValueBox'
+import PointerBox from '../PointerBox'
+import ValueBox from '../ValueBox'
 import css from 'styled-jsx/css'
-import Arrow from '../Arrow/Arrow'
-// TODO: Make files structure consistent (here ..Arrow/index.tsx)
+import { ArrowOrientation } from '../Arrow'
 
 type Props = {
   pointer?: boolean
   pointed?: boolean
   orientation?: 'row' | 'column'
-  arrowOrientation?: 'string'
+  arrowOrientation: ArrowOrientation
   color?: number[]
   name?: string
-  arrow?: boolean
+  arrow: boolean
   label?: string
 }
 
