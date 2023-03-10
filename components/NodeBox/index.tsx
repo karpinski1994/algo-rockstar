@@ -22,25 +22,30 @@ function NodeBox({
   color,
   name,
   arrow,
-  label = '',
+  label = "",
   arrowOrientation,
 }: Props) {
   return (
     <div>
       <ValueBox color={color} name={name} label={label} />
-      {pointer && <PointerBox color={color} pointed={pointed} arrow={arrow} arrowOrientation={arrowOrientation} />}
+      {pointer && (
+        <PointerBox
+          color={color}
+          pointed={pointed}
+          arrow={arrow}
+          arrowOrientation={arrowOrientation}
+        />
+      )}
       <style jsx>{nodeBoxStyles}</style>
     </div>
-
-  )
+  );
 }
 
-export default NodeBox
-
+export default NodeBox;
 
 const nodeBoxStyles = css`
   div {
     display: flex;
     margin-right: -30%;
   }
-`
+`;
