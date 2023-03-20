@@ -1,38 +1,63 @@
 export default `#### Summary
 
-A linked list is like a train, where each box is connected to the next box with a string. Each box has something special inside, like toys or candy. The first box is called the "head" and the last box is called the "tail." To get to a specific box, we follow the strings from the head until we reach the right box.
+A queue is like a line of people waiting for something, where the person at the front is the first one to be served. People join the line at the back and leave the line from the front.
 
-A linked list is a way to store a collection of items, just like an array. But instead of storing all the items in a single block of memory, each item is stored in its own box, and the boxes are connected using pointers. This makes it possible to add or remove items from the middle of the list without having to move all the other items.
+A queue is a way to store a collection of items, similar to an array or a list. However, unlike an array or a list, a queue follows the "first-in, first-out" (FIFO) principle. This means that the first item added to the queue is the first one to be removed.
 
-The linked list has two parts: data and a pointer. The data part stores the actual item, and the pointer points to the next box. The last box has a special pointer that points to null, which means there are no more boxes after it.
+A queue has two ends: the front and the rear. Items are added to the rear end and removed from the front end. The front end is also sometimes called the "head" of the queue, and the rear end is called the "tail".
 
-Linked lists are useful for when you need to insert or delete items frequently, or when you don't know the size of the list in advance.
+Queues are useful when you want to process items in the order they were added, like a message queue or a print queue.
 
 #### Operations
-The most common operations performed on linked lists are:
+The most common operations performed on queues are:
 
-Insertion O(n): Adding a new item to the list at a specific position. \n
-Deletion O(n): Removing an item from the list.\n
-Traversal O(n): Going through all the items in the list, one by one.\n
-Search O(n) Finding an item in the list with a specific value.\n
-Reverse O(n): Reversing the order of the items in the list.\n
-Sorting O(n log n): Arranging the items in the list in a specific order, like from smallest to largest.\n
-Merge O(m + n): Combining two linked lists into one.\n
-Split O(n): Dividing a linked list into two separate linked lists.
+Enqueue O(1): Adding an item to the rear end of the queue.
+
+Dequeue O(1): Removing an item from the front end of the queue.
+
+Peek O(1): Looking at the front item of the queue without removing it.
+
+IsEmpty O(1): Checking if the queue is empty.
+
+IsFull O(1): Checking if the queue is full (in the case of a fixed-size queue).
+
+Size O(1): Finding the number of items in the queue.
 
 
-(n: number of elements in first linked list, m: number of elements in second linked list)
+#### Example
+
+Here's an example of using a queue to process items in order.
+
+In this example, we create an empty queue represented by an array queue.
+
+Then, we add three items to the queue using the push() method.
+
+Finally, we process the items in the queue using a while loop, where we remove items from the front of the queue using the shift() method and log them to the console.
+
 ${'```javascript'}
-function loopAadUpTo(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i ++) {
-      sum += i;
-    }
-  return sum;
-}
-${"```"}
-### Videos
-[Linked lists in 4 minutes](https://www.youtube.com/watch?v=F8AbOfQwl1c)
+// Creating an empty queue
+const queue = [];
 
-[Introduction to Linked Lists (Data Structures & Algorithms #5)](https://www.youtube.com/watch?v=WwfhLC16bis)
+// Adding items to the queue
+queue.push("first item");
+queue.push("second item");
+queue.push("third item");
+
+// Processing items in the queue
+while (queue.length > 0) {
+  const currentItem = queue.shift();
+  console.log(currentItem);
+}
+
+// Output:
+// "first item"
+// "second item"
+// "third item"
+
+${"```"}
+
+### Videos
+[Queue in 3 minutes](https://www.youtube.com/watch?v=D6gu-_tmEpQ)
+
+[Queue Introduction](https://www.youtube.com/watch?v=KxzhEQ-zpDc)
 `

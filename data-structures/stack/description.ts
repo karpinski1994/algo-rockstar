@@ -1,38 +1,34 @@
 export default `#### Summary
-
-A linked list is like a train, where each box is connected to the next box with a string. Each box has something special inside, like toys or candy. The first box is called the "head" and the last box is called the "tail." To get to a specific box, we follow the strings from the head until we reach the right box.
-
-A linked list is a way to store a collection of items, just like an array. But instead of storing all the items in a single block of memory, each item is stored in its own box, and the boxes are connected using pointers. This makes it possible to add or remove items from the middle of the list without having to move all the other items.
-
-The linked list has two parts: data and a pointer. The data part stores the actual item, and the pointer points to the next box. The last box has a special pointer that points to null, which means there are no more boxes after it.
-
-Linked lists are useful for when you need to insert or delete items frequently, or when you don't know the size of the list in advance.
-
+A stack is a data structure that works like a stack of plates. We can add plates to the top of the stack, and remove plates from the top of the stack.
+The last plate added to the stack is the first one to be removed, which is also known as the Last-In-First-Out (LIFO) principle.
+Stacks are useful for when you need to keep track of a sequence of items in which the most recently added item is the first one to be processed.
+For example, when evaluating expressions in computer programming, we can use a stack to keep track of the order of operations.
 #### Operations
-The most common operations performed on linked lists are:
-
-Insertion O(n): Adding a new item to the list at a specific position. \n
-Deletion O(n): Removing an item from the list.\n
-Traversal O(n): Going through all the items in the list, one by one.\n
-Search O(n) Finding an item in the list with a specific value.\n
-Reverse O(n): Reversing the order of the items in the list.\n
-Sorting O(n log n): Arranging the items in the list in a specific order, like from smallest to largest.\n
-Merge O(m + n): Combining two linked lists into one.\n
-Split O(n): Dividing a linked list into two separate linked lists.
-
-
-(n: number of elements in first linked list, m: number of elements in second linked list)
+A stack has two main operations:
+Push: Adding a new item to the top of the stack.
+Pop: Removing the top item from the stack.
+In addition to these operations, we can also perform the following:
+Peek: Looking at the top item on the stack without removing it.
+Search: Finding an item in the stack with a specific value.
+#### Implementation
+We can implement a stack using an array or a linked list. When using an array, we keep track of the top of the stack using a pointer. When using a linked list, we add and remove items from the head of the list.
+Here is an example of a stack implemented using an array:
 ${'```javascript'}
-function loopAadUpTo(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i ++) {
-      sum += i;
-    }
-  return sum;
-}
-${"```"}
+// Creating an empty stack
+const stack = [];
+// Adding elements to the stack
+stack.push("one");
+stack.push("two");
+stack.push("three");
+// Removing elements from the stack
+const removedElement1 = stack.pop();
+const removedElement2 = stack.pop();
+const removedElement3 = stack.pop();
+console.log(removedElement1); // will display "three"
+console.log(removedElement2); // will display "two"
+console.log(removedElement3); // will display "one"
+${'```'}
 ### Videos
-[Linked lists in 4 minutes](https://www.youtube.com/watch?v=F8AbOfQwl1c)
-
-[Introduction to Linked Lists (Data Structures & Algorithms #5)](https://www.youtube.com/watch?v=WwfhLC16bis)
+[Stacks in 4 minutes](https://www.youtube.com/watch?v=wjI1WNcIntg)
+[Stack Data Structure - Part 1](https://www.youtube.com/watch?v=F1F2imiOJfk)
 `
