@@ -1,5 +1,5 @@
 import linkedListDescription from "../../data-structures/linked-list/description";
-import arrayDescription from "../../data-structures/array/description";
+import arrayDescription from "../../data-structures/indexed-list/description";
 import bigODescription from "../../data-structures/big-o/description";
 import stackDescription from "../../data-structures/stack/description";
 import queueDescriptions from "../../data-structures/queue/description";
