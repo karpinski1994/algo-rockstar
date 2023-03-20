@@ -38,6 +38,7 @@ const Markdown = ({ markdown }: { markdown: string }) => {
     <ReactMarkdown
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[remarkGfm]}
+      // @ts-ignore
       components={CodeBlock}
     >
       {markdown}

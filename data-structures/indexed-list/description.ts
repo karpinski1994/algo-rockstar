@@ -1,5 +1,4 @@
-export default `
-#### Summary
+export default `#### Summary
 
 An array is a linear data structure that stores a collection of elements, each identified by a unique index or subscript. Elements in an array are stored in contiguous memory locations and can be of any data type such as integers, floating-point numbers, or characters. Arrays allow for fast and efficient access to specific elements based on their index, and are commonly used in computer algorithms and programming. The size of an array is fixed at the time of creation, and updating or inserting elements may require shifting existing elements and allocating additional memory.
 

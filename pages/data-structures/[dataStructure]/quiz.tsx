@@ -38,7 +38,7 @@ export async function getStaticProps(context: Props) {
   };
 }
 
-const DataStructuresQuizPage = ({ questions, dataStructure }: Props) => {
+const DataStructuresQuizPage = ({ questions, dataStructure }: any) => {
   return (
     <>
       <h3 className="text-capitalize mt-4">{`${removeHyphens(

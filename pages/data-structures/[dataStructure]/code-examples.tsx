@@ -37,7 +37,7 @@ export async function getStaticProps(context: Props) {
   };
 }
 
-const DataStructuresCodeExamplesPage = ({ codeExample }) => {
+const DataStructuresCodeExamplesPage = ({ codeExample }: { codeExample: any }) => {
   return (
     <>
       <CodeExample codeExamples={codeExample} />

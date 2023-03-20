@@ -5,7 +5,7 @@ import Question from './Question';
 
 
 // TODO: Change everywhere where i have factories (Visualization factory to factories / switch)
-function Quiz({questionsFromFactory}) {
+function Quiz({questionsFromFactory} : {questionsFromFactory: any}) {
   const [questions, setQuestions] = useState<IQuestion[] | string>(questionsFromFactory);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 

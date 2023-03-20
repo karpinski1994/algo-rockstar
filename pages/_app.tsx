@@ -18,7 +18,7 @@ const Layout = ({
   Component,
   pageProps,
 }: {
-  Component: Page;
+  Component: any;
   pageProps: PageProps;
 }): any => {
   if (Component.getLayout) {
