@@ -1,11 +1,11 @@
 import React from 'react'
-import Arrow from '../Arrow/Arrow';
+import Arrow, { ArrowOrientation } from '../Arrow';
 
 type Props = {
     color?: number[]
     pointed?: boolean
     arrow: boolean
-    arrowOrientation: string
+    arrowOrientation: ArrowOrientation
 }
 // TODO: Fix colors
 function PointerBox({ color = [122, 123, 124], pointed=false, arrow=false, arrowOrientation='right'}: Props) {
@@ -13,7 +13,7 @@ function PointerBox({ color = [122, 123, 124], pointed=false, arrow=false, arrow
     const colorTop = `RGBA(${color[0] - 30},${color[1] - 30},${color[2] - 30},${color[3]})`;
     return (
         <div 
-        className='pointerBox position-relative' style={{zIndex: '99'}}>
+        className='position-relative' style={{zIndex: '99'}}>
             {/* TODO: we have to change coloring of those borders / tops and light to reflect colors or whatever */}
             <svg width="100%" style={{ transform: 'rotate(-30deg)', marginLeft: '-58%'}} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" tabIndex={0}>
                 <rect className="buttonSides" x="5.04999" y="51" width="90.62" height="8" fill={colorSides} />

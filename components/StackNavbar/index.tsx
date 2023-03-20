@@ -22,7 +22,7 @@ function StackNavbar() {
     const { asPath } = useRouter();
     return (
         <Navbar variant="dark" className='col-md-3 flex-column col-sm-12 mt-5'>
-            <p className="fw-bolder">Data structures and algorithms</p>
+            <p className="fw-bolder">Data structures</p>
             <ul className="d-flex flex-md-column justify-content-md-start flex-wrap align-items-center align-items-md-start">
                 {
                     stackNavSettings.map((el, idx) => {

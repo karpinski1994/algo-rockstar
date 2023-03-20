@@ -1,13 +1,20 @@
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 
-import rehypeRaw from 'rehype-raw';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import remarkGfm from 'remark-gfm';
+import rehypeRaw from "rehype-raw";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import remarkGfm from "remark-gfm";
+
+type CodeBlockProps = {
+  node: any;
+  inline: boolean;
+  className?: string;
+  children: string;
+};
 
 const CodeBlock = {
-  code({ node, inline, className, children, ...props }: any) {
-    const match = /language-(\w+)/.exec(className || '');
+  code({ node, inline, className, children, ...props }: CodeBlockProps) {
+    const match = /language-(\w+)/.exec(className || "");
     return !inline && match ? (
       <SyntaxHighlighter
         style={vscDarkPlus}
@@ -15,7 +22,7 @@ const CodeBlock = {
         PreTag="div"
         {...props}
       >
-        {String(children).replace(/\n$/, '')}
+        {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     ) : (
       <code className={className} {...props}>
@@ -26,19 +33,18 @@ const CodeBlock = {
 };
 
 // TODO: improve readability maybe just background maybe some extra highlighter
-const Markdown = ({ markdown }: { markdown: string}) => {
-
+const Markdown = ({ markdown }: { markdown: string }) => {
   return (
     <ReactMarkdown
-        rehypePlugins={[rehypeRaw]}
-        remarkPlugins={[remarkGfm]}
-        components={CodeBlock}
-        >
-        {markdown}
+      rehypePlugins={[rehypeRaw]}
+      remarkPlugins={[remarkGfm]}
+      // @ts-ignore
+      components={CodeBlock}
+    >
+      {markdown}
     </ReactMarkdown>
+  );
+};
 
-  )
-}
-
-export default Markdown
-Markdown.displayName = 'Markdown'
+export default Markdown;
+Markdown.displayName = "Markdown";
