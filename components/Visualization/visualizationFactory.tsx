@@ -1,4 +1,4 @@
-import arrayVisualizationSteps from "@/data-structures/array/visualization";
+import arrayVisualizationSteps from "@/data-structures/indexed-list/visualization";
 import linkedListVisualizationSteps from "@/data-structures/linked-list/visualization";
 import stackVisualizationSteps from "@/data-structures/stack/visualization";
 import queueVisualizationSteps from"@/data-structures/queue/visualization";
