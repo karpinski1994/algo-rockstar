@@ -4,15 +4,6 @@ import visualizationFactory from "@/components/Visualization/visualizationFactor
 import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { DataStructurePageLayout } from ".";
 
-interface Props {
-  params: {
-    dataStructure: "array";
-  };
-  locales?: undefined;
-  locale?: undefined;
-  defaultLocale?: undefined;
-}
-
 export const getStaticPaths = () => {
   const paths = stackNavSettings
     .filter(({ url }) => url.length > 1)
@@ -25,7 +16,7 @@ export const getStaticPaths = () => {
   };
 };
 
-export async function getStaticProps(context: Props) {
+export async function getStaticProps(context: any) {
   const {
     params: { dataStructure },
   } = context;
@@ -38,7 +29,7 @@ export async function getStaticProps(context: Props) {
   };
 }
 
-const DataStructuresVisualizationPage = ({ visualization, dataStructure }) => {
+const DataStructuresVisualizationPage = ({ visualization, dataStructure }: { visualization: any, dataStructure: any }) => {
   return (
     <>
       {/* TODO: Extract to above component to not depend on dataStructure here */}

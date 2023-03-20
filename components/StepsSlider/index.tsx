@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import NodeBox from "../NodeBox";
 
-interface VisualizationRows {
+export interface VisualizationRows extends Array<any> {
   name: string;
   color: number[];
   pointer: boolean;
@@ -14,25 +14,26 @@ interface VisualizationSteps {
   rows: Array<VisualizationRows>;
   stepId: number;
   orientation?: string;
+  frame?: string;
 }
 
 function StepsSlider({
   visualization,
 }: {
-  visualization: Array<VisualizationSteps>;
+  visualization: any;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
   useEffect(() => {
     const numberOfItems =
-      ref.current.element.querySelectorAll(".carousel-item").length;
+      ref?.current?.element?.querySelectorAll(".carousel-item").length;
     setNumberOfItems(numberOfItems);
   }, [visualization]);
 
   useEffect(() => {
     const numberOfItems =
-      ref.current.element.querySelectorAll(".carousel-item").length;
+      ref?.current?.element?.querySelectorAll(".carousel-item").length;
     setNumberOfItems(numberOfItems);
   }, [visualization]);
 
@@ -101,7 +102,7 @@ function StepsSlider({
                   <p className="ww-bold" style={{ minHeight: "120px" }}>
                     {text}
                   </p>
-                  {rows.map((row, index) => {
+                  {rows.map((row: any, index: number) => {
                     return (
                       <div
                         key={JSON.stringify(row) + index}
@@ -129,7 +130,7 @@ function StepsSlider({
                             }}
                           ></div>
                         ) : null}
-                        {row.map((r, index) => {
+                        {row.map((r: any, index: number) => {
                           return (
                             <div
                               key={JSON.stringify(r) + index}

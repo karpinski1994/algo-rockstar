@@ -2,7 +2,6 @@ const stackVisualizationSteps = [
   {
     stepId: 0,
     text: `"Stack" are one type of data structure.`,
-    text: `"stack0`,
     orientation: "column",
     frame: "sides-bottom",
     rows: [
