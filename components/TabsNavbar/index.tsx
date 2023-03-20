@@ -2,14 +2,10 @@ import { useRouter } from "next/router";
 import React from "react";
 import { Nav } from "react-bootstrap";
 
-type Props = {
-  queryElement: string;
-};
-
 const addActiveClass = (currentUrl: string, linkUrl: string) =>
   currentUrl === linkUrl ? "active" : "";
 
-function TabsNavbar({ queryElement }: Props) {
+function TabsNavbar({ queryElement }: any) {
   const router = useRouter();
   const { asPath } = router;
   return (

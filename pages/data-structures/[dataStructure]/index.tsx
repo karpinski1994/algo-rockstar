@@ -25,7 +25,7 @@ export const getStaticPaths = () => {
   }
 }
 
-export async function getStaticProps(context: Props) {
+export async function getStaticProps(context: any) {
   const {
     params: {
       dataStructure
