@@ -7,6 +7,7 @@ import hashtableDescriptions from "../../data-structures/hash-table/description"
 import treeDescriptions from "../../data-structures/tree/description";
 import heapDescriptions from "../../data-structures/heap/description";
 import graphDescriptions from "../../data-structures/graph/description";
+
 // TODO: directories structure may be a little bit confusing we have 'data-structures' twice
 // we have to think about some declarations folder or settings or whatever
 // (TO BE CHECKED WHAT ARE GOOD PRACTICES)
