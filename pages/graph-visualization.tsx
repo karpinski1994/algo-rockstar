@@ -1,35 +1,21 @@
+import NetworkGraph from '@/components/ForceTreeChart';
+import ForceTreeChart from '@/components/ForceTreeChart'
 import React from 'react'
-import { Graph } from "react-d3-graph";
 
-const data = {
-  nodes: [{ id: "Harry" }, { id: "Sally" }, { id: "Alice" }],
-  links: [
-    { source: "Harry", target: "Sally" },
-    { source: "Harry", target: "Alice" },
+const graphData = {
+  nodes: [
+    { id: 'A' },
+    { id: 'B' },
+    { id: 'C' },
+    { id: 'D' },
+    { id: 'E' },
   ],
-};
-
-
-const myConfig = {
-  nodeHighlightBehavior: true,
-  node: {
-    color: "lightgreen",
-    size: 120,
-    labelProperty: "id",
-    highlightStrokeColor: "blue",
-  },
-  link: {
-    type: "CURVE_SMOOTH",
-    highlightColor: "lightblue",
-  },
-};
-
-const onClickNode = function (nodeId) {
-  window.alert(`Clicked node ${nodeId}`);
-};
-
-const onClickLink = function (source, target) {
-  window.alert(`Clicked link between ${source} and ${target}`);
+  links: [
+    { source: 'A', target: 'B', value: 1 },
+    { source: 'A', target: 'C', value: 1 },
+    { source: 'B', target: 'C', value: 1 },
+    { source: 'D', target: 'E', value: 1 },
+  ],
 };
 
 const GraphVisualization = () => {
@@ -39,13 +25,7 @@ const GraphVisualization = () => {
       height: '100%'
     }}
     >
-      <Graph
-        id="graph-id" // id is mandatory
-        data={data}
-        config={myConfig}
-        onClickNode={onClickNode}
-        onClickLink={onClickLink}
-      />
+      <NetworkGraph data={graphData}/>
     </div>
   )
 }
