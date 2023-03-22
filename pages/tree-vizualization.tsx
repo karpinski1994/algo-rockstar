@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { select, hierarchy, tree, linkHorizontal, linkVertical, curveLinear, link, curveBumpY } from "d3";
 import useResizeObserver from "@/hooks/useResizeObserver";
+import treeVisualizationSteps from "@/data-structures/tree/visualization";
 
 function usePrevious(value) {
     const ref = useRef();
@@ -10,30 +11,8 @@ function usePrevious(value) {
     return ref.current;
 }
 
-const initialData = {
-    name: "1",
-    children: [
-        {
-            name: "3",
-            children: [
-                {
-                    name: "4"
-                },
-                {
-                    name: "5"
-                },
-                {
-                    name: "6"
-                },
-
-            ]
-        },
-        {
-            name: "2"
-        },
-
-    ]
-};
+{`TODO: temporary set index 0. Create more steps and use map in the future`}
+const initialData = treeVisualizationSteps[0];
 
 function TreeVizualization() {
     const svgRef = useRef();
