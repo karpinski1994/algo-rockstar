@@ -1,22 +1,12 @@
-import React, { useRef, useEffect, useState } from "react";
-import { select } from "d3";
-import useResizeObserver from "@/hooks/useResizeObserver";
+import React from "react";
 import treeVisualizationSteps from "@/data-structures/tree/visualization";
-import nodes from "@/data-structures/tree/nodes";
+import renderTree from "@/hooks/renderTree";
 
 //TODO: temporary set index 0. Create more steps and use map in the future
-const treeData = treeVisualizationSteps[0];
+const data = treeVisualizationSteps[0];
 
 function TreeVizualization() {
-  const svgRef = useRef();
-  const wrapperRef = useRef();
-  const dimensions = useResizeObserver(wrapperRef);
-
-  useEffect(() => {
-    const svg = select(svgRef.current);
-
-    nodes(svg, treeData, wrapperRef);
-  }, [treeData, dimensions]);
+  const { svgRef, wrapperRef } = renderTree(data);
 
   return (
     <div ref={wrapperRef} className="pt-8 mt-3 w-100 h-100">
