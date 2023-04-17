@@ -27,7 +27,7 @@ function nodes(svg, treeData, wrapperRef) {
     .duration(500)
     .delay((d) => d.depth * 300)
     .attr("opacity", 0.5)
-    .style("fill", "url(#bg-gradient)")
+    .style("fill", "url(#radial-gradient)")
 
   nodes
     .append("text")
@@ -57,18 +57,24 @@ function nodes(svg, treeData, wrapperRef) {
 
   const defs = svg.append('defs');
 
-  const bgGradient = defs
-    .append('linearGradient')
-    .attr('id', 'bg-gradient')
-    .attr('gradientTransform', 'rotate(90)');
-  bgGradient
-    .append('stop')
-    .attr('stop-color', '#F2C66B')
-    .attr('offset', '0%');
-  bgGradient
-    .append('stop')
-    .attr('stop-color', '#D13D73')
-    .attr('offset', '100%');
+  //Append a radialGradient element to the defs and give it a unique id
+  const radialGradient = defs.append("radialGradient")
+    .attr("id", "radial-gradient")
+    .attr("cx", "20%")    //The x-center of the gradient
+    .attr("cy", "30%")    //The y-center of the gradient
+    .attr("r", "80%");   //The radius of the gradient
+  radialGradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "blue");
+  radialGradient.append("stop")
+    .attr("offset", "50%")
+    .attr("stop-color", "darkblue");
+  radialGradient.append("stop")
+    .attr("offset", "90%")
+    .attr("stop-color", "#FFDA4E");
+  radialGradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#FB8933");
 }
 
 export default nodes;
