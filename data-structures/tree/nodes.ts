@@ -12,21 +12,22 @@ function nodes(svg, treeData, wrapperRef) {
     .data(root.descendants())
     .join("g")
     .attr("class", "node")
-    .attr("transform", (d) => `translate(${d.x},${d.y + 30})`);
+    .attr("transform", (d) => `translate(${d.x},${d.y + 30})`)
 
   nodes
     .append("circle")
     .attr("r", 20)
-    .attr("fill", "lightblue")
-    .attr("stroke", "black")
-    .attr("stroke-width", "2")
+    // .attr("fill", "lightblue")
+    // .attr("stroke", "black")
+    // .attr("stroke-width", "2")
     .on("click", function (event, d) {
       console.log("Clicked on node:", d);
     })
     .transition()
     .duration(500)
     .delay((d) => d.depth * 300)
-    .attr("opacity", 0.5);
+    .attr("opacity", 0.5)
+    .style("fill", "url(#bg-gradient)")
 
   nodes
     .append("text")
@@ -36,6 +37,7 @@ function nodes(svg, treeData, wrapperRef) {
     .attr("font-size", "12px")
     .attr("font-weight", "bold")
     .attr("fill", "black");
+
 
   // Links
   // explain me this
@@ -51,7 +53,22 @@ function nodes(svg, treeData, wrapperRef) {
     })
     .attr("stroke", "black")
     .attr("fill", "none")
-    .attr("opacity", 1);
+    .attr("opacity", 1)
+
+  const defs = svg.append('defs');
+
+  const bgGradient = defs
+    .append('linearGradient')
+    .attr('id', 'bg-gradient')
+    .attr('gradientTransform', 'rotate(90)');
+  bgGradient
+    .append('stop')
+    .attr('stop-color', '#F2C66B')
+    .attr('offset', '0%');
+  bgGradient
+    .append('stop')
+    .attr('stop-color', '#D13D73')
+    .attr('offset', '100%');
 }
 
 export default nodes;
