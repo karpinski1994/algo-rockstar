@@ -52,6 +52,17 @@ function TabsNavbar({ queryElement }: any) {
           Quiz
         </Nav.Link>
       </Nav.Item>
+      <Nav.Item>
+        <Nav.Link
+          className={addActiveClass(
+            asPath,
+            `/data-structures/${queryElement}/puzzles`
+          )}
+          href={`/data-structures/${queryElement}/puzzles`}
+        >
+          Puzzles
+        </Nav.Link>
+      </Nav.Item>
     </Nav>
   );
 }

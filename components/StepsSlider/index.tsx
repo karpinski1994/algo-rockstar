@@ -53,6 +53,7 @@ function StepsSlider({
         : setActiveIndex((i) => i + 1);
   };
 
+  console.log('visualization: ', visualization)
   return (
     <div className="w-100 position-relative">
       <div className="py-3">
@@ -92,7 +93,7 @@ function StepsSlider({
       >
         {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
         {/* TODO: It can be lavereged to the top and render props / custom hook */}
-
+       
         {visualization &&
           Array.isArray(visualization) &&
           visualization.map(
