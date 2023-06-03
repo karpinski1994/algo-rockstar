@@ -55,9 +55,9 @@ const NestedLayout = ({ children }: { children: React.ReactNode }) => {
   const { dataStructure } = router.query;
 
   return (
-    <Container className="mt-3">
+    <Container className="mt-3 h-100">
       <TabsNavbar queryElement={dataStructure} />
-      <section className="mt-4">{children}</section>
+      <section className="mt-4 h-100">{children}</section>
     </Container>
   );
 };

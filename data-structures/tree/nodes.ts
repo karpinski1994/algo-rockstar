@@ -36,7 +36,7 @@ function nodes(svg, treeData, wrapperRef) {
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
     .attr("font-weight", "bold")
-    .attr("fill", "black");
+    .attr("fill", "white");
 
 
   // Links

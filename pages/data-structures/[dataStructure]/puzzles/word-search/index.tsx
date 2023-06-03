@@ -1,9 +1,11 @@
 import React from "react";
 import highlightWord from "./highlightWord";
+import NodeBox from "@/components/NodeBox";
 const board = [
   ["P", "A", "T", "E"],
   ["S", "F", "R", "S"],
-  ["A", "K", "Y", "E"]
+  ["A", "M", "Y", "E"],
+  ["S", "O", "K", "I"],
 ];
 
 export default function WordSearchPage() {
@@ -20,18 +22,32 @@ export default function WordSearchPage() {
     <div className="App">
       <input value={text} onChange={(e) => setText(e.target.value)} />
       {fields.map((r, i) => (
-        <div style={{}} key={new Date().getTime() + i}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+          key={new Date().getTime() + i}
+        >
           {r.map((l, i) => (
-            <div
-              style={{
-                display: "inline-flex",
-                marginRight: 5,
-                backgroundColor: l.isUsed ? "lightgreen" : "lightblue"
-              }}
-              key={new Date().getTime() + i}
-            >
-              {String(l.letter)}
-            </div>
+            <>
+              <NodeBox
+                width="40%"
+                arrow={false}
+                name={l.letter}
+                color={l.isUsed ? [100, 200, 10, 1] : [102, 144, 250, 0.9]}
+                pointer={false}
+              />
+            </>
+
+            // <div
+            //   style={{
+            //     display: "inline-flex",
+            //   }}
+            //   key={new Date().getTime() + i}
+            // >
+
+            // </div>
           ))}
         </div>
       ))}

@@ -1,20 +1,20 @@
-import React from 'react'
-import PointerBox from '../PointerBox'
-import ValueBox from '../ValueBox'
-import css from 'styled-jsx/css'
-import { ArrowOrientation } from '../Arrow'
+import React from "react";
+import PointerBox from "../PointerBox";
+import ValueBox from "../ValueBox";
+import css from "styled-jsx/css";
+import { ArrowOrientation } from "../Arrow";
 
 type Props = {
-  pointer?: boolean
-  pointed?: boolean
-  orientation?: 'row' | 'column'
-  arrowOrientation: ArrowOrientation
-  color?: number[]
-  name?: string
-  arrow: boolean
-  label?: string
-}
-
+  pointer?: boolean;
+  pointed?: boolean;
+  orientation?: "row" | "column";
+  arrowOrientation?: ArrowOrientation;
+  color?: number[];
+  name?: string;
+  arrow: boolean;
+  label?: string;
+  width?: string;
+};
 
 function NodeBox({
   pointer = true,
@@ -24,10 +24,12 @@ function NodeBox({
   arrow,
   label = "",
   arrowOrientation,
+  width="100%"
 }: Props) {
   return (
-    <div>
-      <ValueBox color={color} name={name} label={label} />
+    <div
+    >
+      <ValueBox color={color} name={name} label={label} width={width}/>
       {pointer && (
         <PointerBox
           color={color}

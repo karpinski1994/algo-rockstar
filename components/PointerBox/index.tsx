@@ -5,10 +5,10 @@ type Props = {
     color?: number[]
     pointed?: boolean
     arrow: boolean
-    arrowOrientation: ArrowOrientation
+    arrowOrientation?: ArrowOrientation
 }
 // TODO: Fix colors
-function PointerBox({ color = [122, 123, 124], pointed=false, arrow=false, arrowOrientation='right'}: Props) {
+function PointerBox({ color = [122, 123, 124], pointed=false, arrow=false, arrowOrientation='right',}: Props) {
     const colorSides = `RGBA(${color[0] - 100},${color[1] - 100},${color[2] - 100},${color[3]})`;
     const colorTop = `RGBA(${color[0] - 30},${color[1] - 30},${color[2] - 30},${color[3]})`;
     return (

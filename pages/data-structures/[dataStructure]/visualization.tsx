@@ -3,6 +3,7 @@ import { Visualization } from "@/components/Visualization";
 import visualizationFactory from "@/components/Visualization/visualizationFactory";
 import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { DataStructurePageLayout } from ".";
+import TreeVizualization from "@/pages/tree-vizualization";
 
 export const getStaticPaths = () => {
   const paths = stackNavSettings
@@ -36,7 +37,7 @@ const DataStructuresVisualizationPage = ({ visualization, dataStructure }: { vis
       <h3 className="text-capitalize mt-4">{`${removeHyphens(
         dataStructure
       )} - visualization`}</h3>
-      <Visualization visualization={visualization} />
+      {dataStructure === 'tree' ? <TreeVizualization /> : <Visualization visualization={visualization} />}
     </>
   );
 };
