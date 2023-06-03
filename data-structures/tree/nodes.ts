@@ -20,7 +20,7 @@ function nodes(svg: any, treeData: any, wrapperRef: any) {
     // .attr("fill", "lightblue")
     // .attr("stroke", "black")
     // .attr("stroke-width", "2")
-    .on("click", function (event, d) {
+    .on("click", function (event: any, d: any) {
       console.log("Clicked on node:", d);
     })
     .transition()
