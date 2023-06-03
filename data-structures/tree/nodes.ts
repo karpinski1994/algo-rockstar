@@ -1,6 +1,6 @@
 import { hierarchy, tree } from "d3";
 
-function nodes(svg, treeData, wrapperRef) {
+function nodes(svg: any, treeData: any, wrapperRef: any) {
   const { width, height } = wrapperRef.current.getBoundingClientRect();
   const root = hierarchy(treeData);
   const treeLayout = tree().size([width, height - 80]);
@@ -12,7 +12,7 @@ function nodes(svg, treeData, wrapperRef) {
     .data(root.descendants())
     .join("g")
     .attr("class", "node")
-    .attr("transform", (d) => `translate(${d.x},${d.y + 30})`)
+    .attr("transform", (d: any) => `translate(${d.x},${d.y + 30})`)
 
   nodes
     .append("circle")
@@ -25,13 +25,13 @@ function nodes(svg, treeData, wrapperRef) {
     })
     .transition()
     .duration(500)
-    .delay((d) => d.depth * 300)
+    .delay((d: any) => d.depth * 300)
     .attr("opacity", 0.5)
     .style("fill", "url(#radial-gradient)")
 
   nodes
     .append("text")
-    .text((d) => d.data.name)
+    .text((d: any) => d.data.name)
     .attr("dy", 5)
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
@@ -46,7 +46,7 @@ function nodes(svg, treeData, wrapperRef) {
     .data(root.links())
     .join("path")
     .attr("class", "link")
-    .attr("d", (d) => {
+    .attr("d", (d: any) => {
       const source = { x: d.source.x, y: d.source.y + 50 };
       const target = { x: d.target.x, y: d.target.y };
       return `M${source.x},${source.y} L${target.x},${target.y + 10}`;
