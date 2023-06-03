@@ -13,6 +13,7 @@ function nodes(svg: any, treeData: any, wrapperRef: any) {
     .join("g")
     .attr("class", "node")
     .attr("transform", (d: any) => `translate(${d.x},${d.y + 30})`)
+    
 
   nodes
     .append("circle")
