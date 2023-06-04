@@ -3,9 +3,9 @@ import { select } from "d3";
 import nodes from "@/data-structures/tree/nodes";
 import useResizeObserver from "./useResizeObserver";
 
-function renderTree(data) {
-  const svgRef = useRef();
-  const wrapperRef = useRef();
+function useRenderTree(data: any) {
+  const svgRef = useRef<any>();
+  const wrapperRef = useRef<any>();
 
   const dimensions = useResizeObserver(wrapperRef);
 
@@ -18,4 +18,4 @@ function renderTree(data) {
   return { svgRef, wrapperRef };
 }
 
-export default renderTree;
+export default useRenderTree;

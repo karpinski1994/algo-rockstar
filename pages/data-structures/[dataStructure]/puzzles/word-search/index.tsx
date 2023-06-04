@@ -10,7 +10,7 @@ const board = [
 
 export default function WordSearchPage() {
   // const highlightedFields = highlightWord(board, "A");
-  const [fields, setFields] = React.useState([]);
+  const [fields, setFields] = React.useState<Array<any>>([]);
   const [text, setText] = React.useState("");
 
   React.useEffect(() => {
@@ -21,7 +21,7 @@ export default function WordSearchPage() {
   return (
     <div className="App">
       <input value={text} onChange={(e) => setText(e.target.value)} />
-      {fields.map((r, i) => (
+      {fields.map((r: Array<any>, i: number) => (
         <div
           style={{
             display: "flex",
@@ -29,7 +29,7 @@ export default function WordSearchPage() {
           }}
           key={new Date().getTime() + i}
         >
-          {r.map((l, i) => (
+          {r.map((l: {letter: string, isUsed: boolean}, i: number) => (
             <>
               <NodeBox
                 width="40%"
