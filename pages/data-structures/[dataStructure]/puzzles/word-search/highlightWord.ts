@@ -7,7 +7,7 @@ const directions = [
   
   const highlightWord = (board: Array<any>, word: string) => {
     console.log("word: ", word);
-    const isUsed = board.map((row) => row.map(() => false));
+    const isUsed = board.map((row: any) => row.map(() => false));
     const target = [...word as any];
     console.log("target: ", target);
     const traverse = (i: number, j: number) => {
@@ -40,7 +40,7 @@ const directions = [
   
     board.forEach((row: Array<any>, i: number) => row.forEach((_: any, j: number) => traverse(i, j)));
   
-    const fieldsToDisplay = board.map((row, r) =>
+    const fieldsToDisplay = board.map((row: any, r: number) =>
       row.map((letter: string, c: number) => ({
         letter,
         isUsed: isUsed[r][c]
