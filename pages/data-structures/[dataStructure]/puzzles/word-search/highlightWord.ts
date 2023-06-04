@@ -5,10 +5,9 @@ const directions = [
     [-1, 0] // up
   ];
   
-  const highlightWord = (board: Array<any>, word: string) => {
-    console.log("word: ", word);
-    const isUsed = board.map((row: any) => row.map(() => false));
-    const target = [...word as any];
+  const highlightWord = (board: Array<any> = [[]], word : any) => {
+    const isUsed: any = Array.isArray(board) && board.map((row: any) => row.map(() => false));
+    const target = Array.from(word);
     console.log("target: ", target);
     const traverse = (i: number, j: number) => {
       if (
@@ -38,9 +37,9 @@ const directions = [
       return false;
     };
   
-    board.forEach((row: Array<any>, i: number) => row.forEach((_: any, j: number) => traverse(i, j)));
+    Array.isArray(board) && board.forEach((row: Array<any>, i: number) => row.forEach((_: any, j: number) => traverse(i, j)));
   
-    const fieldsToDisplay = board.map((row: any, r: number) =>
+    const fieldsToDisplay = Array.isArray(board) && board.map((row: any, r: number) =>
       row.map((letter: string, c: number) => ({
         letter,
         isUsed: isUsed[r][c]

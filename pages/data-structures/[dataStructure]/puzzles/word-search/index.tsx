@@ -10,7 +10,7 @@ const board = [
 
 export default function WordSearchPage() {
   // const highlightedFields = highlightWord(board, "A");
-  const [fields, setFields] = React.useState<Array<any>>([]);
+  const [fields, setFields] = React.useState<any>([]);
   const [text, setText] = React.useState("");
 
   React.useEffect(() => {
