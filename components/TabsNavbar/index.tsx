@@ -1,20 +1,18 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { Nav } from "react-bootstrap";
+import puzzlesFactory from "../Puzzles/puzzlesFactory";
 
-
-
-
-const addActiveClass = (currentUrl: string, linkUrl: string) =>{
-console.log('currentUrl: ', currentUrl)
-console.log('linkUrl: ', linkUrl)
+const addActiveClass = (currentUrl: string, linkUrl: string) => {
+  console.log("currentUrl: ", currentUrl);
+  console.log("linkUrl: ", linkUrl);
   return currentUrl.includes(linkUrl) ? "active" : "";
-}
+};
 
 function TabsNavbar({ queryElement }: any) {
-  console.log("🚀 ~ file: index.tsx:9 ~ TabsNavbar ~ queryElement:", queryElement)
   const router = useRouter();
   const { asPath } = router;
+  const { numberOfPuzzles } = puzzlesFactory(queryElement);
   return (
     <Nav fill variant="tabs">
       <Nav.Item>
@@ -59,17 +57,19 @@ function TabsNavbar({ queryElement }: any) {
           Quiz
         </Nav.Link>
       </Nav.Item>
-      <Nav.Item>
-        <Nav.Link
-          className={addActiveClass(
-            asPath,
-            `/data-structures/${queryElement}/puzzles`
-          )}
-          href={`/data-structures/${queryElement}/puzzles`}
-        >
-          Puzzles
-        </Nav.Link>
-      </Nav.Item>
+      {numberOfPuzzles && (
+        <Nav.Item>
+          <Nav.Link
+            className={addActiveClass(
+              asPath,
+              `/data-structures/${queryElement}/puzzles`
+            )}
+            href={`/data-structures/${queryElement}/puzzles`}
+          >
+            Puzzles
+          </Nav.Link>
+        </Nav.Item>
+      )}
     </Nav>
   );
 }
