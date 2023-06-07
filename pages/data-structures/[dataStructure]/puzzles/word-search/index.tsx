@@ -1,6 +1,9 @@
 import React from "react";
 import highlightWord from "./highlightWord";
 import NodeBox from "@/components/NodeBox";
+import { DataStructurePageLayout } from "../..";
+import { useRouter } from "next/router";
+import Link from "next/link";
 const board = [
   ["P", "A", "T", "E"],
   ["S", "F", "R", "S"],
@@ -8,18 +11,31 @@ const board = [
   ["S", "O", "K", "I"],
 ];
 
-export default function WordSearchPage() {
+function WordSearchPage() {
   // const highlightedFields = highlightWord(board, "A");
   const [fields, setFields] = React.useState<any>([]);
   const [text, setText] = React.useState("");
 
+  const router = useRouter();
   React.useEffect(() => {
     setFields(highlightWord(board, text));
     console.log("fields: ", fields);
   }, [text]);
 
   return (
-    <div className="App">
+    <div>
+      <Link href="/data-structures/tree/puzzles/">
+        <span
+          style={{
+            borderColor: "black",
+            borderWidth: "1px",
+            borderStyle: "solid",
+            padding: "5px",
+          }}
+        >
+          {"< back to the list"}
+        </span>
+      </Link>
       <h1>Leet code - Word Search</h1>
       <h4>Description</h4>
       <p>
@@ -63,3 +79,7 @@ export default function WordSearchPage() {
     </div>
   );
 }
+
+WordSearchPage.getLayout = DataStructurePageLayout;
+
+export default WordSearchPage;
