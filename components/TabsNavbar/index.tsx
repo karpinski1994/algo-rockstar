@@ -2,10 +2,17 @@ import { useRouter } from "next/router";
 import React from "react";
 import { Nav } from "react-bootstrap";
 
-const addActiveClass = (currentUrl: string, linkUrl: string) =>
-  currentUrl === linkUrl ? "active" : "";
+
+
+
+const addActiveClass = (currentUrl: string, linkUrl: string) =>{
+console.log('currentUrl: ', currentUrl)
+console.log('linkUrl: ', linkUrl)
+  return currentUrl.includes(linkUrl) ? "active" : "";
+}
 
 function TabsNavbar({ queryElement }: any) {
+  console.log("🚀 ~ file: index.tsx:9 ~ TabsNavbar ~ queryElement:", queryElement)
   const router = useRouter();
   const { asPath } = router;
   return (

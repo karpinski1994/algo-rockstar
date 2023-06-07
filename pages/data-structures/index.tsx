@@ -6,9 +6,9 @@ const DataStructuresPage = () => {
 
 export const NestedLayout = ({ children }: {children: ReactNode}) => {
   return (
-    <>
+    <div>
       {children}
-    </>
+    </div>
   );
 };
 
