@@ -19,7 +19,6 @@ function WordSearchPage() {
   const router = useRouter();
   React.useEffect(() => {
     setFields(highlightWord(board, text));
-    console.log("fields: ", fields);
   }, [text]);
 
   return (

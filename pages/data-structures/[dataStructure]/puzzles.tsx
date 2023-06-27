@@ -49,7 +49,7 @@ const DataStructuresPuzzlesPage = ({ questions, dataStructure }: any) => {
       )} - Puzzles`}</h3>
       {Array.isArray(puzzles) &&
         puzzles?.map((l: any) => (
-          <Nav.Item>
+          <Nav.Item key={Date.now()}>
             <Nav.Link
               // TODO: Maybe move it to utils, and extract configuration of nav to some config array
               // className={addActiveClass(asPath, `/data-structures/${queryElement}`)}
