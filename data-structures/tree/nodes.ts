@@ -2,8 +2,9 @@ import { hierarchy, tree } from "d3";
 
 function nodes(svg: any, treeData: any, wrapperRef: any) {
   const { width, height } = wrapperRef.current.getBoundingClientRect();
+
   const root = hierarchy(treeData);
-  const treeLayout = tree().size([width, height - 80]);
+  const treeLayout = tree().size([width, height - 130]);
 
   treeLayout(root);
 

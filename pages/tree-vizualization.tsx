@@ -10,7 +10,7 @@ function TreeVizualization() {
 
   return (
     <div ref={wrapperRef} className="pt-8 mt-3 w-100 h-100">
-      <svg className=" w-100 h-100" ref={svgRef}></svg>
+      <svg className="w-100 h-100" ref={svgRef}></svg>
     </div>
   );
 }

@@ -12,11 +12,11 @@ export const NestedLayout = ({ children }: {children: ReactNode}) => {
   const { dataStructure } = router.query;
 
   return (
-    <div>
+    <>
       <TabsNavbar queryElement={dataStructure} />
 
       {children}
-    </div>
+    </>
   );
 };
 
