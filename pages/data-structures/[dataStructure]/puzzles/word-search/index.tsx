@@ -4,6 +4,7 @@ import NodeBox from "@/components/NodeBox";
 import { DataStructurePageLayout } from "../..";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { Nav } from "react-bootstrap";
 const board = [
   ["P", "A", "T", "E"],
   ["S", "F", "R", "S"],
@@ -23,18 +24,7 @@ function WordSearchPage() {
 
   return (
     <div>
-      <Link href="/data-structures/tree/puzzles/">
-        <span
-          style={{
-            borderColor: "black",
-            borderWidth: "1px",
-            borderStyle: "solid",
-            padding: "5px",
-          }}
-        >
-          {"< back to the list"}
-        </span>
-      </Link>
+      <Nav.Link onClick={() => router.back()}>{"< back to the list"}</Nav.Link>
       <h1>Leet code - Word Search</h1>
       <h4>Description</h4>
       <p>
