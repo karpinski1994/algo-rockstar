@@ -5,6 +5,7 @@ import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { DataStructurePageLayout } from ".";
 import TreeVizualization from "@/pages/tree-vizualization";
 import { useRouter } from "next/router";
+import GraphVizualization from "@/pages/graph-visualization";
 
 export const getStaticPaths = () => {
   const paths = stackNavSettings
@@ -33,13 +34,22 @@ export async function getStaticProps(context: any) {
 
 const DataStructuresVisualizationPage = ({ visualization, dataStructure }: { visualization: any, dataStructure: any }) => {
   const router = useRouter();
+  let visu;
+  if (dataStructure === 'tree') {
+    visu =  <TreeVizualization />;
+  }else if (dataStructure === 'graph') {
+    visu =  <GraphVizualization />;
+  } else {
+    visu = <Visualization visualization={visualization} />
+  }
+
   return (
     <>
       {/* TODO: Extract to above component to not depend on dataStructure here */}
       <h3 className="text-capitalize mt-4">{`${removeHyphens(
         dataStructure
       )} - visualization`}</h3>
-      {dataStructure === 'tree' ? <TreeVizualization /> : <Visualization visualization={visualization} />}
+      {visu}
     </>
   );
 };
