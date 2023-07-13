@@ -1,12 +1,12 @@
 import React from "react";
 import treeVisualizationSteps from "@/data-structures/tree/visualization";
-import useRenderTree from "@/hooks/useRenderTree";
+import useRenderD3 from "@/hooks/useRenderD3";
 
 //TODO: temporary set index 0. Create more steps and use map in the future
 const data = treeVisualizationSteps[0];
 
 function TreeVizualization() {
-  const { svgRef, wrapperRef } = useRenderTree(data);
+  const { svgRef, wrapperRef } = useRenderD3(data);
 
   return (
     <div ref={wrapperRef} className="pt-8 mt-3 w-100 h-100">
