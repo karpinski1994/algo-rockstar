@@ -25,11 +25,11 @@ function nodes(svg: any, treeData: any, wrapperRef: any) {
     .on("click", function (event: any, d: any) {
       console.log("Clicked on node:", d);
     })
-    .transition()
-    .duration(500)
-    .delay((d: any) => d.depth * 300)
-    .attr("opacity", 0.5)
-    .style("fill", "url(#radial-gradient)")
+    // .transition()
+    // .duration(500)
+    // .delay((d: any) => d.depth * 300)
+    // .attr("opacity", 0.5)
+    // .style("fill", "url(#radial-gradient)")
 
   nodes
     .append("text")
