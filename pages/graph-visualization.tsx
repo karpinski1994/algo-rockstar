@@ -1,18 +1,36 @@
 import React from "react";
-import graphVisualizationSteps from "@/data-structures/graph/visualization";
 import useRenderGraph from "@/hooks/useRenderGraph";
 
-//TODO: temporary set index 0. Create more steps and use map in the future
-const data = graphVisualizationSteps[0];
-
-function GraphVizualization() {
+function GraphVisualization({ data }) {
   const { svgRef, wrapperRef } = useRenderGraph(data);
 
   return (
-    <div ref={wrapperRef} className="pt-8 mt-3 w-100 h-100">
-      <svg className="w-100 h-100" ref={svgRef}></svg>
+    <div
+      ref={wrapperRef}
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <svg
+          ref={svgRef}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        ></svg>
+      </div>
     </div>
   );
 }
 
-export default GraphVizualization;
+export default React.memo(GraphVisualization);

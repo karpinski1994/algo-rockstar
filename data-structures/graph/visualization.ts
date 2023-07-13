@@ -5,6 +5,64 @@ const graphVisualizationSteps = [
                 "id": 1,
                 "name": "A"
             },
+        ],
+        "links": [
+        ]
+    },
+    {
+        "nodes": [
+            {
+                "id": 1,
+                "name": "A"
+            },
+            {
+                "id": 2,
+                "name": "BBB"
+            },
+        ],
+        "links": [
+            {
+                "source": 1,
+                "target": 2
+            },
+        ]
+    },
+    {
+        "nodes": [
+            {
+                "id": 1,
+                "name": "A"
+            },
+            {
+                "id": 2,
+                "name": "BBB"
+            },
+            {
+                "id": 3,
+                "name": "C"
+            },
+           
+        ],
+        "links": [
+
+            {
+                "source": 1,
+                "target": 2
+            },
+
+            {
+                "source": 2,
+                "target": 3
+            },
+            
+        ]
+    },
+    {
+        "nodes": [
+            {
+                "id": 1,
+                "name": "A"
+            },
             {
                 "id": 2,
                 "name": "BBB"
@@ -92,6 +150,7 @@ const graphVisualizationSteps = [
             }
         ]
     }
+    
 ]
 
 export default graphVisualizationSteps;

@@ -37,20 +37,13 @@ export async function getStaticProps(context: any) {
 const DataStructuresVisualizationPage = ({ visualization, dataStructure }: { visualization: any, dataStructure: any }) => {
   console.log("visualization: ", visualization)
   const router = useRouter();
-  let visu;
-  if (dataStructure === 'graph') {
-    visu =  <GraphVizualization />;
-  } else {
-    visu = <Visualization dataStructure={dataStructure} visualization={visualization} />
-  }
-
   return (
     <>
       {/* TODO: Extract to above component to not depend on dataStructure here */}
       <h3 className="text-capitalize mt-4">{`${removeHyphens(
         dataStructure
       )} - visualization`}</h3>
-      {visu}
+      <Visualization dataStructure={dataStructure} visualization={visualization} />
     </>
   );
 };

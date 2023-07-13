@@ -16,4 +16,4 @@ function TreeVizualization({data}) {
   );
 }
 
-export default TreeVizualization;
+export default React.memo(TreeVizualization);

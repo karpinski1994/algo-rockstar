@@ -4,6 +4,8 @@ import { Button } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import NodeBox from "../NodeBox";
 import TreeVizualization from "@/pages/tree-vizualization";
+import GraphVizualization from "@/pages/graph-visualization";
+import GraphVisualization from "@/pages/graph-visualization";
 
 export interface VisualizationRows extends Array<any> {
   name: string;
@@ -90,7 +92,28 @@ function StepsSlider({ dataStructure, visualization }: { visualization: any }) {
         slide={false}
         style={{ height: "100%" }}
       >
-        {dataStructure === "tree"
+        {dataStructure === "graph"
+          ? visualization &&
+            Array.isArray(visualization) &&
+            visualization.map((el) => {
+              console.log("EL: ", el);
+              return (
+                <Carousel.Item style={{ height: "100%" }} key={uuidv4()}>
+                  <div
+                    style={{
+                      height: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <GraphVisualization data={el} />{" "}
+                    {/* Use the updated component here */}
+                  </div>
+                </Carousel.Item>
+              );
+            })
+          : dataStructure === "tree"
           ? visualization &&
             Array.isArray(visualization) &&
             visualization.map((el) => {

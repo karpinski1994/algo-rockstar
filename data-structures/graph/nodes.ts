@@ -1,13 +1,17 @@
-import { select, forceSimulation, forceLink, forceManyBody, forceCenter } from "d3";
+import { select, forceLink, forceManyBody, forceCenter, forceSimulation } from "d3";
 
 export function nodes(svg, graphData, wrapperRef) {
   const { width, height } = wrapperRef.current.getBoundingClientRect();
 
-  const simulation = forceSimulation(graphData.nodes)
-    .force("link", forceLink(graphData.links).id((d) => d.id))
+  const simulation = forceLink(graphData.links)
+    .id((d) => d.id)
+    .distance(100) // Set the desired link distance
+    .iterations(1) // Set the number of iterations to 1 to disable the animation
+
+  const force = forceSimulation(graphData.nodes)
+    .force("link", simulation)
     .force("charge", forceManyBody().strength(-400))
-    .force("center", forceCenter(width / 2, height / 2.5))
-    .on("tick", ticked);
+    .force("center", forceCenter(width / 2, height / 2));
 
   const links = svg
     .selectAll(".link")
@@ -42,7 +46,9 @@ export function nodes(svg, graphData, wrapperRef) {
     .attr("font-weight", "bold")
     .attr("fill", "white");
 
-  function ticked() {
+  // Remove the ticked function
+
+  force.on("tick", () => {
     links
       .attr("x1", (d) => d.source.x)
       .attr("y1", (d) => d.source.y)
@@ -56,5 +62,5 @@ export function nodes(svg, graphData, wrapperRef) {
     texts
       .attr("x", (d) => d.x)
       .attr("y", (d) => d.y);
-  }
+  });
 }
