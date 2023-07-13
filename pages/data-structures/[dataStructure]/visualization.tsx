@@ -7,6 +7,8 @@ import TreeVizualization from "@/pages/tree-vizualization";
 import { useRouter } from "next/router";
 import GraphVizualization from "@/pages/graph-visualization";
 
+
+
 export const getStaticPaths = () => {
   const paths = stackNavSettings
     .filter(({ url }) => url.length > 1)
@@ -33,14 +35,13 @@ export async function getStaticProps(context: any) {
 }
 
 const DataStructuresVisualizationPage = ({ visualization, dataStructure }: { visualization: any, dataStructure: any }) => {
+  console.log("visualization: ", visualization)
   const router = useRouter();
   let visu;
-  if (dataStructure === 'tree') {
-    visu =  <TreeVizualization />;
-  }else if (dataStructure === 'graph') {
+  if (dataStructure === 'graph') {
     visu =  <GraphVizualization />;
   } else {
-    visu = <Visualization visualization={visualization} />
+    visu = <Visualization dataStructure={dataStructure} visualization={visualization} />
   }
 
   return (

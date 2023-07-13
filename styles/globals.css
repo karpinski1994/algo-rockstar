@@ -148,3 +148,7 @@ a.nav-link:hover{
 .answer > .form-check-input {
   display: none;
 } */
+
+.carousel-inner {
+  height: 100%;
+}

@@ -3,6 +3,7 @@ import linkedListVisualizationSteps from "@/data-structures/linked-list/visualiz
 import stackVisualizationSteps from "@/data-structures/stack/visualization";
 import queueVisualizationSteps from "@/data-structures/queue/visualization";
 import treeVisualizationSteps from "@/data-structures/tree/visualization";
+import graphVisualizationSteps from "@/data-structures/graph/visualization";
 
 const visualizationFactory = (codeStructure: string | string[] | undefined) => {
   switch (codeStructure) {
@@ -16,6 +17,8 @@ const visualizationFactory = (codeStructure: string | string[] | undefined) => {
       return queueVisualizationSteps;
     case "tree":
       return treeVisualizationSteps;
+    case "graph":
+        return graphVisualizationSteps;
     default:
       return "Content for that section will be provided soon.";
   }

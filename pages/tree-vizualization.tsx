@@ -1,11 +1,12 @@
 import React from "react";
-import treeVisualizationSteps from "@/data-structures/tree/visualization";
+// import treeVisualizationSteps from "@/data-structures/tree/visualization";
 import useRenderD3 from "@/hooks/useRenderD3";
 
 //TODO: temporary set index 0. Create more steps and use map in the future
-const data = treeVisualizationSteps[0];
+// const data = treeVisualizationSteps[0];
+// console.log("🚀 ~ file: tree-vizualization.tsx:7 ~ data:", data)
 
-function TreeVizualization() {
+function TreeVizualization({data}) {
   const { svgRef, wrapperRef } = useRenderD3(data);
 
   return (

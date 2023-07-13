@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { Button } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import NodeBox from "../NodeBox";
+import TreeVizualization from "@/pages/tree-vizualization";
 
 export interface VisualizationRows extends Array<any> {
   name: string;
@@ -17,11 +19,7 @@ interface VisualizationSteps {
   frame?: string;
 }
 
-function StepsSlider({
-  visualization,
-}: {
-  visualization: any;
-}) {
+function StepsSlider({ dataStructure, visualization }: { visualization: any }) {
   const ref = useRef<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
@@ -53,9 +51,9 @@ function StepsSlider({
         : setActiveIndex((i) => i + 1);
   };
 
-  console.log('visualization: ', visualization)
+  console.log("visualization: ", visualization);
   return (
-    <div className="w-100 position-relative">
+    <div className="w-100 position-relative" style={{ height: "100%" }}>
       <div className="py-3">
         <Button
           size="lg"
@@ -90,65 +88,81 @@ function StepsSlider({
         indicators={false}
         interval={null}
         slide={false}
+        style={{ height: "100%" }}
       >
-        {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
-        {/* TODO: It can be lavereged to the top and render props / custom hook */}
-       
-        {visualization &&
-          Array.isArray(visualization) &&
-          visualization.map(
-            ({ text, rows, stepId, orientation = "row", frame }) => {
+        {dataStructure === "tree"
+          ? visualization &&
+            Array.isArray(visualization) &&
+            visualization.map((el) => {
+              console.log("EL: ", el);
               return (
-                <Carousel.Item key={stepId + text}>
-                  <p className="ww-bold" style={{ minHeight: "120px" }}>
-                    {text}
-                  </p>
-                  {rows.map((row: any, index: number) => {
-                    return (
-                      <div
-                        key={JSON.stringify(row) + index}
-                        className={`d-flex flex-${orientation} align-items-center`}
-                        style={{
-                          maxWidth: "696px",
-                          minWidth: "288px",
-                          position: "relative",
-                        }}
-                      >
-                        {frame ? (
-                          <div
-                            className="frame"
-                            style={{
-                              borderRight: "5px solid black",
-                              borderLeft: "5px solid black",
-                              borderBottom:
-                                frame === "sides-bottom"
-                                  ? "5px solid black"
-                                  : "none",
-                              borderRadius: "5px",
-                              width: "50%",
-                              height: "100%",
-                              position: "absolute",
-                            }}
-                          ></div>
-                        ) : null}
-                        {row.map((r: any, index: number) => {
-                          return (
-                            <div
-                              key={JSON.stringify(r) + index}
-                              style={{ width: r.color[3] == 0 ? "10%" : "30%" }}
-                            >
-                              <NodeBox {...r} />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    );
-                  })}
+                <Carousel.Item style={{ height: "100%" }} key={uuidv4()}>
+                  <div style={{ height: "100%" }}>
+                    <TreeVizualization data={el} />
+                  </div>
                 </Carousel.Item>
               );
-            }
-          )}
+            })
+          : visualization &&
+            Array.isArray(visualization) &&
+            visualization.map(
+              ({ text, rows, stepId, orientation = "row", frame }) => {
+                return (
+                  <Carousel.Item style={{ height: "100%" }} key={uuidv4()}>
+                    <p className="ww-bold" style={{ minHeight: "120px" }}>
+                      {text}
+                    </p>
+                    {rows.map((row: any, index: number) => {
+                      return (
+                        <div
+                          key={uuidv4()}
+                          className={`d-flex flex-${orientation} align-items-center`}
+                          style={{
+                            maxWidth: "696px",
+                            minWidth: "288px",
+                            position: "relative",
+                          }}
+                        >
+                          {frame ? (
+                            <div
+                              className="frame"
+                              style={{
+                                borderRight: "5px solid black",
+                                borderLeft: "5px solid black",
+                                borderBottom:
+                                  frame === "sides-bottom"
+                                    ? "5px solid black"
+                                    : "none",
+                                borderRadius: "5px",
+                                width: "50%",
+                                height: "100%",
+                                position: "absolute",
+                              }}
+                            ></div>
+                          ) : null}
+                          {row.map((r: any, index: number) => {
+                            return (
+                              <div
+                                key={uuidv4()}
+                                style={{
+                                  width: r.color[3] == 0 ? "10%" : "30%",
+                                }}
+                              >
+                                <NodeBox {...r} />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      );
+                    })}
+                  </Carousel.Item>
+                );
+              }
+            )}
       </Carousel>
+
+      {/*TODO:fix hardcoding value below (30). It must be length of steps array */}
+      {/* TODO: It can be lavereged to the top and render props / custom hook */}
     </div>
   );
 }

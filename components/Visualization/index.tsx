@@ -15,9 +15,10 @@ interface VisualizationSteps {
 }
 
 export const Visualization = ({
+  dataStructure,
   visualization,
 }: {
   visualization: Array<VisualizationSteps>;
 }) => {
-  return <>{visualization && <StepsSlider visualization={visualization} />}</>;
+  return <>{visualization && <StepsSlider dataStructure={dataStructure} visualization={visualization} />}</>;
 };
