@@ -4,7 +4,7 @@ function nodes(svg: any, treeData: any, wrapperRef: any) {
   const { width, height } = wrapperRef.current.getBoundingClientRect();
 
   const root = hierarchy(treeData);
-  const treeLayout = tree().size([width, height - 130]);
+  const treeLayout = tree().size([width, height - 230]);
 
   treeLayout(root);
 
