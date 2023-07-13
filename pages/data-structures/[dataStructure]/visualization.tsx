@@ -4,6 +4,7 @@ import visualizationFactory from "@/components/Visualization/visualizationFactor
 import { removeHyphens } from "@/utils/strings/removeHyphens";
 import { DataStructurePageLayout } from ".";
 import TreeVizualization from "@/pages/tree-vizualization";
+import { useRouter } from "next/router";
 
 export const getStaticPaths = () => {
   const paths = stackNavSettings
@@ -31,6 +32,7 @@ export async function getStaticProps(context: any) {
 }
 
 const DataStructuresVisualizationPage = ({ visualization, dataStructure }: { visualization: any, dataStructure: any }) => {
+  const router = useRouter();
   return (
     <>
       {/* TODO: Extract to above component to not depend on dataStructure here */}

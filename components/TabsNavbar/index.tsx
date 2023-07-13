@@ -4,8 +4,6 @@ import { Nav } from "react-bootstrap";
 import puzzlesFactory from "../Puzzles/puzzlesFactory";
 
 const addActiveClass = (currentUrl: string, linkUrl: string) => {
-  console.log("currentUrl: ", currentUrl);
-  console.log("linkUrl: ", linkUrl);
   return currentUrl.includes(linkUrl) ? "active" : "";
 };
 
@@ -57,6 +55,18 @@ function TabsNavbar({ queryElement }: any) {
           Quiz
         </Nav.Link>
       </Nav.Item>
+      <Nav.Item>
+          <Nav.Link
+            className={addActiveClass(
+              asPath,
+              `/data-structures/${queryElement}/algorithms`
+            )}
+            href={`/data-structures/${queryElement}/algorithms`}
+          >
+            Algorithms
+          </Nav.Link>
+        </Nav.Item>
+      {/* TODO: numberOf implement to other cases as well*/}
       {numberOfPuzzles && (
         <Nav.Item>
           <Nav.Link

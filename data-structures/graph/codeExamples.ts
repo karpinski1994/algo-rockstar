@@ -15,7 +15,7 @@ export default {
           this.vertices.get(destination).push(origin);
         }
       
-        [Symbol.for("nodejs.util.inspect.custom")]() {
+        [inspectionSymbol]() {
           return this.vertices;
         }
       }
