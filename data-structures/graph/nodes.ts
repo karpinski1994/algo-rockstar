@@ -1,7 +1,10 @@
 import { select, forceLink, forceManyBody, forceCenter, forceSimulation } from "d3";
 
-export function nodes(svg, graphData, wrapperRef) {
-  const { width, height } = wrapperRef.current.getBoundingClientRect();
+export function nodes(svg, graphData) {
+  // TODO: Base on getBoundingClientRect width and height
+  // const { width, height } = wrapperRef.current.getBoundingClientRect();
+  const width = 500;
+  const height = 500;
 
   const simulation = forceLink(graphData.links)
     .id((d) => d.id)
@@ -11,7 +14,7 @@ export function nodes(svg, graphData, wrapperRef) {
   const force = forceSimulation(graphData.nodes)
     .force("link", simulation)
     .force("charge", forceManyBody().strength(-400))
-    .force("center", forceCenter(width / 2, height / 2));
+    .force("center", forceCenter(width / 2, height /2));
 
   const links = svg
     .selectAll(".link")

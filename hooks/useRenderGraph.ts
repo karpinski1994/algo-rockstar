@@ -7,14 +7,11 @@ import {nodes} from "@/data-structures/graph/nodes";
 function useRenderGraph(data) {
   const svgRef = useRef();
   const wrapperRef = useRef();
-
+  // TODO: Base on getBoundingClientRect width and height
+  
   useEffect(() => {
     const svg = select(svgRef.current);
-
-    const { width, height } = wrapperRef.current.getBoundingClientRect();
-    svg.attr("width", width).attr("height", height);
-
-    nodes(svg, data, wrapperRef);
+    nodes(svg, data);
   }, [data]);
 
   return { svgRef, wrapperRef };

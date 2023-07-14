@@ -12,23 +12,13 @@ function GraphVisualization({ data }) {
         height: "100%",
       }}
     >
-      <div
+      <svg
+        ref={svgRef}
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
+          width: "450px",
+          height: "480px",
         }}
-      >
-        <svg
-          ref={svgRef}
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-        ></svg>
-      </div>
+      ></svg>
     </div>
   );
 }
