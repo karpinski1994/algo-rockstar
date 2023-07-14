@@ -15,8 +15,8 @@ function GraphVisualization({ data }) {
       <svg
         ref={svgRef}
         style={{
-          width: "450px",
-          height: "480px",
+          width: "480px",
+          height: "440px",
         }}
       ></svg>
     </div>

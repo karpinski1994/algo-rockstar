@@ -3,8 +3,8 @@ import { select, forceLink, forceManyBody, forceCenter, forceSimulation } from "
 export function nodes(svg, graphData) {
   // TODO: Base on getBoundingClientRect width and height
   // const { width, height } = wrapperRef.current.getBoundingClientRect();
-  const width = 500;
-  const height = 500;
+  const width = 450;
+  const height = 450;
 
   const simulation = forceLink(graphData.links)
     .id((d) => d.id)
