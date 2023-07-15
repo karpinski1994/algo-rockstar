@@ -1,6 +1,7 @@
 import { select, forceLink, forceManyBody, forceCenter, forceSimulation } from "d3";
 
-export function nodes(svg, graphData) {
+export function nodes(svg, graphData, onClick) {
+  console.log("🚀 ~ file: nodes.ts:4 ~ nodes ~ graphData:", graphData)
   // TODO: Base on getBoundingClientRect width and height
   // const { width, height } = wrapperRef.current.getBoundingClientRect();
   const width = 450;
@@ -23,7 +24,7 @@ export function nodes(svg, graphData) {
     .append("line")
     .attr("class", "link")
     .style("stroke", "#aaa");
-
+console.log('DZIABONG!!!!!')
   const nodes = svg
     .selectAll(".node")
     .data(graphData.nodes)
@@ -31,11 +32,16 @@ export function nodes(svg, graphData) {
     .append("circle")
     .attr("class", "node")
     .attr("r", 20)
-    .style("fill", "#69b3a2")
+    .style("fill", ({selected}) => {
+      console.log('selected!')
+      return selected ? "#eee000" : '#69b3a2'
+    })
     .on("click", function (event, d) {
+      onClick(d);
       console.log("Clicked on node:", d);
     });
 
+    console.log('DZIABONG2 !!!!!')
   const texts = svg
     .selectAll(".text")
     .data(graphData.nodes)

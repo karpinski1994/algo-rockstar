@@ -1,8 +1,8 @@
 import React from "react";
 import useRenderGraph from "@/hooks/useRenderGraph";
 
-function GraphVisualization({ data }) {
-  const { svgRef, wrapperRef } = useRenderGraph(data);
+function GraphVisualization({ data, onClick }) {
+  const { svgRef, wrapperRef } = useRenderGraph(data, onClick);
 
   return (
     <div
@@ -23,4 +23,4 @@ function GraphVisualization({ data }) {
   );
 }
 
-export default React.memo(GraphVisualization);
+export default GraphVisualization;
