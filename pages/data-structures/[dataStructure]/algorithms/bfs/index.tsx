@@ -5,7 +5,45 @@ import { Nav } from "react-bootstrap";
 import GraphExperiment from "@/components/GraphExperiment";
 import Markdown from "@/components/Markdown";
 
-function WordSearchPage() {
+
+const data = {
+  name: "A",
+  children: [
+      {
+          name: "B",
+          children: [
+              {
+                  name: "C"
+              },
+              {
+                  name: "D"
+              },
+              {
+                  name: "E"
+              }
+          ]
+      },
+      {
+          name: "F"
+      },
+      {
+          name: "G",
+          children: [
+              {
+                  name: "H"
+              },
+              {
+                  name: "I"
+              },
+              {
+                  name: "J"
+              }
+          ]
+      }
+  ]
+};
+
+function GraphBFSPage() {
 
   const router = useRouter();
 
@@ -93,11 +131,11 @@ function WordSearchPage() {
                   return bfsOrder;
                 }`} />
       
-      <GraphExperiment />
+      <GraphExperiment data={data}/>
     </div>
   );
 }
 
-WordSearchPage.getLayout = DataStructurePageLayout;
+GraphBFSPage.getLayout = DataStructurePageLayout;
 
-export default WordSearchPage;
+export default GraphBFSPage;

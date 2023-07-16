@@ -20,7 +20,7 @@ interface VisualizationSteps {
   frame?: string;
 }
 
-function StepsSlider({ dataStructure, visualization }: { visualization: any }) {
+function StepsSlider({ dataStructure, visualization, children }: { visualization: any }) {
   console.log(
     "🚀 ~ file: index.tsx:24 ~ StepsSlider ~ visualization:",
     visualization
@@ -97,27 +97,28 @@ function StepsSlider({ dataStructure, visualization }: { visualization: any }) {
 
   if (dataStructure === 'graph') {
     carouselItems = Array.isArray(visualization) &&
-            visualization.map((el) => (
-              <Carousel.Item style={{ height: "100%" }} key={uuidv4()}>
-                <div
-                  style={{
-                    height: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <GraphVisualization data={el} />
-                </div>
-              </Carousel.Item>
-            ))
+      visualization.map((el) => (
+        <Carousel.Item style={{ height: "100%" }} key={uuidv4()}>
+          <div
+            style={{
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <GraphVisualization data={el} />
+          </div>
+        </Carousel.Item>
+      ))
   }
 
   return (
     <div className="w-100 position-relative" style={{ height: "100%" }}>
       <div className="py-3 h-100">
         <VisualizationCarousel>
-          {carouselItems}
+          {children}
+          {/* {carouselItems} */}
         </VisualizationCarousel>
       </div>
     </div>
@@ -125,3 +126,18 @@ function StepsSlider({ dataStructure, visualization }: { visualization: any }) {
 }
 
 export default StepsSlider;
+
+export const Step = ({ children }: { children: React.ReactNode }) => {
+  <Carousel.Item style={{ height: "100%" }} key={uuidv4()}>
+    <div
+      style={{
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </div>
+  </Carousel.Item>
+}

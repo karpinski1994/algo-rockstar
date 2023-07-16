@@ -13,47 +13,11 @@ import {
 import useResizeObserver from "@/hooks/useResizeObserver";
 import { Button } from "react-bootstrap";
 
-const data = {
-    name: "A",
-    children: [
-        {
-            name: "B",
-            children: [
-                {
-                    name: "C"
-                },
-                {
-                    name: "D"
-                },
-                {
-                    name: "E"
-                }
-            ]
-        },
-        {
-            name: "F"
-        },
-        {
-            name: "G",
-            children: [
-                {
-                    name: "H"
-                },
-                {
-                    name: "I"
-                },
-                {
-                    name: "J"
-                }
-            ]
-        }
-    ]
-};
 /**
  * Component, that renders a force layout for hierarchical data.
  */
 
-function GraphExperiment() {
+function GraphExperiment({data}) {
     const [nodes, setNodes] = useState(data);
     const [visited, setVisited] = useState([]);
     const svgRef = useRef();
