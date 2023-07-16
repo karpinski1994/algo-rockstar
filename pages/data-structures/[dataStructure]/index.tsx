@@ -42,6 +42,7 @@ export async function getStaticProps(context: any) {
 
 
 const DataStructurePage = ({ dataStructure, markdown }: Props) => {
+  console.log("🚀 ~ file: index.tsx:45 ~ DataStructurePage ~ markdown:", markdown)
   return (
     <>
       <h3 className="text-capitalize mt-4">{`${removeHyphens(dataStructure)} - description`}</h3>
