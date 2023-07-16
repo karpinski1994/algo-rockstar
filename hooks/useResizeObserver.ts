@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import ResizeObserver from "resize-observer-polyfill";
 
-const useResizeObserver = (ref: any) => {
+/**
+ * Hook, that returns the current dimensions of an HTML element.
+ * Doesn't play well with SVG.
+ */
+
+const useResizeObserver = ref => {
   const [dimensions, setDimensions] = useState(null);
   useEffect(() => {
     const observeTarget = ref.current;
     const resizeObserver = new ResizeObserver(entries => {
-      entries.forEach((entry: any) => {
+      entries.forEach(entry => {
         setDimensions(entry.contentRect);
       });
     });

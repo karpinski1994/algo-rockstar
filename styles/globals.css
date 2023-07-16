@@ -152,3 +152,7 @@ a.nav-link:hover{
 .carousel-inner {
   height: 100%;
 }
+
+.hidden {
+  visibility: hidden;
+}
