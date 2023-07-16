@@ -75,7 +75,8 @@ function WordSearchPage() {
                   
                   while(queue.length > 0) {
                     const currentNode = queue.shift();
-
+                    visited.add(currentNode)
+                    
                     // process current node
                     bfsOrder.push(currentNode)
 
