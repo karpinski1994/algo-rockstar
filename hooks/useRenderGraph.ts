@@ -8,7 +8,9 @@ function useRenderGraph(data, onClick) {
   useEffect(() => {
     const renderGraph = () => {
       const svg = select(svgRef.current);
-      const { width, height } = wrapperRef.current.getBoundingClientRect();
+      // const { width } = wrapperRef.current.getBoundingClientRect();
+      const height = 480;
+      const width = 480;
 
       const simulation = forceLink(data.links)
         .id((d) => d.id)

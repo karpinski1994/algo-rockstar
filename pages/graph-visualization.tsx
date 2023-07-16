@@ -86,25 +86,23 @@ const data = [
 
 ]
 
-function GraphVisualization() {
-
+function GraphVisualization({ data, onClick }) {
+  const { svgRef, wrapperRef } = useRenderGraph(data, onClick);
   return (
     <div
+      ref={wrapperRef}
       style={{
         width: "100%",
         height: "100%",
       }}
     >
-      <Steps>
-        {data.map(d => <Step>
-          <GraphExperiment data={d} />
-        </Step>)}
-        <Step>
-          <div>
-            zyrafa
-          </div>
-        </Step>
-      </Steps>
+      <svg
+        ref={svgRef}
+        style={{
+          width: "100%",
+          height: "480px",
+        }}
+      ></svg>
     </div>
   );
 }

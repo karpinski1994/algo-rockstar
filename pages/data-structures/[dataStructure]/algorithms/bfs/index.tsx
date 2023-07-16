@@ -4,44 +4,10 @@ import { useRouter } from "next/router";
 import { Nav } from "react-bootstrap";
 import GraphExperiment from "@/components/GraphExperiment";
 import Markdown from "@/components/Markdown";
+import Steps, { Step } from "@/components/Steps";
+import GraphVisualization from "@/pages/graph-visualization";
 
-
-const data = {
-  name: "A",
-  children: [
-      {
-          name: "B",
-          children: [
-              {
-                  name: "C"
-              },
-              {
-                  name: "D"
-              },
-              {
-                  name: "E"
-              }
-          ]
-      },
-      {
-          name: "F"
-      },
-      {
-          name: "G",
-          children: [
-              {
-                  name: "H"
-              },
-              {
-                  name: "I"
-              },
-              {
-                  name: "J"
-              }
-          ]
-      }
-  ]
-};
+import { data, graphVisualizationSteps } from './data'
 
 function GraphBFSPage() {
 
@@ -49,9 +15,14 @@ function GraphBFSPage() {
 
   return (
     <div>
+
       <Nav.Link onClick={() => router.back()}>{"< back to the list"}</Nav.Link>
       <h1>Graph - BFS</h1>
-      <h4>Description</h4>
+      <h4>Description below</h4>
+      <GraphExperiment data={data} />
+      <Steps>
+        {graphVisualizationSteps.map(s => <Step><GraphVisualization data={s} /></Step>)}
+      </Steps>
       <p>
         Breath first search it is one of the most fundamental graph traversal algorithms
       </p>
@@ -105,7 +76,7 @@ function GraphBFSPage() {
       <h4>
         BFS code
       </h4>
-<Markdown markdown={`
+      <Markdown markdown={`
                 function bfs (graph, startingNode) {
                   const visited = new Set();
                   const queue = [startingNode];
@@ -130,8 +101,7 @@ function GraphBFSPage() {
                   }
                   return bfsOrder;
                 }`} />
-      
-      <GraphExperiment data={data}/>
+
     </div>
   );
 }

@@ -18,7 +18,7 @@ const graphVisualizationSteps = [
             },
             {
                 "id": 2,
-                "name": "BBB"
+                "name": "B"
             },
         ],
         "links": [
@@ -37,7 +37,7 @@ const graphVisualizationSteps = [
             },
             {
                 "id": 2,
-                "name": "BBB"
+                "name": "B"
             },
             {
                 "id": 3,
@@ -71,7 +71,7 @@ const graphVisualizationSteps = [
             },
             {
                 "id": 2,
-                "name": "BBB"
+                "name": "B"
             },
             {
                 "id": 3,

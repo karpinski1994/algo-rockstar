@@ -117,8 +117,8 @@ function StepsSlider({ dataStructure, visualization, children }: { visualization
     <div className="w-100 position-relative" style={{ height: "100%" }}>
       <div className="py-3 h-100">
         <VisualizationCarousel>
-          {children}
-          {/* {carouselItems} */}
+          {/* {children} */}
+          {carouselItems}
         </VisualizationCarousel>
       </div>
     </div>

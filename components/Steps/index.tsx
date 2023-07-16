@@ -12,13 +12,6 @@ interface StepsSliderProps {
 }
 
 function Steps({ children }: StepsProps) {
-  const [activeStep, setActiveStep] = useState(0);
-
-  useEffect(() => {
-    // Perform any necessary actions when the active step changes
-    // For example, update the UI or trigger animations
-    console.log("Active Step:", activeStep);
-  }, [activeStep]);
 
   const carouselItems = React.Children.map(children, (child, index) => (
     <Carousel.Item style={{ height: "100%" }} key={uuidv4()}>
@@ -26,18 +19,10 @@ function Steps({ children }: StepsProps) {
     </Carousel.Item>
   ));
 
-  const handleNext = () => {
-    setActiveStep((prevStep) => prevStep + 1);
-  };
-
-  const handlePrev = () => {
-    setActiveStep((prevStep) => prevStep - 1);
-  };
-
   return (
     <div className="w-100 position-relative" style={{ height: "100%" }}>
       <div className="py-3 h-100">
-        <VisualizationCarousel activeIndex={activeStep}>
+        <VisualizationCarousel >
           {carouselItems}
         </VisualizationCarousel>
       </div>
