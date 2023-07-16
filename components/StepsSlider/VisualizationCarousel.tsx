@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 
@@ -16,14 +16,17 @@ interface VisualizationSteps {
   frame?: string;
 }
 
-function VisualizationCarousel({children} : {children: React.ReactNode}) {
+function VisualizationCarousel({ children }: { children: React.ReactNode }) {
   const ref = useRef<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const intervalRef = useRef<any>(null);
 
   useEffect(() => {
-    const numberOfItems =
-    ref?.current?.element?.querySelectorAll(".carousel-item").length;
+    const numberOfItems = ref?.current?.element?.querySelectorAll(
+      ".carousel-item"
+    ).length;
     setNumberOfItems(numberOfItems);
   }, []);
 
@@ -43,7 +46,18 @@ function VisualizationCarousel({children} : {children: React.ReactNode}) {
     }
   };
 
-  
+  const onPlayClick = () => {
+    if (isPlaying) {
+      clearInterval(intervalRef.current);
+      setIsPlaying(false);
+    } else {
+      setIsPlaying(true);
+      intervalRef.current = setInterval(() => {
+        setActiveIndex((i) => (i === numberOfItems - 1 ? 0 : i + 1));
+      }, 2000);
+    }
+  };
+
   return (
     <div className="w-100 position-relative" style={{ height: "100%" }}>
       <div className="py-3">
@@ -71,6 +85,14 @@ function VisualizationCarousel({children} : {children: React.ReactNode}) {
         >
           {"Next Step >"}
         </Button>
+        <Button
+          size="lg"
+          className="ms-1 font-weight-bold"
+          variant="info"
+          onClick={onPlayClick}
+        >
+          {isPlaying ? "Stop" : "Play"}
+        </Button>
       </div>
 
       <Carousel
@@ -82,7 +104,7 @@ function VisualizationCarousel({children} : {children: React.ReactNode}) {
         slide={false}
         style={{ height: "100%" }}
       >
-       {children}
+        {children}
       </Carousel>
     </div>
   );
