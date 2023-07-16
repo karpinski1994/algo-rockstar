@@ -22,7 +22,7 @@ function Steps({ children }: StepsProps) {
   return (
     <div className="w-100 position-relative" style={{ height: "100%" }}>
       <div className="py-3 h-100">
-        <VisualizationCarousel >
+        <VisualizationCarousel interval={1000}>
           {carouselItems}
         </VisualizationCarousel>
       </div>

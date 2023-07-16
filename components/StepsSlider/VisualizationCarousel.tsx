@@ -16,7 +16,7 @@ interface VisualizationSteps {
   frame?: string;
 }
 
-function VisualizationCarousel({ children }: { children: React.ReactNode }) {
+function VisualizationCarousel({ children, interval = 2000 }: { children: React.ReactNode, interval?: number }) {
   const ref = useRef<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
@@ -54,7 +54,7 @@ function VisualizationCarousel({ children }: { children: React.ReactNode }) {
       setIsPlaying(true);
       intervalRef.current = setInterval(() => {
         setActiveIndex((i) => (i === numberOfItems - 1 ? 0 : i + 1));
-      }, 2000);
+      }, interval);
     }
   };
 
