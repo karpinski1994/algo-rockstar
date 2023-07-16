@@ -81,32 +81,51 @@ function ForceTreeChart() {
     };
 
     const onClick = () => {
-        const targetNode = dfs(nodes, "C");
-        if (targetNode) {
-            const updatedNodes = {
-                ...nodes,
-                children: updateNode(nodes.children, targetNode),
-            };
-            setNodes(updatedNodes);
-        }
-    };
+  const visited = new Set(); // Set to track visited nodes
+  const queue = [nodes]; // Queue to store nodes for BFS traversal
 
-    const updateNode = (children, targetNode) => {
-        return children.map((child) => {
-            if (child === targetNode) {
-                return {
-                    ...child,
-                    selected: true,
-                };
-            } else if (child.children) {
-                return {
-                    ...child,
-                    children: updateNode(child.children, targetNode),
-                };
-            }
-            return child;
+  while (queue.length > 0) {
+    console.log("🚀 ~ file: graph-experiment.tsx:88 ~ onClick ~ queue:", queue)
+    const currentNode = queue.shift();
+    console.log("🚀 ~ file: graph-experiment.tsx:89 ~ onClick ~ currentNode:", currentNode)
+
+    if (!visited.has(currentNode)) {
+      visited.add(currentNode);
+      setTimeout(() => {
+        setNodes((prevNodes) => ({
+          ...prevNodes,
+          children: updateNode(prevNodes.children, currentNode),
+        }));
+      }, 1500 * visited.size);
+
+      if (currentNode.children) {
+        currentNode.children.forEach((child) => {
+          queue.push(child);
         });
-    };
+      }
+    }
+  }
+};
+
+const updateNode = (children, targetNode) => {
+  return children.map((child) => {
+    if (child === targetNode) {
+      return {
+        ...child,
+        selected: true,
+      };
+    } else if (child.children) {
+      const updatedChildren = updateNode(child.children, targetNode);
+      if (updatedChildren !== child.children) {
+        return {
+          ...child,
+          children: updatedChildren,
+        };
+      }
+    }
+    return child;
+  });
+};
 
     useEffect(() => {
         console.log('nodes: ', nodes)
