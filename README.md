@@ -1,4 +1,7 @@
 <!-- ## Algo Rockstar ![Latest release](https://badgen.net/badge/Release%20Date/January%202022/blue) -->
+> **Warning**
+> This project is done for educational purposes related to algorithms. The parts related to the layout are written 'quickly' just to display the algorithms. Additionally, it is in progress, so the code is not yet of the highest quality.
+
 
 ---
 
